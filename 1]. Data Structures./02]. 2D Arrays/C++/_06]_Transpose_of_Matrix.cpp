@@ -26,10 +26,11 @@ int main(){
     cout << "The Transpose of the Matrix :" <<endl;
     
     int temp[rows][cols];
-    for(int i=0; i<rows; i++)
-        for(int j=0; j<cols; j++)
+    for(int i=0; i<rows; i++){
+        for(int j=0; j<cols; j++){
             temp[j][i] =arr[i][j];
-
+        }
+    }
     for(int i=0; i<rows; i++)
         for(int j=0; j<cols; j++)
             arr[i][j] = temp[i][j];
