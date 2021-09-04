@@ -1,34 +1,34 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-int binarySearch(int array[], int n ,int key){
-    int s = 0 ;
-    int e = n-1 ;
-    int c = 0 ;
-    while(s < e){
-        int mid = (s+e)/2 ;
-        if(array[mid] == key){
-            cout << " The item " << key <<" is present" << endl;
-            c++;
-            break ;
-            return 0 ;
-        }
-        if(array[mid] > key)  mid = s ;
-        if(array[mid] < key) mid = e ;
-    }
-    if(c!=1) cout << "The item " << key <<" is not present" << endl;
-    return 0;
+int binarySearch(int a[], int beg, int end, int item){  
+    int mid;  
+    if(end >= beg){     
+        mid = (beg + end)/2;  
+        if(a[mid] == item){  
+            return mid+1;  
+        }  
+        else if(a[mid] < item){  
+            return binarySearch(a,mid+1,end,item);  
+        }  
+        else{  
+            return binarySearch(a,beg,mid-1,item);  
+        }  
+      
+    }  
+    return -1;   
 }
-int main(){
-    cout << "Enter the number of elements:";
-    int n ; cin >> n;
-    cout << "Array Inputs:";
-    int arr[n];
-    for(int i = 0; i < n; i++){
-        cin >> arr[i];
-    }
-    int key ;
-    cout <<"\nEnter item which you want to search :";
-    cin >> key ;
-    binarySearch(arr,n ,key);
-}
+
+int main (){  
+    int arr[10] = {16, 19, 20, 23, 45, 56, 78, 90, 96, 100};  
+    int item, location=-1;   
+    cout << "Enter the item which you want to search : ";  
+    cin >> item; 
+    location = binarySearch(arr, 0, 9, item);  
+    if(location != -1){  
+        cout << "Item found at index " << location << endl; 
+    }  
+    else{  
+       cout <<"Item Not found" << endl; 
+    }  
+}   
