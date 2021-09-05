@@ -33,7 +33,7 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 ## Searching
 
 * [Binary](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/01%5D.Searching%20Algorithms/C%2B%2B/_02%5D_Binary_Search.cpp), 
-[Sequential](src/main/java/dsa/search/SequentialSearch.java)
+[Sequential](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/01%5D.Searching%20Algorithms/C%2B%2B/_01%5D_Linear_Search.cpp)
 
 	![Preview](Resources/Images/binary-and-linear-search.gif)
 ## Data Structure
