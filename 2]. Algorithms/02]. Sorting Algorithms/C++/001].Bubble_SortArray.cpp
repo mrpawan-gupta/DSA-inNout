@@ -2,6 +2,7 @@
 using namespace std;
 
 int main(){
+    
     cout << "Enter the no of elements :" ;
     int num ; cin >> num;
     cout << "Enter the value :" <<endl; 
