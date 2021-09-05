@@ -17,7 +17,7 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 
 ## Sorting
 
-* [Bubble](),[Insertion](),[Selection](),[Merge]()
+* [Bubble](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/02%5D.%20Sorting%20Algorithms/C%2B%2B/001%5D.Bubble_SortArray.cpp),[Insertion](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/02%5D.%20Sorting%20Algorithms/C%2B%2B/002%5D.Insertion_SortArray.cpp),[Selection](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/02%5D.%20Sorting%20Algorithms/C%2B%2B/003%5D.Selection_SortArray.cpp),[Merge]()
 
 	![Preview](Resources/Images/bubble-sort.gif)
 	![Preview](Resources/Images/insertion-sort.gif)
