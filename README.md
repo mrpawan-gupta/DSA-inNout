@@ -30,12 +30,13 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 	![Preview](Resources/Images/heap-sort.gif)
 	![Preview](Resources/Images/quick-sort.gif)
 
-## Searching(https://github.com/mrpawan-gupta/DSA-inNout/tree/main/2%5D.%20Algorithms/01%5D.Searching%20Algorithms)
+## Searching
 
 * [Binary](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/01%5D.Searching%20Algorithms/C%2B%2B/_02%5D_Binary_Search.cpp), 
 [Sequential](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/01%5D.Searching%20Algorithms/C%2B%2B/_01%5D_Linear_Search.cpp)
 
-	![Preview](Resources/Images/binary-and-linear-search.gif)
+![Preview](Resources/Images/binary-and-linear-search.gif)
+
 ## Data Structure
 
 1. Stack
