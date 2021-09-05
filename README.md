@@ -16,5 +16,52 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 | 8.       | [Resources]() |
 
 
+# Data Structure
+
+1. Stack
+
+	![Preview](doc/stack.jpg)
+
+
+2. Queue
+
+	![Preview](doc/queue.jpg)
+	
+	![Preview](doc/priorityqueue.png)
+
+3. LinkedList
+4. 
+	![Preview](doc/linked_list.jpg)
+	
+	![Preview](doc/doubly_linked_list.jpg)
+
+	![Preview](doc/singly_circular_linked_list.jpg)
+	
+
+4. Tree
+
+	* [BinaryTree](src/main/java/dsa/tree/bst/BinarySearchTree.java)
+
+
+	![Preview](doc/binary_tree.jpg)
+
+
+	![Preview](doc/avl.gif)
+
+	![Preview](doc/huffman.png)
+	
+
+5. Graph
+	
+	![Preview](doc/graph_adjacent_matrix.png)
+
+	![Preview](doc/dijkstra.gif)
+
+	![Preview](doc/bellman_ford.gif)
+
+	![Preview](doc/mini-max.gif)
+
+	![Preview](doc/a-star.gif)
+
 
 
