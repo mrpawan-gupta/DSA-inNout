@@ -12,12 +12,12 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 | 4.       | [Striver Series](#-------------Striver Series----) |
 | 5.       | [CodeForces Series](#-------------CodeForces Series----) |
 | 6.       | [150 SDE Questions Leetcode](#-------------150 SDE Questions Leetcode----) |
-| 7.       | [CompanyWise Questions](#-------------CompanyWise Questions----) |
-| 8.       | [Resources](#-------------important-books-and-resources----) |
+| 7.       | [CompanyWise Questions](#--------------CompanyWise Questions----) |
+| 8.       | [Resources](#=-------------Resources----) |
 
 
 ## `Domain 🔰`
-### 1. [Data Structure](https://github.com/mrpawan-gupta/DSA-inNout/tree/main/1%5D.%20Data%20Structures.)
+### 1. [Data Structure](https://github.com/mrpawan-gupta/DSA-inNout/tree/main/1%5D.%20Data%20Structures)
 ### 2. [Algorithms](https://github.com/mrpawan-gupta/DSA-inNout/tree/main/2%5D.%20Algorithms)
 ### 3. [Love Babar DSA Sheet](https://github.com/mrpawan-gupta/DSA-inNout/tree/main/3%5D.%20Love%20Babbar%20DSA%20Sheet)
 ### 4. [Striver Series](https://github.com/mrpawan-gupta/DSA-inNout/tree/main/4%5D.%20Striver%20Series)
