@@ -15,7 +15,26 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 | 7.       | [CompanyWise Questions](https://github.com/mrpawan-gupta/DSA-inNout/tree/main/7%5D.%20CompanyWise%20Questions) |
 | 8.       | [Resources]() |
 
+## Sorting
 
+* [Bubble](src/main/java/dsa/sort/BubbleSort.java), [Insertion](src/main/java/dsa/sort/InsertionSort.java), [Selection](src/main/java/dsa/sort/SelectionSort.java), [Merge](src/main/java/dsa/sort/MergeSort.java)
+
+	![Preview](Resources/Images/bubble-sort.gif)
+	![Preview](Resources/Images/insertion-sort.gif)
+	![Preview](Resources/Images/selection-sort.gif)
+	![Preview](Resources/Images/merge-sort.gif)
+
+* [Shell](src/main/java/dsa/sort/ShellSort.java), [Heap](src/main/java/dsa/sort/HeapSort.java), [Quick](src/main/java/dsa/sort/QuickSort.java), [Radix](src/main/java/dsa/sort/RadixSort.java)
+
+	![Preview](Resources/Images/shell-sort.gif)
+	![Preview](Resources/Images/heap-sort.gif)
+	![Preview](Resources/Images/quick-sort.gif)
+
+## Searching
+
+* [Binary](src/main/java/dsa/search/BinarySearch.java), [Sequential](src/main/java/dsa/search/SequentialSearch.java)
+
+	![Preview](Resources/Images/binary-and-linear-search.gif)
 ## Data Structure
 
 1. Stack
