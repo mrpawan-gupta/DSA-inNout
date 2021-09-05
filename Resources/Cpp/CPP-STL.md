@@ -227,7 +227,7 @@ d.clear();
 | Remove Index | `O(n)`          |
 | Remove Tail  | `O(1)`          |
 | Find Index   | `O(n)`          |
-| Find Object  | `O(n)`          |
+| Find Object  | `O(n)`          | 
 
 **Example Code**
 
