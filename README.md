@@ -6,14 +6,14 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 ## `Table of Contents 📋`
 | **SNo.** | **Contents** |
 | -------  | ------------ |
-| 1.       | [Data Structure](#-------------Data Structure----) |
-| 2.       | [Algorithms](#-------------Algorithms----) |
-| 3.       | [Love Babar DSA Sheet](#-------------Love Babar DSA Sheet----) |
-| 4.       | [Striver Series](#-------------Striver Series----) |
-| 5.       | [CodeForces Series](#-------------CodeForces Series----) |
-| 6.       | [150 SDE Questions Leetcode](#-------------150 SDE Questions Leetcode----) |
-| 7.       | [CompanyWise Questions](#--------------CompanyWise Questions----) |
-| 8.       | [Resources](#=-------------Resources----) |
+| 1.       | [Data Structure](#1-Data-Structure) |
+| 2.       | [Algorithms](#2-Algorithms) |
+| 3.       | [Love Babar DSA Sheet](#3-Love-Babar-DSA-Sheet) |
+| 4.       | [Striver Series](#4-Striver-Series) |
+| 5.       | [CodeForces Series](#5-CodeForces-Series) |
+| 6.       | [150 SDE Questions Leetcode](#6-150-SDE-Questions-Leetcode) |
+| 7.       | [CompanyWise Questions](#7-CompanyWise-Questions) |
+| 8.       | [Resources](#8-Resources) |
 
 
 ## `Domain 🔰`
@@ -25,3 +25,4 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 ### 6. [150 SDE Questions Leetcode]
 ### 7. [CompanyWise Questions](https://github.com/mrpawan-gupta/DSA-inNout/tree/main/7%5D.%20CompanyWise%20Questions)
 ### 8. [Resources]
+
