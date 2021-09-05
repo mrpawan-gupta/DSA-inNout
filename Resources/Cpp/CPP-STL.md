@@ -58,7 +58,7 @@ The C++ standard library provides different container types with different abili
 
 A table below provides an overview of container abilities: Overview of Container Abilities
 
-![TableOverview](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/Resources/Cpp/Images/STL%20Table.png"STL Table")
+<img src="https://github.com/mrpawan-gupta/DSA-inNout/blob/main/Resources/Cpp/Images/STL%20Table.png")
 
 However, it contains general statements that might not fit in reality. For example, if you manage only a few elements, you can ignore the complexity because short element processing with linear complexity is better than long element processing with logarithmic complexity (in practice, “few” might become very large here).
 
