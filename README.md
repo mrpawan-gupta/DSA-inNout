@@ -32,7 +32,7 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 
 ## Searching
 
-* [Binary](src/main/java/dsa/search/BinarySearch.java), 
+* [Binary](2]. Algorithms/01].Searching Algorithms/C++/_02]_Binary_Search.cpp), 
 [Sequential](src/main/java/dsa/search/SequentialSearch.java)
 
 	![Preview](Resources/Images/binary-and-linear-search.gif)
