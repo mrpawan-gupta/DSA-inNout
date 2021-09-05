@@ -795,4 +795,4 @@ p.pop();
 
 #### Optimizations
 
-- Choice of - Choose median of the first, middle, and last elements as pivot
+- Choice of - Choose median of the first, middle, and last elements as pivot .
