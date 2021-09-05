@@ -58,7 +58,7 @@ The C++ standard library provides different container types with different abili
 
 A table below provides an overview of container abilities: Overview of Container Abilities
 
-![TableOverview](Resources/images/STL%20Table.png "STL Table")
+![TableOverview](Resources/Cpp/Images/STL%20Table.png "STL Table")
 
 However, it contains general statements that might not fit in reality. For example, if you manage only a few elements, you can ignore the complexity because short element processing with linear complexity is better than long element processing with logarithmic complexity (in practice, “few” might become very large here).
 
@@ -80,8 +80,8 @@ However, it contains general statements that might not fit in reality. For examp
 
 - If you need a dictionary, use an unordered multimap or, if the element order matters, a multimap.
 
-![DataStructures](Resources/images/Data%20Structures.png "Data Structures")
-![ComplexityChart](Resources/images/Complexity%20Chart.png "Complexity Chart")
+![DataStructures](Resources/Cpp/images/Data%20Structures.png "Data Structures")
+![ComplexityChart](Resources/Cpp/images/Complexity%20Chart.png "Complexity Chart")
 
 ### 1.2 Vector `std::vector`
 
