@@ -37,9 +37,9 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 
 ![Preview](Resources/Images/shell-sort.gif) 
 
-* [Heap](src/main/java/dsa/sort/HeapSort.java), 
+* [Heap](src/main/java/dsa/sort/HeapSort.java
 
-![Preview](Resources/Images/heap-sort.gif)
+![Preview](Resources/Images/Heap-Sort.gif)
 
 * [Quick](src/main/java/dsa/sort/QuickSort.java),
 
