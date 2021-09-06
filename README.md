@@ -19,16 +19,16 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 
 * [Bubble](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/02%5D.%20Sorting%20Algorithms/C%2B%2B/001%5D.Bubble_SortArray.cpp),[Insertion](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/02%5D.%20Sorting%20Algorithms/C%2B%2B/002%5D.Insertion_SortArray.cpp),[Selection](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/02%5D.%20Sorting%20Algorithms/C%2B%2B/003%5D.Selection_SortArray.cpp),[Merge]()
 
-	![Preview](Resources/Images/bubble-sort.gif)
-	![Preview](Resources/Images/insertion-sort.gif)
-	![Preview](Resources/Images/selection-sort.gif)
-	![Preview](Resources/Images/merge-sort.gif)
+	![Preview](Resources/Images/Bubble-Sort.gif)
+	![Preview](Resources/Images/Insertion-Sort.gif)
+	![Preview](Resources/Images/Selection-Sort.gif)
+	![Preview](Resources/Images/Merge-Sort.gif)
 
 * [Shell](src/main/java/dsa/sort/ShellSort.java), [Heap](src/main/java/dsa/sort/HeapSort.java), [Quick](src/main/java/dsa/sort/QuickSort.java), [Radix](src/main/java/dsa/sort/RadixSort.java)
 
 	![Preview](Resources/Images/shell-sort.gif)
 	![Preview](Resources/Images/heap-sort.gif)
-	![Preview](Resources/Images/quick-sort.gif)
+	![Preview](Resources/Images/Quick-Sort.gif)
 
 ## Searching
 
