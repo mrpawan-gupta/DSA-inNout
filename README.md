@@ -21,14 +21,13 @@ The Programming languages used for demonstration are the C++, Python, and Java.
 ![Preview](Resources/Images/Bubble-Sort.gif)
 
 * [Insertion](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/02%5D.%20Sorting%20Algorithms/C%2B%2B/002%5D.Insertion_SortArray.cpp),
-
-	![Preview](Resources/Images/Insertion-Sort.gif)
+![Preview](Resources/Images/Insertion-Sort.gif)
 
 * [Selection](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/2%5D.%20Algorithms/02%5D.%20Sorting%20Algorithms/C%2B%2B/003%5D.Selection_SortArray.cpp),
 ![Preview](Resources/Images/Selection-Sort.gif)
 
 * [Merge]()
-	![Preview](Resources/Images/Merge-Sort.gif)
+![Preview](Resources/Images/Merge-Sort.gif)
 
 * [Shell](src/main/java/dsa/sort/ShellSort.java), [Heap](src/main/java/dsa/sort/HeapSort.java), [Quick](src/main/java/dsa/sort/QuickSort.java), [Radix](src/main/java/dsa/sort/RadixSort.java)
 
