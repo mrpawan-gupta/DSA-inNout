@@ -77,3 +77,20 @@
 - [Find Peak Element](https://leetcode.com/problems/find-peak-element/) | Array, Binary Search
 
 - [Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/) | Array, Binary Search, Dynamic ProgrammingLinked List added to ReadeMe
+
+## Sliding Window
+
+- [Leetcode Pattern 2 | Sliding Windows for Strings | by csgator | Leetcode Patterns](https://medium.com/leetcode-patterns/leetcode-pattern-2-sliding-windows-for-strings-e19af105316b) | Read 
+
+Questions : ---------->
+- [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Sliding Window, HashTable
+
+-[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/description/) | HashTable , String
+
+- [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/) | Sliding Window, HashTable
+
+- [Count Number of Nice Subarrays](https://leetcode.com/problems/count-number-of-nice-subarrays/) | HashTable, Array
+
+- [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/) | Sliding Window, HashTable
+
+## Two-Pointer
