@@ -132,57 +132,59 @@ Questions : ---------->
 ## BFS, DFS
 
 Read---->
-- Leetcode Pattern 1 | BFS + DFS == 25% of the problems — part 1
-- Leetcode Pattern 1 | DFS + BFS == 25% of the problems — part 2
+- [Leetcode Pattern 1 | BFS + DFS == 25% of the problems — part 1](https://medium.com/leetcode-patterns/leetcode-pattern-1-bfs-dfs-25-of-the-problems-part-1-519450a84353)
+
+- [Leetcode Pattern 1 | DFS + BFS == 25% of the problems — part 2](https://medium.com/leetcode-patterns/leetcode-pattern-2-dfs-bfs-25-of-the-problems-part-2-a5b269597f52)
 
 Questions : ---------->
 
-- [](https://leetcode.com/problems/flood-fill/)
+- [flood fill](https://leetcode.com/problems/flood-fill/)
 
-- [](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+- [binary treen preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 
-- [](https://leetcode.com/problems/number-of-islands/)
+- [number of islands](https://leetcode.com/problems/number-of-islands/)
 
-- [](https://leetcode.com/problems/walls-and-gates/)
+- [walls and gates](https://leetcode.com/problems/walls-and-gates/)
 
-- [](https://leetcode.com/problems/max-area-of-island/)
+- [max area of island](https://leetcode.com/problems/max-area-of-island/)
 
-- [](https://leetcode.com/problems/number-of-provinces/)
+- [number of provinces](https://leetcode.com/problems/number-of-provinces/)
 
-- [](https://leetcode.com/problems/perfect-squares/)
+- [perfect squares](https://leetcode.com/problems/perfect-squares/)
 
-- [](https://leetcode.com/problems/course-schedule/)
+- [course schedule](https://leetcode.com/problems/course-schedule/)
 
-- [](https://www.geeksforgeeks.org/detect-cycle-undirected-graph/)
+- [detect cycle undirected graph](https://www.geeksforgeeks.org/detect-cycle-undirected-graph/)
 
-- [](https://leetcode.com/problems/word-ladder/)
+- [word ladder](https://leetcode.com/problems/word-ladder/)
 
-- [](https://leetcode.com/problems/01-matrix/) 
+- [01 matrix](https://leetcode.com/problems/01-matrix/) 
 
-- [](https://leetcode.com/problems/rotting-oranges/)
+- [rotting oranges](https://leetcode.com/problems/rotting-oranges/)
 
-- [](https://leetcode.com/problems/perfect-squares/)
+- [perfect squares](https://leetcode.com/problems/perfect-squares/)
 
-- [](https://leetcode.com/problems/all-paths-from-source-to-target/)
+- [all paths from source to target](https://leetcode.com/problems/all-paths-from-source-to-target/)
 
-- [](https://leetcode.com/problems/number-of-closed-islands/)
+- [number of closed islands](https://leetcode.com/problems/number-of-closed-islands/)
 
 ## Recursion
 
-- 509. Fibonacci Number
-- Reverse String30DaysCoding.com
-- 24. Swap Nodes in Pairs
-- 206. Reverse Linked List
-- Leetcode #700 Search in a Binary Search Tree
-- 70. Climbing Stairs
-- Leetcode #50 Pow(x, n)
+- [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
+- [Reverse String](https://leetcode.com/problems/reverse-string/)
+- [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
+- [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+- [Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
+- [Climbing Stair](https://leetcode.com/problems/climbing-stairs/)
+- [Pow(x, n)](https://leetcode.com/problems/powx-n/)
 
 # Backtracking
 
 Read --------->
-- Leetcode Pattern 3 | Backtracking | by csgator | Leetcode Patterns
-- A general approach to backtracking questions in Java (Subsets, Permutations,
-Combination Sum, Palindrome Partitioning)
+- [Leetcode Pattern 3 | Backtracking | by csgator | Leetcode Patterns](https://medium.com/leetcode-patterns/leetcode-pattern-3-backtracking-5d9e5a03dc26)
+
+- [A general approach to backtracking question Subsets, Permutations,
+Combination Sum, Palindrome Partitioning ](https://leetcode.com/problems/subsets/discuss/27281/a-general-approach-to-backtracking-questions-in-java-subsets-permutations-combination-sum-palindrome-partitioning)
 
 Questions------->
 
