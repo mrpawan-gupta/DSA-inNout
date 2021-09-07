@@ -94,3 +94,228 @@ Questions : ---------->
 - [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/) | Sliding Window, HashTable
 
 ## Two-Pointer
+
+- [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) | HashTable, Two-Pointers
+
+- [](https://leetcode.com/problems/maximum-ascending-subarray-sum/)
+
+- [](https://leetcode.com/problems/backspace-string-compare/)
+
+- [](https://leetcode.com/problems/long-pressed-name/)
+
+- [](https://leetcode.com/problems/fruit-into-baskets/)
+
+- [](https://leetcode.com/problems/max-consecutive-ones-iii/)
+
+- [](https://leetcode.com/problems/container-with-most-water/)
+
+## Stacks, Queues
+
+- [](https://leetcode.com/problems/valid-parentheses/)
+
+- [](https://leetcode.com/problems/implement-queue-using-stacks/)
+
+- [](https://leetcode.com/problems/min-stack/)
+
+- [](https://leetcode.com/problems/design-circular-queue/)
+
+- [](https://leetcode.com/problems/decode-string/30DaysCoding.com)
+
+- [](https://leetcode.com/problems/open-the-lock/)
+
+- [](https://leetcode.com/problems/daily-temperatures/)
+
+- [](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)
+
+
+## BFS, DFS
+
+Read---->
+- Leetcode Pattern 1 | BFS + DFS == 25% of the problems — part 1
+- Leetcode Pattern 1 | DFS + BFS == 25% of the problems — part 2
+
+Questions : ---------->
+
+- [](https://leetcode.com/problems/flood-fill/)
+
+- [](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+
+- [](https://leetcode.com/problems/number-of-islands/)
+
+- [](https://leetcode.com/problems/walls-and-gates/)
+
+- [](https://leetcode.com/problems/max-area-of-island/)
+
+- [](https://leetcode.com/problems/number-of-provinces/)
+
+- [](https://leetcode.com/problems/perfect-squares/)
+
+- [](https://leetcode.com/problems/course-schedule/)
+
+- [](https://www.geeksforgeeks.org/detect-cycle-undirected-graph/)
+
+- [](https://leetcode.com/problems/word-ladder/)
+
+- [](https://leetcode.com/problems/01-matrix/) 
+
+- [](https://leetcode.com/problems/rotting-oranges/)
+
+- [](https://leetcode.com/problems/perfect-squares/)
+
+- [](https://leetcode.com/problems/all-paths-from-source-to-target/)
+
+- [](https://leetcode.com/problems/number-of-closed-islands/)
+
+## Recursion
+
+- 509. Fibonacci Number
+- Reverse String30DaysCoding.com
+- 24. Swap Nodes in Pairs
+- 206. Reverse Linked List
+- Leetcode #700 Search in a Binary Search Tree
+- 70. Climbing Stairs
+- Leetcode #50 Pow(x, n)
+
+# Backtracking
+
+Read --------->
+- Leetcode Pattern 3 | Backtracking | by csgator | Leetcode Patterns
+- A general approach to backtracking questions in Java (Subsets, Permutations,
+Combination Sum, Palindrome Partitioning)
+
+Questions------->
+
+- Word Search
+- Leetcode #78 Subsets
+- 90. Subsets II
+- Letter Case Permutation
+- 39. Combination Sum
+- 17. Letter Combinations of a Phone Number
+- Combinations
+- Leetcode : Combination Sum II
+- 216. Combination Sum III
+- Combination Sum IV
+- 46. Permutations
+- 47. Permutations II
+- 31. Next Permutation
+- 51. N-Queens30DaysCoding.com
+
+
+## Trees
+
+Read----------->
+- Leetcode Pattern 0 | Iterative traversals on Trees | by csgator | Leetcode Patterns
+
+Questions----------->
+
+- [](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+
+- [](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+
+- [](https://leetcode.com/problems/binary-tree-postorder-traversal/)
+
+- [](https://leetcode.com/problems/validate-binary-search-tree/)
+
+- [](https://leetcode.com/problems/minimum-distance-between-bst-nodes/)
+
+- [](https://leetcode.com/problems/symmetric-tree/)
+
+- [](https://leetcode.com/problems/same-tree/)
+
+- [](https://leetcode.com/problems/path-sum/)
+
+- [](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+
+- [](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
+
+- [](https://leetcode.com/problems/validate-binary-search-tree/)
+
+- [](https://leetcode.com/problems/binary-search-tree-iterator/)
+
+- [](https://leetcode.com/problems/unique-binary-search-trees/)
+
+- [](https://leetcode.com/problems/serialize-and-deserialize-bst/)
+
+- [](https://leetcode.com/problems/binary-tree-right-side-view/)
+
+- [](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+
+- [](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
+
+- [](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
+
+
+## Dynamic programming
+
+- [](https://leetcode.com/problems/maximum-subarray/30DaysCoding.com)
+
+- [](https://leetcode.com/problems/fibonacci-number/)
+
+- [](https://leetcode.com/problems/climbing-stairs/)
+
+- [](https://leetcode.com/problems/min-cost-climbing-stairs/)
+
+- [](https://leetcode.com/problems/n-th-tribonacci-number/)
+
+- [](https://leetcode.com/problems/coin-change/)
+
+- [](https://leetcode.com/problems/minimum-falling-path-sum/)
+
+- [](https://leetcode.com/problems/minimum-cost-for-tickets/)
+
+- [](https://leetcode.com/problems/2-keys-keyboard/)
+
+- [](https://leetcode.com/problems/maximum-product-subarray/)
+
+- [](https://leetcode.com/problems/triangle/)
+
+- [](https://leetcode.com/problems/ones-and-zeroes/)
+
+- [](https://leetcode.com/problems/longest-arithmetic-subsequence/)
+
+- [](https://leetcode.com/problems/partition-equal-subset-sum/)
+
+- [](https://leetcode.com/problems/house-robber/)
+
+- [](https://leetcode.com/problems/decode-ways/)
+
+- [](https://leetcode.com/problems/word-break/)
+
+- [](https://leetcode.com/problems/edit-distance/)
+
+- [](https://leetcode.com/problems/longest-increasing-subsequence/)
+
+## Graphs
+
+- [](https://leetcode.com/problems/employee-importance/)
+
+- [](https://leetcode.com/problems/find-the-town-judge/)
+
+- [](https://leetcode.com/problems/course-schedule-ii/)
+
+- [](https://leetcode.com/problems/redundant-connection/)
+
+- [](https://leetcode.com/problems/surrounded-regions/)
+
+- [](https://leetcode.com/problems/accounts-merge/30DaysCoding.com)
+
+- [](https://leetcode.com/problems/network-delay-time/)
+
+- [](https://leetcode.com/problems/is-graph-bipartite/)
+
+- [](https://leetcode.com/problems/find-eventual-safe-states/)
+
+- [](https://leetcode.com/problems/keys-and-rooms/)
+
+- [](https://leetcode.com/problems/possible-bipartition/)
+
+- [](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)
+
+- [](https://leetcode.com/problems/rotting-oranges/)
+
+- [](https://leetcode.com/problems/number-of-operations-to-make-network-connected/)
+
+## Additional questions
+- [](https://leetcode.com/problems/longest-common-prefix/)
+
+- [](https://leetcode.com/problems/implement-trie-prefix-tree/)
