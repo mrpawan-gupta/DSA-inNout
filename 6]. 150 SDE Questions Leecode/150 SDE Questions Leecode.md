@@ -6,9 +6,9 @@
 
 - [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | String , Stack
 
-- [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Array , Two -Pointers 
+- [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Array , Two-Pointers 
 
-- [Remove Element](https://leetcode.com/problems/remove-element/) | Array , Two -Pointers 
+- [Remove Element](https://leetcode.com/problems/remove-element/) | Array , Two-Pointers 
 
 - [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Array , Duplicates
 
@@ -22,13 +22,13 @@
 
 - [Plus One](https://leetcode.com/problems/plus-one/) | Array, Math
  
-- [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | Array,Two-Pointers
+- [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | Array, Two-Pointers
 
-- [Rotate Image](https://leetcode.com/problems/rotate-image/) | Array,matrix
+- [Rotate Image](https://leetcode.com/problems/rotate-image/) | Array, Matrix
 
 - [3Sum](https://leetcode.com/problems/3sum/) | Array, Matrix
 
-- [4Sum](https://leetcode.com/problems/4sum/) Array, Two-Matrix
+- [4Sum](https://leetcode.com/problems/4sum/) Array, Matrix
 
 - [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Array, BinarySearch
 
