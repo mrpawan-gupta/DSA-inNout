@@ -138,45 +138,52 @@ Read---->
 
 Questions : ---------->
 
-- [flood fill](https://leetcode.com/problems/flood-fill/)
+- [flood fill](https://leetcode.com/problems/flood-fill/) | DFS, BFS
 
-- [binary treen preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+- [binary treen preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) | DFS, BFS
 
-- [number of islands](https://leetcode.com/problems/number-of-islands/)
+- [number of islands](https://leetcode.com/problems/number-of-islands/) | DFS, BFS
 
-- [walls and gates](https://leetcode.com/problems/walls-and-gates/)
+- [walls and gates](https://leetcode.com/problems/walls-and-gates/) | DFS, BFS
 
-- [max area of island](https://leetcode.com/problems/max-area-of-island/)
+- [max area of island](https://leetcode.com/problems/max-area-of-island/) | DFS, BFS
 
-- [number of provinces](https://leetcode.com/problems/number-of-provinces/)
+- [number of provinces](https://leetcode.com/problems/number-of-provinces/) | DFS, BFS
 
-- [perfect squares](https://leetcode.com/problems/perfect-squares/)
+- [perfect squares](https://leetcode.com/problems/perfect-squares/) | DFS, BFS
 
-- [course schedule](https://leetcode.com/problems/course-schedule/)
+- [course schedule](https://leetcode.com/problems/course-schedule/) | DFS, BFS
 
-- [detect cycle undirected graph](https://www.geeksforgeeks.org/detect-cycle-undirected-graph/)
+- [detect cycle undirected graph](https://www.geeksforgeeks.org/detect-cycle-undirected-graph/) | DFS, BFS
 
-- [word ladder](https://leetcode.com/problems/word-ladder/)
+- [word ladder](https://leetcode.com/problems/word-ladder/) | DFS, BFS
 
-- [01 matrix](https://leetcode.com/problems/01-matrix/) 
+- [01 matrix](https://leetcode.com/problems/01-matrix/)  | DFS, BFS
 
-- [rotting oranges](https://leetcode.com/problems/rotting-oranges/)
+- [rotting oranges](https://leetcode.com/problems/rotting-oranges/) | DFS, BFS
 
-- [perfect squares](https://leetcode.com/problems/perfect-squares/)
+- [perfect squares](https://leetcode.com/problems/perfect-squares/) | DFS, BFS
 
-- [all paths from source to target](https://leetcode.com/problems/all-paths-from-source-to-target/)
+- [all paths from source to target](https://leetcode.com/problems/all-paths-from-source-to-target/) | DFS, BFS
 
-- [number of closed islands](https://leetcode.com/problems/number-of-closed-islands/)
+- [number of closed islands](https://leetcode.com/problems/number-of-closed-islands/) | DFS, BFS
 
 ## Recursion
 
-- [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
-- [Reverse String](https://leetcode.com/problems/reverse-string/)
-- [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
-- [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
-- [Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
-- [Climbing Stair](https://leetcode.com/problems/climbing-stairs/)
-- [Pow(x, n)](https://leetcode.com/problems/powx-n/)
+- [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | Recursion
+
+- [Reverse String](https://leetcode.com/problems/reverse-string/) | Recursion
+
+- [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | Recursion
+
+- [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | Recursion
+
+- [Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | Recursion
+
+- [Climbing Stair](https://leetcode.com/problems/climbing-stairs/) | Recursion
+
+- [Pow(x, n)](https://leetcode.com/problems/powx-n/) | Recursion
+
 
 # Backtracking
 
@@ -188,137 +195,149 @@ Combination Sum, Palindrome Partitioning ](https://leetcode.com/problems/subsets
 
 Questions------->
 
-- Word Search
-- Leetcode #78 Subsets
-- 90. Subsets II
-- Letter Case Permutation
-- 39. Combination Sum
-- 17. Letter Combinations of a Phone Number
-- Combinations
-- Leetcode : Combination Sum II
-- 216. Combination Sum III
-- Combination Sum IV
-- 46. Permutations
-- 47. Permutations II
-- 31. Next Permutation
-- 51. N-Queens30DaysCoding.com
+- [Word Search](https://leetcode.com/problems/word-search/) | Backtracking
 
+- [Subsets](https://leetcode.com/problems/subsets/) | Backtracking, Subsets
+
+- [Subsets II](https://leetcode.com/problems/subsets-ii/) | Backtracking , Subsets
+
+- [Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/) | Backtracking
+
+- [Combination Sum](https://leetcode.com/problems/combination-sum/) | Backtracking, Combination
+
+- [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Backtracking
+
+- [Combinations](https://leetcode.com/problems/combinations/) | Backtracking  
+
+- [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/) | Backtracking, permutation
+
+- [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/) | Backtracking, permutation
+
+- [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) | Backtracking, permutation
+
+- [Permutations](https://leetcode.com/problems/permutations/) | Backtracking, permutation
+
+- [Permutations II](https://leetcode.com/problems/permutations-ii/) Backtracking, permutation
+
+- [Next Permutation](https://leetcode.com/problems/next-permutation/) | Backtracking, permutation
+
+- [N-Queens](https://leetcode.com/problems/n-queens/description/) | Backtracking, permutation
 
 ## Trees
 
 Read----------->
-- Leetcode Pattern 0 | Iterative traversals on Trees | by csgator | Leetcode Patterns
+- [Leetcode Pattern 0 | Iterative traversals on Trees | by csgator | Leetcode Patterns](https://medium.com/leetcode-patterns/leetcode-pattern-0-iterative-traversals-on-trees-d373568eb0ec)
 
 Questions----------->
 
-- [](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+- [binary tree preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) | Tree , BST
 
-- [](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+- [binary tree inorder traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | Tree , BST
 
-- [](https://leetcode.com/problems/binary-tree-postorder-traversal/)
+- [binary tree postorder traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) | Tree , BST
 
-- [](https://leetcode.com/problems/validate-binary-search-tree/)
+- [validate binary search tree](https://leetcode.com/problems/validate-binary-search-tree/) | Tree , BST
 
-- [](https://leetcode.com/problems/minimum-distance-between-bst-nodes/)
+- [minimum distance between bst nodes](https://leetcode.com/problems/minimum-distance-between-bst-nodes/) | Tree , BST
 
-- [](https://leetcode.com/problems/symmetric-tree/)
+- [symmetric tree](https://leetcode.com/problems/symmetric-tree/) | Tree , BST
 
-- [](https://leetcode.com/problems/same-tree/)
+- [same tree](https://leetcode.com/problems/same-tree/) | Tree , Balancing tree
 
-- [](https://leetcode.com/problems/path-sum/)
+- [path sum](https://leetcode.com/problems/path-sum/) | Tree , BST
 
-- [](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [maximum depth of binary tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Tree , Binary Tree
 
-- [](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
+- [convert sorted array to binary search tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/) | Tree , BST , Sorting
 
-- [](https://leetcode.com/problems/validate-binary-search-tree/)
+- [validate binary search tree](https://leetcode.com/problems/validate-binary-search-tree/) | Tree , BST
 
-- [](https://leetcode.com/problems/binary-search-tree-iterator/)
+- [binary search tree iterator](https://leetcode.com/problems/binary-search-tree-iterator/) | Tree , BST
 
-- [](https://leetcode.com/problems/unique-binary-search-trees/)
+- [unique binary search trees](https://leetcode.com/problems/unique-binary-search-trees/) | Tree , BST
 
-- [](https://leetcode.com/problems/serialize-and-deserialize-bst/)
+- [serialize and deserialize bst](https://leetcode.com/problems/serialize-and-deserialize-bst/) | Tree , BST
 
-- [](https://leetcode.com/problems/binary-tree-right-side-view/)
+- [binary tree right side view](https://leetcode.com/problems/binary-tree-right-side-view/) | Tree , BST
 
-- [](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+- [binary tree level order traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Tree , Order
 
-- [](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
+- [binary tree level order traversal ii](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) | Tree , order
 
-- [](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
+- [binary tree zigzag level order traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) | Tree , Order
 
 
 ## Dynamic programming
 
-- [](https://leetcode.com/problems/maximum-subarray/30DaysCoding.com)
+- [maximum subarray](https://leetcode.com/problems/maximum-subarray/) | Dp, Array
 
-- [](https://leetcode.com/problems/fibonacci-number/)
+- [fibonacci number](https://leetcode.com/problems/fibonacci-number/) | Dp, Maths
 
-- [](https://leetcode.com/problems/climbing-stairs/)
+- [climbing stairs](https://leetcode.com/problems/climbing-stairs/) | Dp
 
-- [](https://leetcode.com/problems/min-cost-climbing-stairs/)
+- [min cost climbing stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) | Dp
 
-- [](https://leetcode.com/problems/n-th-tribonacci-number/)
+- [nth tribonacci number/](https://leetcode.com/problems/n-th-tribonacci-number/) | Dp, Maths
 
-- [](https://leetcode.com/problems/coin-change/)
+- [coin change](https://leetcode.com/problems/coin-change/) | Dp, Stack
 
-- [](https://leetcode.com/problems/minimum-falling-path-sum/)
+- [minimum falling path sum](https://leetcode.com/problems/minimum-falling-path-sum/) | Dp
 
-- [](https://leetcode.com/problems/minimum-cost-for-tickets/)
+- [minimum cost for tickets](https://leetcode.com/problems/minimum-cost-for-tickets/) | Dp
 
-- [](https://leetcode.com/problems/2-keys-keyboard/)
+- [2keys keyboard](https://leetcode.com/problems/2-keys-keyboard/) | Dp
 
-- [](https://leetcode.com/problems/maximum-product-subarray/)
+- [maximum product subarray](https://leetcode.com/problems/maximum-product-subarray/) | Dp, Array
 
-- [](https://leetcode.com/problems/triangle/)
+- [triangle](https://leetcode.com/problems/triangle/) | Dp
 
-- [](https://leetcode.com/problems/ones-and-zeroes/)
+- [ones and zeroes](https://leetcode.com/problems/ones-and-zeroes/) | Dp
 
-- [](https://leetcode.com/problems/longest-arithmetic-subsequence/)
+- [longest arithmetic subsequence](https://leetcode.com/problems/longest-arithmetic-subsequence/) | Dp
 
-- [](https://leetcode.com/problems/partition-equal-subset-sum/)
+- [partition equal subset sum](https://leetcode.com/problems/partition-equal-subset-sum/) | Dp
 
-- [](https://leetcode.com/problems/house-robber/)
+- [house robbe](https://leetcode.com/problems/house-robber/) | Dp
 
-- [](https://leetcode.com/problems/decode-ways/)
+- [decode ways](https://leetcode.com/problems/decode-ways/) | Dp, Stack
 
-- [](https://leetcode.com/problems/word-break/)
+- [word break](https://leetcode.com/problems/word-break/) | Dp. String
 
-- [](https://leetcode.com/problems/edit-distance/)
+- [edit distance](https://leetcode.com/problems/edit-distance/) | Dp
 
-- [](https://leetcode.com/problems/longest-increasing-subsequence/)
+- [longest increasing subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) | Dp , Array
 
 ## Graphs
 
-- [](https://leetcode.com/problems/employee-importance/)
+- [employee importance](https://leetcode.com/problems/employee-importance/) | Graph
 
-- [](https://leetcode.com/problems/find-the-town-judge/)
+- [find the town judge](https://leetcode.com/problems/find-the-town-judge/) | Graph
 
-- [](https://leetcode.com/problems/course-schedule-ii/)
+- [course schedule II](https://leetcode.com/problems/course-schedule-ii/) | Graph
 
-- [](https://leetcode.com/problems/redundant-connection/)
+- [redundant connection](https://leetcode.com/problems/redundant-connection/) | Graph
 
-- [](https://leetcode.com/problems/surrounded-regions/)
+- [surrounded regions](https://leetcode.com/problems//) | Graph
 
-- [](https://leetcode.com/problems/accounts-merge/30DaysCoding.com)
+- [accounts merge](https://leetcode.com/problems/accounts-merge/) | Graph
 
-- [](https://leetcode.com/problems/network-delay-time/)
+- [network delay time](https://leetcode.com/problems/network-delay-time/) | Graph
 
-- [](https://leetcode.com/problems/is-graph-bipartite/)
+- [is graph\ bipartite](https://leetcode.com/problems/is-graph-bipartite/) | Graph
 
-- [](https://leetcode.com/problems/find-eventual-safe-states/)
+- [find eventual safe states](https://leetcode.com/problems/find-eventual-safe-states/) | Graph
 
-- [](https://leetcode.com/problems/keys-and-rooms/)
+- [keys and rooms](https://leetcode.com/problems/keys-and-rooms/) | Graph
 
-- [](https://leetcode.com/problems/possible-bipartition/)
+- [possible bipartition](https://leetcode.com/problems/possible-bipartition/) | Graph
 
-- [](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)
+- [most stones removed with same row or column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/) | Graph
 
-- [](https://leetcode.com/problems/rotting-oranges/)
+- [rotting oranges](https://leetcode.com/problems/rotting-oranges/) | Graph
 
-- [](https://leetcode.com/problems/number-of-operations-to-make-network-connected/)
+- [number of operations to make network connected](https://leetcode.com/problems/number-of-operations-to-make-network-connected/) | Graph
 
 ## Additional questions
-- [](https://leetcode.com/problems/longest-common-prefix/)
+- [longest Common prefix](https://leetcode.com/problems/longest-common-prefix/)
 
-- [](https://leetcode.com/problems/implement-trie-prefix-tree/)
+- [Implement trie prefix tree](https://leetcode.com/problems/implement-trie-prefix-tree/)
