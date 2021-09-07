@@ -77,8 +77,9 @@
 - [Find Peak Element](https://leetcode.com/problems/find-peak-element/) | Array, Binary Search
 
 - [Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/) | Array, Binary Search, Dynamic ProgrammingLinked List added to ReadeMe
+## Sliding 
 
-## Sliding Window
+Read ------------------->
 
 - [Leetcode Pattern 2 | Sliding Windows for Strings | by csgator | Leetcode Patterns](https://medium.com/leetcode-patterns/leetcode-pattern-2-sliding-windows-for-strings-e19af105316b) | Read 
 
@@ -97,35 +98,35 @@ Questions : ---------->
 
 - [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) | HashTable, Two-Pointers
 
-- [](https://leetcode.com/problems/maximum-ascending-subarray-sum/)
+- [Maximum Ascending Subarray Sum](https://leetcode.com/problems/maximum-ascending-subarray-sum/) | Array
 
-- [](https://leetcode.com/problems/backspace-string-compare/)
+- [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/) | Two-Pointers, Strings
 
-- [](https://leetcode.com/problems/long-pressed-name/)
+- [Long Pressed Name](https://leetcode.com/problems/long-pressed-name/) | Two-Pointers, Strings
 
-- [](https://leetcode.com/problems/fruit-into-baskets/)
+- [Fruit into baskets](https://leetcode.com/problems/fruit-into-baskets/) | Two-Pointers, Stack
 
-- [](https://leetcode.com/problems/max-consecutive-ones-iii/)
+- [Max consecutive ones iii](https://leetcode.com/problems/max-consecutive-ones-iii/) | Two-Pointers, Arrays,
 
-- [](https://leetcode.com/problems/container-with-most-water/)
+- [Container with most water](https://leetcode.com/problems/container-with-most-water/) | Stacks
 
 ## Stacks, Queues
 
-- [](https://leetcode.com/problems/valid-parentheses/)
+- [valid parentheses](https://leetcode.com/problems/valid-parentheses/) | Stacks, Strings
 
-- [](https://leetcode.com/problems/implement-queue-using-stacks/)
+- [Implement queue using stacks](https://leetcode.com/problems/implement-queue-using-stacks/) | Stack, Queue
 
-- [](https://leetcode.com/problems/min-stack/)
+- [min stack](https://leetcode.com/problems/min-stack/) | Stack
 
-- [](https://leetcode.com/problems/design-circular-queue/)
+- [design circular queue](https://leetcode.com/problems/design-circular-queue/) | Stack, Queue
 
-- [](https://leetcode.com/problems/decode-string/30DaysCoding.com)
+- [decode string](https://leetcode.com/problems/decode-string/) | Stack, Strings
 
-- [](https://leetcode.com/problems/open-the-lock/)
+- [open the lock](https://leetcode.com/problems/open-the-lock/) | Stack
 
-- [](https://leetcode.com/problems/daily-temperatures/)
+- [daily temperatures](https://leetcode.com/problems/daily-temperatures/) | Stack
 
-- [](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)
+- [minimum add to make parentheses valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/) | Stack
 
 
 ## BFS, DFS
