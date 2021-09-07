@@ -46,16 +46,16 @@
 
 - [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | Linked List, Recursion
 
--[Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | Linked List, Two-Pointers
+- [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | Linked List, Two-Pointers
 
--[Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Linked List, HashTable
+- [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Linked List, HashTable
 
--[Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | Linked List, HashTable
+- [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | Linked List, HashTable
 
--[Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/) | Linked List, Recursion
+- [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/) | Linked List, Recursion
 
--[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | Linked List, Two-Pointer
+- [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | Linked List, Two-Pointer
 
--[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) Linked List, Divide And Conquer
+- [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) Linked List, Divide And Conquer
 
 ## Binary Search
