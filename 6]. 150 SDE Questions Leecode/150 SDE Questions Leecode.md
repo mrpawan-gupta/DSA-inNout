@@ -85,7 +85,7 @@
 Questions : ---------->
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Sliding Window, HashTable
 
--[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/description/) | HashTable , String
+- [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/description/) | HashTable , String
 
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/) | Sliding Window, HashTable
 
