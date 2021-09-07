@@ -2,5 +2,5 @@
 
 ### Array
 
--[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)
--[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+-[Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | Strings , HashTable
+-[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | String , Stack
