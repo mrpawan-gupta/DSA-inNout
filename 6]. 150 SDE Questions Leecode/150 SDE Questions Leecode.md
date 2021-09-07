@@ -59,3 +59,21 @@
 - [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) Linked List, Divide And Conquer
 
 ## Binary Search
+
+- [Binary Search](https://leetcode.com/problems/binary-search/) | Array, Binary Search
+
+- [First Bad Version](https://leetcode.com/problems/first-bad-version/) | Binary Search
+
+- [Arranging Coins](https://leetcode.com/problems/arranging-coins/) | Binary Search, Arrays
+
+- [Search Insert Position](https://leetcode.com/problems/search-insert-position/) | Array, Binary Search
+
+- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Array, Binary Search
+
+- [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Array, Binary Search
+
+- [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) | BST, Binary Search, Depth-First Search
+
+- [Find Peak Element](https://leetcode.com/problems/find-peak-element/) | Array, Binary Search
+
+- [Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/) | Array, Binary Search, Dynamic ProgrammingLinked List added to ReadeMe
