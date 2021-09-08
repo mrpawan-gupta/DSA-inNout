@@ -8,7 +8,7 @@ This repository contains all the DSA (Data-Structures, Algorithms, 450 DSA by Lo
 “ For solving any real-world problem with programming approach we need to follow some steps & strategy. The collection of that steps is Algorithm, whereas a data structure is a way to store and organize data during solving that problem or constructing any software so that it can be used efficiently in terms of time and space, this way Data structure & Algorithms always allow us to write efficient and optimized computer programs.”
 
 
-* ***STL*** is standard template library, It is most powerful & useful while doing competitive coding questions [Read More](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/Resources/Cpp/CPP-STL.mds).
+* ***STL*** is standard template library, It is most powerful & useful while doing competitive coding questions [Read More](https://github.com/mrpawan-gupta/DSA-inNout/tree/main/Resources/Cpp/CPP-STL).
 
 * Problems on Data structure & Algorithms (Competitive coding)  [Click Here ](https://github.com/mrpawan-gupta/Competitve-Coding) to get into problems section..
 
