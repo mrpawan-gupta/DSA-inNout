@@ -2,7 +2,7 @@
 
 ## Array
 
-- [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | Strings , HashTable
+- [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) ----> [Solution]-[cpp](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/6%5D.%20150%20SDE%20Questions%20Leecode/Cpp/romanToInt.cpp) -[Java]()
 
 - [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | String , Stack
 
