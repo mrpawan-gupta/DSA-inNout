@@ -1,0 +1,997 @@
+define("@ember/test-waiters/build-waiter",["exports","@babel/runtime/helpers/esm/defineProperty","@ember/debug","@ember/test-waiters/token","@ember/test-waiters/waiter-manager"],(function(e,t,i,r,a){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e._resetWaiterNames=function(){n=new Set}
+e.default=function(e){0
+return new s(e)
+return new l(e)}
+let n
+function o(){return new r.default}class l{constructor(e,i){(0,t.default)(this,"name",void 0);(0,t.default)(this,"nextToken",void 0);(0,t.default)(this,"isRegistered",!1);(0,t.default)(this,"items",new Map);(0,t.default)(this,"completedOperationsForTokens",new WeakMap);(0,t.default)(this,"completedOperationsForPrimitives",new Map)
+this.name=e
+this.nextToken=i||o}beginAsync(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this.nextToken(),t=arguments.length>1?arguments[1]:void 0
+this._register()
+if(this.items.has(e))throw new Error(`beginAsync called for ${e} but it is already pending.`)
+let i=new Error
+this.items.set(e,{get stack(){return i.stack},label:t})
+return e}endAsync(e){if(!this.items.has(e)&&!this._getCompletedOperations(e).has(e))throw new Error("endAsync called with no preceding beginAsync call.")
+this.items.delete(e)
+this._getCompletedOperations(e).set(e,!0)}waitUntil(){return 0===this.items.size}debugInfo(){let e=[]
+this.items.forEach((t=>{e.push(t)}))
+return e}reset(){this.items.clear()}_register(){if(!this.isRegistered){(0,a.register)(this)
+this.isRegistered=!0}}_getCompletedOperations(e){let t=typeof e
+return!("function"===t)&&!(null!==e&&"object"===t)?this.completedOperationsForPrimitives:this.completedOperationsForTokens}}class s{constructor(e){(0,t.default)(this,"name",void 0)
+this.name=e}beginAsync(){return this}endAsync(){}waitUntil(){return!0}debugInfo(){return[]}reset(){}}}))
+define("@ember/test-waiters/index",["exports","@ember/test-waiters/waiter-manager","@ember/test-waiters/build-waiter","@ember/test-waiters/wait-for-promise","@ember/test-waiters/wait-for"],(function(e,t,i,r,a){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+Object.defineProperty(e,"register",{enumerable:!0,get:function(){return t.register}})
+Object.defineProperty(e,"unregister",{enumerable:!0,get:function(){return t.unregister}})
+Object.defineProperty(e,"getWaiters",{enumerable:!0,get:function(){return t.getWaiters}})
+Object.defineProperty(e,"_reset",{enumerable:!0,get:function(){return t._reset}})
+Object.defineProperty(e,"getPendingWaiterState",{enumerable:!0,get:function(){return t.getPendingWaiterState}})
+Object.defineProperty(e,"hasPendingWaiters",{enumerable:!0,get:function(){return t.hasPendingWaiters}})
+Object.defineProperty(e,"buildWaiter",{enumerable:!0,get:function(){return i.default}})
+Object.defineProperty(e,"_resetWaiterNames",{enumerable:!0,get:function(){return i._resetWaiterNames}})
+Object.defineProperty(e,"waitForPromise",{enumerable:!0,get:function(){return r.default}})
+Object.defineProperty(e,"waitFor",{enumerable:!0,get:function(){return a.default}})}))
+define("@ember/test-waiters/token",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+e.default=class{}}))
+define("@ember/test-waiters/types/index",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})}))
+define("@ember/test-waiters/wait-for-promise",["exports","@ember/test-waiters/build-waiter"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=function(e,t){let i=e
+0
+return i};(0,t.default)("@ember/test-waiters:promise-waiter")}))
+define("@ember/test-waiters/wait-for",["exports","@ember/test-waiters/wait-for-promise","@ember/test-waiters/build-waiter"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=function(){for(var e=arguments.length,t=new Array(e),i=0;i<e;i++)t[i]=arguments[i]
+let a=t.length<3
+if(a){let[e,i]=t
+return r(e,i)}{let[,,e,i]=t
+return e}}
+function r(e,t){return e}(0,i.default)("@ember/test-waiters:generator-waiter")}))
+define("@ember/test-waiters/waiter-manager",["exports","ember","@ember/test"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.register=function(e){r.set(e.name,e)}
+e.unregister=function(e){r.delete(e.name)}
+e.getWaiters=a
+e._reset=function(){for(let e of a())e.isRegistered=!1
+r.clear()}
+e.getPendingWaiterState=n
+e.hasPendingWaiters=o
+const r=new Map
+t.default.Test&&(0,i.registerWaiter)((()=>!o()))
+function a(){let e=[]
+r.forEach((t=>{e.push(t)}))
+return e}function n(){let e={pending:0,waiters:{}}
+r.forEach((t=>{if(!t.waitUntil()){e.pending++
+let i=t.debugInfo()
+e.waiters[t.name]=i||!0}}))
+return e}function o(){return n().pending>0}}))
+define("ad-choice/components/modals/ad-choice-modal",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component","@ember/object","global-utils/utils/is-browser","@ember/debug","@ember/service","@glimmer/tracking","ad-choice/utils/constants","global-utils/utils/url"],(function(e,t,i,r,a,n,o,l,s,d,c,u,p){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var m,h,v,f,g,b,y,_,T,E,w,S,P
+const k="yes",O="no",R="ad-choice@components/modals/ad-choice-modal"
+let D=(m=(0,d.inject)("tracking"),h=(0,d.inject)("store"),v=(0,d.inject)("lix"),f=(0,d.inject)("i18n"),g=class extends n.default{constructor(){super(...arguments);(0,t.default)(this,"tracking",b,this);(0,t.default)(this,"store",y,this);(0,t.default)(this,"lix",_,this);(0,t.default)(this,"i18n",T,this);(0,t.default)(this,"showLoader",E,this);(0,t.default)(this,"hasError",w,this);(0,t.default)(this,"selectedFacetIdx",S,this);(0,t.default)(this,"feedbackCache",P,this);(0,i.default)(this,"policyLink",`${(0,p.getDomainUrl)()}/help/linkedin/answer/38605`);(0,i.default)(this,"manageAdPreferencesLink",`${(0,p.getDomainUrl)()}/help/linkedin/answer/62931`);(0,i.default)(this,"adChoiceData",null)
+this._fetchAdChoiceResponse()}get inOverviewScreen(){return void 0===this.selectedFacetIdx}get showFeedbackSubmittedText(){if(this.inOverviewScreen)return this.feedbackCache[u.OVERVIEW_FEEDBACK_CACHE_KEY]
+const e=`${u.DETAIL_FEEDBACK_CACHE_KEY_PREFIX}${this.selectedFacetIdx}`
+return this.feedbackCache[e]}get hideFooterContent(){return this.showLoader||this.hasError}get matchedTargetingFacet(){return"number"==typeof this.selectedFacetIdx?(0,o.get)(this.adChoiceData,"matchedTargetingFacets").objectAt(this.selectedFacetIdx):null}get feedbackQuestion(){const e=this.inOverviewScreenAndReportThisAdRedirectionFlowEnabled()?"i18n_ad_choice_modal_relevance_feedback_text":"i18n_ad_choice_modal_feedback_text"
+return this.i18n.lookupTranslation(R,e)()}get inlineFeedbackMessage(){const e=this.feedbackCache[u.OVERVIEW_FEEDBACK_CACHE_KEY]===O&&this.inOverviewScreenAndReportThisAdRedirectionFlowEnabled()?"i18n_ad_choice_modal_report_ad_text":"i18n_ad_choice_modal_feedback_submitted_text"
+return this.i18n.lookupTranslation(R,e)()}get showReportAdButton(){return this.feedbackCache[u.OVERVIEW_FEEDBACK_CACHE_KEY]===O&&this.inOverviewScreenAndReportThisAdRedirectionFlowEnabled()}_fetchAdChoiceResponse(){(0,o.setProperties)(this,{showLoader:!0,hasError:!1})
+this.store.queryURL(`voyagerFeedDashAdServing/${this.args.adServingUrn}`,{params:{recipe:"com.linkedin.voyager.dash.deco.feed.revenue.AdServing"}}).then((e=>{this.isDestroying||(0,o.setProperties)(this,{adChoiceData:e,showLoader:!1})})).catch((e=>{if(!this.isDestroying){(0,o.setProperties)(this,{hasError:!0,showLoader:!1})
+throw e}}))}handleFacetTracking(e){const t="number"==typeof e&&e<=4?`ad_choice_facet_${e}`:"ad_choice_facet_other",i=(0,o.get)(this.adChoiceData,"trackingId")
+this.tracking.fireInteractionEvent(t,"SHORT_PRESS",i)}_focusAdChoiceModal(){if(l.default){const e=document.querySelector(".ad-choice-modal")
+e&&e.focus()}}inOverviewScreenAndReportThisAdRedirectionFlowEnabled(){return this.inOverviewScreen&&this.lix.getTreatmentIsEnabled("voyager.web.ad-choice-report-ad-redirection-enabled")}onMatchedTargetingFacetClick(e){this.handleFacetTracking(e)
+this.selectedFacetIdx=e}onBackButtonClicked(){this.selectedFacetIdx=void 0
+this._focusAdChoiceModal()}dismissModal(e){this.args.onDismissAdChoice(e)}onFeedBackSubmitted(e){const t=(0,o.get)(this.adChoiceData,"trackingId")
+if(this.inOverviewScreen){const i=e?"ad_choice_overview_feedback_yes_button":"ad_choice_overview_feedback_no_button"
+this.tracking.fireInteractionEvent(i,"SHORT_PRESS",t)
+this.feedbackCache[u.OVERVIEW_FEEDBACK_CACHE_KEY]=e?k:O}else{const i=e?"ad_choice_detail_feedback_yes_button":"ad_choice_detail_feedback_no_button"
+this.tracking.fireInteractionEvent(i,"SHORT_PRESS",t)
+const r=`${u.DETAIL_FEEDBACK_CACHE_KEY_PREFIX}${this.selectedFacetIdx}`
+this.feedbackCache[r]=!0}this.feedbackCache=this.feedbackCache
+this._focusAdChoiceModal()}onReportAdClicked(){if(this.inOverviewScreenAndReportThisAdRedirectionFlowEnabled()){const e=(0,o.get)(this.adChoiceData,"trackingId")
+this.tracking.fireInteractionEvent("ad_choice_overview_report_ad","SHORT_PRESS",e)
+this.dismissModal(!0)}}},b=(0,r.default)(g.prototype,"tracking",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),y=(0,r.default)(g.prototype,"store",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),_=(0,r.default)(g.prototype,"lix",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),T=(0,r.default)(g.prototype,"i18n",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),E=(0,r.default)(g.prototype,"showLoader",[c.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),w=(0,r.default)(g.prototype,"hasError",[c.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),S=(0,r.default)(g.prototype,"selectedFacetIdx",[c.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){}}),P=(0,r.default)(g.prototype,"feedbackCache",[c.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return{}}}),(0,r.default)(g.prototype,"onMatchedTargetingFacetClick",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"onMatchedTargetingFacetClick"),g.prototype),(0,r.default)(g.prototype,"onBackButtonClicked",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"onBackButtonClicked"),g.prototype),(0,r.default)(g.prototype,"dismissModal",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"dismissModal"),g.prototype),(0,r.default)(g.prototype,"onFeedBackSubmitted",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"onFeedBackSubmitted"),g.prototype),(0,r.default)(g.prototype,"onReportAdClicked",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"onReportAdClicked"),g.prototype),g)
+e.default=D}))
+define("ad-choice/components/modals/ad-choice-modal/overview",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component","@ember/object","@ember/debug","@ember/service"],(function(e,t,i,r,a,n,o,l,s){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var d,c,u
+let p=(d=(0,s.inject)("lix"),c=class extends n.default{constructor(){super(...arguments);(0,t.default)(this,"lix",u,this)}get hasNoMatchedFacets(){return 0===(0,o.get)(this.args.adChoiceData,"matchedTargetingFacets").length}onFacetSelected(e){this.args.setSelectedFacet(e)}},u=(0,r.default)(c.prototype,"lix",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),(0,r.default)(c.prototype,"onFacetSelected",[o.action],Object.getOwnPropertyDescriptor(c.prototype,"onFacetSelected"),c.prototype),c)
+e.default=p}))
+define("ad-choice/templates/components/modals/ad-choice-modal",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"Df90qjBl",block:'[[[8,[39,0],[[4,[38,2],null,[["pageKey","routeName","currentRoute"],["flagship3_ad_choice",[28,[37,3],[[53,"outletState"],"render.name"],null],[28,[37,3],[[53,"outletState"],"render"],null]]]]],[["@modalClasses","@isOpen","@dismissModal","@size"],["ad-choice-modal",[30,1],[28,[37,1],[[30,0,["dismissModal"]],false],null],"medium"]],[["default"],[[[[1,"\\n  "],[8,[30,2,["artdeco-modal-header"]],null,null,[["default"],[[[[1,"\\n    "],[10,"h1"],[14,0,"t-sans t-20 t-black t-normal"],[14,1,"ad-choice-modal-header"],[12],[1,"\\n      "],[1,[28,[35,5],["i18n_ad_choice_modal_header","ad-choice/templates/components/modals/ad-choice-modal"],null]],[1,"\\n    "],[13],[1,"\\n  "]],[]]]]],[1,"\\n  "],[8,[30,2,["artdeco-modal-content"]],[[24,"classNames","ad_choice-modal-content t-black"]],null,[["default"],[[[[1,"\\n"],[41,[30,0,["showLoader"]],[[[1,"      "],[8,[39,7],null,null,null],[1,"\\n"]],[]],[[[41,[30,0,["hasError"]],[[[1,"      "],[8,[39,8],null,[["@policyLink"],[[30,0,["policyLink"]]]],null],[1,"\\n"]],[]],[[[41,[30,0,["inOverviewScreen"]],[[[1,"      "],[8,[39,9],null,[["@adChoiceData","@setSelectedFacet","@policyLink","@manageAdPreferencesLink"],[[30,0,["adChoiceData"]],[30,0,["onMatchedTargetingFacetClick"]],[30,0,["policyLink"]],[30,0,["manageAdPreferencesLink"]]]],null],[1,"\\n"]],[]],[[[1,"      "],[8,[39,10],null,[["@image","@trackingId","@matchedTargetingFacet"],[[30,0,["adChoiceData","advertiserImage"]],[30,0,["adChoiceData","trackingId"]],[30,0,["matchedTargetingFacet"]]]],null],[1,"\\n    "]],[]]]],[]]]],[]]],[1,"  "]],[]]]]],[1,"\\n"],[41,[51,[30,0,["hideFooterContent"]]],[[[1,"    "],[10,0],[14,0,"ad-choice-modal__feedback-actions"],[12],[1,"\\n"],[41,[30,0,["showFeedbackSubmittedText"]],[[[1,"        "],[8,[39,12],null,[["@type","@message","@class"],["note",[30,0,["inlineFeedbackMessage"]],"ad-choice-modal__feedback-text"]],null],[1,"\\n"],[41,[30,0,["showReportAdButton"]],[[[1,"          "],[10,0],[14,0,"ad-choice-modal__feedback-buttons"],[12],[1,"\\n            "],[8,[39,13],[[4,[38,14],["click",[30,0,["onReportAdClicked"]]],null]],[["@type","@color","@size","@text"],["tertiary","muted",2,[28,[37,5],["i18n_ad_choice_modal_feedback_text_yes","ad-choice/templates/components/modals/ad-choice-modal"],null]]],null],[1,"\\n          "],[13],[1,"\\n"]],[]],null]],[]],[[[1,"        "],[10,0],[14,0,"t-14 ad-choice-modal__feedback-text"],[12],[1,"\\n          "],[1,[30,0,["feedbackQuestion"]]],[1,"\\n        "],[13],[1,"\\n        "],[10,0],[14,0,"ad-choice-modal__feedback-buttons"],[12],[1,"\\n          "],[8,[39,13],[[4,[38,14],["click",[28,[37,1],[[30,0,["onFeedBackSubmitted"]],true],null]],null]],[["@type","@color","@size","@text"],["tertiary","muted",2,[28,[37,5],["i18n_ad_choice_modal_feedback_text_yes","ad-choice/templates/components/modals/ad-choice-modal"],null]]],null],[1,"\\n          "],[8,[39,13],[[4,[38,14],["click",[28,[37,1],[[30,0,["onFeedBackSubmitted"]],false],null]],null]],[["@type","@color","@size","@text","@class"],["tertiary","muted",2,[28,[37,5],["i18n_ad_choice_modal_feedback_text_no","ad-choice/templates/components/modals/ad-choice-modal"],null],"ad-choice-modal__feedback-button"]],null],[1,"\\n        "],[13],[1,"\\n"]],[]]],[1,"    "],[13],[1,"\\n"],[41,[51,[30,0,["inOverviewScreen"]]],[[[1,"      "],[8,[30,2,["artdeco-modal-footer"]],[[24,0,"ad-choice-modal__footer display-flex justify-flex-end"]],null,[["default"],[[[[1,"\\n        "],[8,[39,13],[[16,"data-control-id",[30,0,["adChoiceData","trackingId"]]],[4,[38,15],["ad_choice_facet_detail_back_button"],null],[4,[38,14],["click",[30,0,["onBackButtonClicked"]]],null]],[["@type","@color","@size","@text"],["secondary","default",2,[28,[37,5],["i18n_ad_choice_modal_feedback_text_back","ad-choice/templates/components/modals/ad-choice-modal"],null]]],null],[1,"\\n      "]],[]]]]],[1,"\\n"]],[]],null]],[]],null]],[2]]]]]],["@isOpen","modal"],false,["artdeco-modal@artdeco-modal","fn","ember-cli-pemberly-tracking@track-render","get","-get-dynamic-var","t","if","ad-choice@modals/ad-choice-modal/loading","ad-choice@modals/ad-choice-modal/error","ad-choice@modals/ad-choice-modal/overview","ad-choice@modals/ad-choice-modal/facet-detail","unless","artdeco-inline-feedback@artdeco-inline-feedback","artdeco-button@artdeco-button","on","ember-cli-pemberly-tracking@track-interaction"]]',moduleName:"ad-choice/templates/components/modals/ad-choice-modal.hbs",isStrictMode:!1})
+e.default=i}))
+define("ad-choice/templates/components/modals/ad-choice-modal/error",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"gBx1tKyB",block:'[[[8,[39,0],[[4,[38,3],null,[["pageKey","routeName","currentRoute"],["flagship3_ad_choice_error_state",[28,[37,4],[[53,"outletState"],"render.name"],null],[28,[37,4],[[53,"outletState"],"render"],null]]]]],[["@illustration","@muted","@headline","@message","@class"],["error-server",true,[28,[37,1],["i18n_ad_choice_error_headline","ad-choice/templates/components/modals/ad-choice-modal/error"],null],[28,[37,1],["i18n_ad_choice_error_message","ad-choice/templates/components/modals/ad-choice-modal/error"],[["linkInfo"],[[28,[37,2],null,[["href","target","class"],[[30,1],"_blank","link"]]]]]],"ad-choice-modal-empty-state"]],null]],["@policyLink"],false,["artdeco-empty-state@artdeco-empty-state","t","hash","ember-cli-pemberly-tracking@track-render","get","-get-dynamic-var"]]',moduleName:"ad-choice/templates/components/modals/ad-choice-modal/error.hbs",isStrictMode:!1})
+e.default=i}))
+define("ad-choice/templates/components/modals/ad-choice-modal/facet-detail",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"AoMITkWA",block:'[[[11,0],[24,0,"ad-choice-modal-facet"],[4,[38,0],null,[["pageKey","routeName","currentRoute"],["flagship3_ad_choice_detail",[28,[37,1],[[53,"outletState"],"render.name"],null],[28,[37,1],[[53,"outletState"],"render"],null]]]],[12],[1,"\\n  "],[10,0],[14,0,"ad-choice-modal-facet-messaging t-sans t-16 t-black"],[12],[1,"\\n"],[41,[30,1],[[[1,"      "],[8,[39,4],[[24,0,"ad-choice-modal-facet-messaging__logo"]],[["@entitySize","@images"],[4,[30,1]]],null],[1,"\\n"]],[]],null],[1,"    "],[10,0],[14,0,"ad-choice-modal-facet-messaging__text"],[12],[1,"\\n      "],[11,1],[16,"data-control-id",[30,2]],[4,[38,5],["ad_choice_advertiser_detail"],null],[12],[1,"\\n        "],[8,[39,6],null,[["@tvm"],[[30,3,["detail"]]]],null],[1,"\\n      "],[13],[1,"\\n      "],[10,0],[14,0,"t-12 ad-choice-modal-facet-messaging__disclaimer"],[12],[1,"\\n        "],[11,1],[16,"data-control-id",[30,2]],[4,[38,5],["ad_choice_facet_disclaimer"],null],[12],[1,"\\n          "],[8,[39,6],null,[["@tvm"],[[30,3,["disclaimer"]]]],null],[1,"\\n        "],[13],[1,"\\n      "],[13],[1,"\\n    "],[13],[1,"\\n  "],[13],[1,"\\n"],[41,[30,3,["segmentDetail"]],[[[1,"    "],[10,0],[14,0,"ad-choice-modal-facet-reason t-14 t-black"],[12],[1,"\\n      "],[8,[39,6],null,[["@tvm"],[[30,3,["segmentDetail"]]]],null],[1,"\\n    "],[13],[1,"\\n"]],[]],null],[41,[30,3,["clickActions"]],[[[1,"    "],[10,"ul"],[14,0,"ad-choice-modal-facet-control-actions artdeco-list"],[12],[1,"\\n"],[42,[28,[37,8],[[28,[37,8],[[30,3,["clickActions"]]],null]],null],null,[[[1,"        "],[10,"li"],[14,0,"artdeco-list__item ad-choice-modal-facet-control-action"],[12],[1,"\\n          "],[11,3],[16,6,[30,4,["targetUrl"]]],[16,"data-control-id",[30,2]],[24,"target","_blank"],[24,"rel","noopener noreferrer"],[4,[38,5],[[30,4,["controlName"]]],null],[12],[1,"\\n            "],[8,[39,6],null,[["@tvm"],[[30,4,["title"]]]],null],[1,"\\n            "],[1,[28,[35,9],null,[["class","type","size"],["ad-choice-modal-facet-control-action__icon","link-external","small"]]]],[1,"\\n          "],[13],[1,"\\n        "],[13],[1,"\\n"]],[4,5]],null],[1,"    "],[13],[1,"\\n"]],[]],null],[13]],["@image","@trackingId","@matchedTargetingFacet","clickAction","idx"],false,["ember-cli-pemberly-tracking@track-render","get","-get-dynamic-var","if","image-view-model@image-view-model","ember-cli-pemberly-tracking@track-interaction","text-view-model@text-view-model-v2","each","-track-array","artdeco-icons-web@li-icon"]]',moduleName:"ad-choice/templates/components/modals/ad-choice-modal/facet-detail.hbs",isStrictMode:!1})
+e.default=i}))
+define("ad-choice/templates/components/modals/ad-choice-modal/loading",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"+x/5ZDQs",block:'[[[10,0],[14,0,"ad-choice-modal-content-loader"],[12],[1,"\\n  "],[8,[39,0],[[24,"size","small"]],null,null],[1,"\\n  "],[10,1],[14,0,"t-sans t-20"],[12],[1,[28,[35,1],["i18n_ad_choice_modal_loader_text","ad-choice/templates/components/modals/ad-choice-modal/loading"],null]],[13],[1,"\\n"],[13]],[],false,["artdeco-loader@artdeco-loader","t"]]',moduleName:"ad-choice/templates/components/modals/ad-choice-modal/loading.hbs",isStrictMode:!1})
+e.default=i}))
+define("ad-choice/templates/components/modals/ad-choice-modal/overview",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"Vdlsl9Z2",block:'[[[11,0],[24,0,"ad-choice-modal-overview-messaging t-sans t-16 t-black"],[4,[38,0],null,[["pageKey","routeName","currentRoute"],["flagship3_ad_choice_overview",[28,[37,1],[[53,"outletState"],"render.name"],null],[28,[37,1],[[53,"outletState"],"render"],null]]]],[12],[1,"\\n"],[41,[30,1,["advertiserImage"]],[[[1,"    "],[8,[39,4],[[24,0,"ad-choice-modal-overview-messaging__logo"]],[["@entitySize","@images"],[4,[30,1,["advertiserImage"]]]],null],[1,"\\n"]],[]],null],[1,"  "],[11,1],[16,"data-control-id",[30,1,["trackingId"]]],[24,0,"ad-choice-modal-overview-messaging__text"],[4,[38,5],["ad_choice_advertiser_overview"],null],[12],[1,"\\n    "],[8,[39,6],null,[["@tvm"],[[30,1,["advertiserDetail"]]]],null],[1,"\\n  "],[13],[1,"\\n"],[13],[1,"\\n"],[10,0],[14,0,"ad-choice-modal-overview-matched-facets"],[12],[1,"\\n"],[41,[30,0,["hasNoMatchedFacets"]],[[[1,"    "],[8,[39,7],[[4,[38,0],null,[["pageKey","routeName","currentRoute"],["flagship3_ad_choice_overview_empty_matched_facets",[28,[37,1],[[53,"outletState"],"render.name"],null],[28,[37,1],[[53,"outletState"],"render"],null]]]]],[["@illustration","@message","@headline","@class"],["main-coworkers-5",[28,[37,8],["i18n_ad_choice_empty_state_headline","ad-choice/templates/components/modals/ad-choice-modal/overview"],null],[28,[37,8],["i18n_ad_choice_empty_state_message","ad-choice/templates/components/modals/ad-choice-modal/overview"],[["linkInfo"],[[28,[37,9],null,[["href","target","class"],[[30,2],"_blank","link"]]]]]],"ad-choice-modal-facts-empty-state"]],null],[1,"\\n"]],[]],[[[1,"    "],[10,"h2"],[14,0,"t-sans t-16 t-bold"],[12],[1,"\\n      "],[1,[28,[35,8],["i18n_ad_choice_modal_targeting_facets_header","ad-choice/templates/components/modals/ad-choice-modal/overview"],null]],[1,"\\n    "],[13],[1,"\\n    "],[10,"ul"],[14,0,"ad-choice-modal-overview-matched-facets-list artdeco-list"],[12],[1,"\\n"],[42,[28,[37,11],[[28,[37,11],[[30,1,["matchedTargetingFacets"]]],null]],null],null,[[[1,"        "],[11,"li"],[24,0,"artdeco-list__item"],[24,"role","button"],[4,[38,12],["click",[28,[37,13],[[30,0,["onFacetSelected"]],[30,4]],null]],null],[12],[1,"\\n          "],[8,[39,14],null,[["@facet"],[[30,3]]],null],[1,"\\n        "],[13],[1,"\\n"]],[3,4]],null],[1,"    "],[13],[1,"\\n    "],[10,0],[14,0,"t-12"],[12],[1,"\\n      "],[10,1],[14,0,"ad-choice-modal-overview-matched-facets-disclaimer t-12"],[12],[1,"\\n        "],[1,[28,[35,8],["i18n_ad_choice_modal_facets_disclaimer_text_v2","ad-choice/templates/components/modals/ad-choice-modal/overview"],[["reasonsLink","adPreferencesLink"],[[28,[37,9],null,[["href","target","class","data-control-name","data-control-id","data-test-learn-more-reasons","rel"],[[30,2],"_blank","link","ad_choice_targeting_reasons_disclaimer",[30,1,["trackingId"]],"true","noopener noreferrer"]]],[28,[37,9],null,[["href","target","class","data-control-name","data-control-id","data-test-manage-ad-preferences","rel"],[[30,5],"_blank","link","ad_choice_overview_manage_ad_preferences",[30,1,["trackingId"]],"true","noopener noreferrer"]]]]]]],[1,"\\n      "],[13],[1,"\\n    "],[13],[1,"\\n"]],[]]],[13]],["@adChoiceData","@policyLink","facet","idx","@manageAdPreferencesLink"],false,["ember-cli-pemberly-tracking@track-render","get","-get-dynamic-var","if","image-view-model@image-view-model","ember-cli-pemberly-tracking@track-interaction","text-view-model@text-view-model-v2","artdeco-empty-state@artdeco-empty-state","t","hash","each","-track-array","on","fn","ad-choice@modals/ad-choice-modal/overview/matched-facet"]]',moduleName:"ad-choice/templates/components/modals/ad-choice-modal/overview.hbs",isStrictMode:!1})
+e.default=i}))
+define("ad-choice/templates/components/modals/ad-choice-modal/overview/matched-facet",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"0F/8IV9G",block:'[[[10,"button"],[14,0,"ad-choice-modal-overview-matched-facet t-black--light"],[14,4,"button"],[12],[1,"\\n  "],[8,[39,0],[[24,0,"ad-choice-modal-overview-matched-facet__icon"]],[["@entitySize","@images"],[1,[30,1,["icon"]]]],null],[1,"\\n  "],[10,2],[14,0,"ad-choice-modal-overview-matched-facet__text t-14"],[12],[1,"\\n    "],[8,[39,1],null,[["@tvm"],[[30,1,["overview"]]]],null],[1,"\\n  "],[13],[1,"\\n  "],[1,[28,[35,2],null,[["type","class","size"],["chevron-right-icon","ad-choice-modal-overview-matched-facet__chevron-icon","large"]]]],[1,"\\n"],[13]],["@facet"],false,["image-view-model@image-view-model","text-view-model@text-view-model-v2","artdeco-icons-web@li-icon"]]',moduleName:"ad-choice/templates/components/modals/ad-choice-modal/overview/matched-facet.hbs",isStrictMode:!1})
+e.default=i}))
+define("ad-choice/utils/constants",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.DETAIL_FEEDBACK_CACHE_KEY_PREFIX=e.OVERVIEW_FEEDBACK_CACHE_KEY=void 0
+e.OVERVIEW_FEEDBACK_CACHE_KEY="overview"
+e.DETAIL_FEEDBACK_CACHE_KEY_PREFIX="detail_"}))
+define("ember-async-data/helpers/load",["exports","@ember/component/helper","ember-async-data/tracked-async-data"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.load=function(e,t){return new i.default(e,t)}
+e.default=void 0
+class r extends t.default{compute(e){let[t]=e
+return new i.default(t,this)}}e.default=r}))
+define("ember-async-data/index",["exports","ember-async-data/tracked-async-data","ember-async-data/helpers/load"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+Object.defineProperty(e,"TrackedAsyncData",{enumerable:!0,get:function(){return t.default}})
+Object.defineProperty(e,"load",{enumerable:!0,get:function(){return i.load}})}))
+define("ember-async-data/tracked-async-data",["exports","@babel/runtime/helpers/esm/classPrivateFieldGet","@babel/runtime/helpers/esm/classPrivateFieldSet","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/tracking","@ember/object/compat","@ember/debug","@ember/test-waiters","@ember/destroyable"],(function(e,t,i,r,a,n,o,l,s,d,c,u){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var p,m,h,v,f
+const g=(0,c.buildWaiter)("ember-async-data"),b=new WeakMap,y=["PENDING"]
+let _=(p=class{constructor(){(0,r.default)(this,"data",m,this)}},m=(0,n.default)(p.prototype,"data",[l.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return y}}),p)
+var T=(h=(v=new WeakMap,f=new WeakMap,class e{constructor(r,a){v.set(this,{writable:!0,value:void 0})
+f.set(this,{writable:!0,value:new _})
+if(this.constructor!==e)throw new Error("tracked-async-data cannot be subclassed")
+const n=function(e){return"object"==typeof e&&null!==e&&(t="then",i=e,t in i)&&"function"==typeof e.then
+var t,i}(r)?r:Promise.resolve(r);(0,i.default)(this,v,g.beginAsync())
+const o=b.get(n)
+if(o)return o
+n.then((e=>{(0,t.default)(this,f).data=["RESOLVED",e]
+g.endAsync((0,t.default)(this,v))}),(e=>{(0,t.default)(this,f).data=["REJECTED",e]
+g.endAsync((0,t.default)(this,v))}))
+b.set(n,this)
+if(a){(0,u.associateDestroyableChild)(a,this);(0,u.registerDestructor)(this,(()=>{g.endAsync((0,t.default)(this,v))}))}}get state(){return(0,t.default)(this,f).data[0]}get value(){return"RESOLVED"===(0,t.default)(this,f).data[0]?(0,t.default)(this,f).data[1]:null}get error(){return"REJECTED"===(0,t.default)(this,f).data[0]?(0,t.default)(this,f).data[1]:null}get isPending(){return"PENDING"===this.state}get isResolved(){return"RESOLVED"===this.state}get isRejected(){return"REJECTED"===this.state}toJSON(){const{isPending:e,isResolved:t,isRejected:i}=this
+return e?{isPending:e,isResolved:t,isRejected:i}:t?{isPending:e,isResolved:t,value:this.value,isRejected:i}:{isPending:e,isResolved:t,isRejected:i,error:this.error}}toString(){return JSON.stringify(this.toJSON(),null,2)}}),(0,n.default)(h.prototype,"state",[s.dependentKeyCompat],Object.getOwnPropertyDescriptor(h.prototype,"state"),h.prototype),(0,n.default)(h.prototype,"value",[s.dependentKeyCompat],Object.getOwnPropertyDescriptor(h.prototype,"value"),h.prototype),(0,n.default)(h.prototype,"error",[s.dependentKeyCompat],Object.getOwnPropertyDescriptor(h.prototype,"error"),h.prototype),(0,n.default)(h.prototype,"isPending",[s.dependentKeyCompat],Object.getOwnPropertyDescriptor(h.prototype,"isPending"),h.prototype),(0,n.default)(h.prototype,"isResolved",[s.dependentKeyCompat],Object.getOwnPropertyDescriptor(h.prototype,"isResolved"),h.prototype),(0,n.default)(h.prototype,"isRejected",[s.dependentKeyCompat],Object.getOwnPropertyDescriptor(h.prototype,"isRejected"),h.prototype),h)
+e.default=T}))
+define("ember-batcher/batcher",["exports","ember-test-waiters"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.readDOM=function(e){let t=i.beginAsync()
+a.unshift([t,e])
+c()}
+e.mutateDOM=function(e){let t=r.beginAsync()
+n.unshift([t,e])
+c()}
+e.visibilityChange=void 0
+const i=(0,t.buildWaiter)("ember-batcher: readDOM"),r=(0,t.buildWaiter)("ember-batcher: mutateDOM"),a=[],n=[]
+let o=()=>{}
+e.visibilityChange=o
+let l=!1,s=!1
+const d="object"==typeof window&&"function"==typeof window.requestAnimationFrame?e=>{let t=()=>{if(!s){s=!0
+e()}}
+setTimeout(t,20)
+return requestAnimationFrame(t)}:e=>setTimeout(e)
+0
+function c(){if(!l){l=!0
+d((()=>{let e,t
+for(e=0,t=a.length;e<t;e++){let[e,t]=a.pop()
+t()
+i.endAsync(e)}for(e=0,t=n.length;e<t;e++){let[e,t]=n.pop()
+t()
+r.endAsync(e)}l=!1
+s=!1;(n.length>0||a.length>0)&&c()}))}}}))
+define("ember-batcher/index",["exports","ember-batcher/batcher"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+Object.defineProperty(e,"readDOM",{enumerable:!0,get:function(){return t.readDOM}})
+Object.defineProperty(e,"mutateDOM",{enumerable:!0,get:function(){return t.mutateDOM}})}))
+define("ember-cli-pemberly-litms/helpers/tag-manager-test-helper",["exports","qunit"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.TagManagerSession=void 0
+function i(e){let i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"LiTMS tracking event"
+t.default.config.current.assert.ok(e(),i)}e.TagManagerSession=class{constructor(e){this._tagManagerService=e}assertLiTMSPageView(e,t){return i((()=>this._tagManagerService._getAllFiredEvents().some((i=>i.profileName===t&&i.eventData.pageKey===e))),`LiTMS has correct ${e} PageViewEvent`)}assertLiTMSInteraction(e,t){return i((()=>this._tagManagerService._getAllFiredEvents().some((i=>{return i.profileName===t&&("string"==typeof(r=i.eventData.controlUrn)?r.split("-").pop():"")===e
+var r}))),`LiTMS has correct ${e} ControlInteractionEvent`)}reset(){this._tagManagerService._cleanUpAllFiredEvents()}}}))
+define("ember-cli-pemberly-litms/services/tag-manager",["exports","@ember/service","ember-cli-pemberly-litms/@linkedin/litms-lib","@ember/application","ember","ember-stdlib/utils/is-browser","@ember/runloop"],(function(e,t,i,r,a,n,o){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=e.TRACKING_SERVICE_EVENT_SOURCE=void 0
+const l=[],{Logger:s}=a.default,d="litms-class",c="litms",u=[],p=[]
+let m=!1,h=!1,v={},f=new Map
+const g="tracking-service-listener"
+e.TRACKING_SERVICE_EVENT_SOURCE=g
+var b=t.default.extend({tracking:(0,t.inject)("tracking"),trackingListenerAdapter:(0,t.inject)("tracking-adapter-for-tag-manager"),lix:(0,t.inject)("lix"),init(){this._super(...arguments)
+if(!h){h=!0
+this.get(d)||this.set(d,i.default)
+if(!n.default)return
+this.set("onTrackingEvent",this._handleTrackingEvent.bind(this))
+this._applyConfigurations()
+this._registerRouteListener()}},_getGlobalTMSProfile(){if(this._shouldInitializeGlobalTMSProfile())return v.profileName},_registerTrackingListener(){if(!m){m=!0
+this.get("trackingListenerAdapter").listen(this.get("onTrackingEvent"))}},_cleanUpTrackingListener(){if(m&&this.get("onTrackingEvent")){m=!1
+this.get("trackingListenerAdapter").removeListener(this.get("onTrackingEvent"))}},_handleTrackingEvent(e){this._processTrackingEvent(e)},_registerRouteListener(){const e=(0,r.getOwner)(this).lookup("router:main")
+e.on?e.on("didTransition",(()=>{this._cleanUpTrackingListener()
+this._useProfileForRoute(e.currentRouteName)
+this._processQueuedEvents()})):s.warn("Router appears to be mocked. Tag Manager won't work as expected")},_shouldInitializeGlobalTMSProfile(){return v.profileName&&this._isTagManagementSystemRamped()},_isTagManagementSystemRamped(){return v.lixKeyForRamp&&this.get("lix").getTreatmentIsEnabled(v.lixKeyForRamp)||!v.lixKeyForRamp},_applyConfigurations(){v=(0,r.getOwner)(this).resolveRegistration("config:environment").tagManager||{}
+v.whitelist=v.whitelist||{}
+v.listenForTrackingEventsWithGlobalProfile=!v.disableTrackingEventsListenerForGlobalProfile},registerProfileForRoutes(e,t){let i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{disableWhitelisting:v.disableWhitelisting}
+l.push({profileName:e,filterFn:t})
+f.set(e,i)},_getProfileNameForRoute(e){let t
+l.some((i=>{let{profileName:r,filterFn:a}=i
+if(a(e)){t=r
+return!0}}))
+return t},_useProfileForRoute(e){const t=this._getProfileNameForRoute(e)
+if(t){this._registerTrackingListener()
+this.useProfile(t)
+s.debug(`Using profile ${t} for route ${e}`)}else this._useGlobalProfile(e)},_useGlobalProfile(e){const t=this._getGlobalTMSProfile()
+if(t){v.listenForTrackingEventsWithGlobalProfile&&this._registerTrackingListener()
+this.useProfile(t)
+s.debug(`No route based profile for route ${e}. Falling back to global profile ${t}`)}else s.debug("No route based profile for route ${currentRouteName}. No global profile configured. TMS will be disabled for this route.")},useProfile(e){const t=this.get(c)
+if(t&&t.profileName===e)return
+let r=(0,i.getInstanceForProfile)(e)
+const a=f.has(e)?f.get(e).disableWhitelisting:v.disableWhitelisting
+if(void 0===r){r=new(this.get(d))({profileName:e,enableWhitelisting:!a,cacheBusterInterval:v.cacheBusterInterval})
+this._instantiateContainerTag(r)}this.set(c,r)},_instantiateContainerTag(e){e.initialize().then(this._fireTrackingEvent.bind(this)).catch((()=>{s.warn("Tag manager failed to initialize")}))},_fireTrackingEvent(e){this.get("isDestroyed")||this.get("isDestroying")||void 0!==e&&this.get("tracking").fireTrackingPayload(e.info.name,e.body)},_recordFiredEventForTesting(e,t){a.default.testing&&u.push({profileName:t,eventData:e})},_queueEvent(e,t){e&&t&&p.push({eventData:e,callbackFunction:t})},_processQueuedEvents(){const e=this.get(c)
+p.forEach((t=>{e?t.callbackFunction.call(this,t.eventData):s.debug(`No LiTMS instance was available. Dropping event ${JSON.stringify(t.eventData)}`)}))
+p.length=0},trackPageView(e){const t=this.get(c)
+t?(0,o.later)((()=>{t.trackPageView(e,this._fireTrackingEvent.bind(this))
+this._recordFiredEventForTesting(e,t.profileName)})):this._queueEvent(e,this.trackPageView)},trackControlInteraction(e){const t=this.get(c)
+if(t){t.trackControlInteraction(e,this._fireTrackingEvent.bind(this))
+this._recordFiredEventForTesting(e,t.profileName)}else this._queueEvent(e,this.trackControlInteraction)},_processTrackingEvent(e){const t=e.eventInfo||e.info,i=e.eventBody||e.body
+switch(t.eventName){case"PageViewEvent":this.trackPageView({eventSource:g,pageKey:i.requestHeader.pageKey})
+break
+case"ControlInteractionEvent":this.trackControlInteraction({eventSource:g,controlUrn:i.controlUrn,pageKey:i.requestHeader.pageKey})}},_getAllFiredEvents:()=>u,_cleanUpAllFiredEvents(){u.length=0},willDestroy(){h=!1
+this._cleanUpTrackingListener()
+l.length=0
+this._cleanUpAllFiredEvents()
+p.length=0}})
+e.default=b}))
+define("ember-cli-pemberly-litms/services/tracking-adapter-for-tag-manager",["exports","@ember/service","@ember/object/evented","ember"],(function(e,t,i,r){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const{Logger:a}=r.default,n="tracking"
+var o=t.default.extend(i.default,{tracking:(0,t.inject)("tracking"),init(){this._super(...arguments)
+const e=this.get("tracking")
+this._trackingEventRelayHandler=e=>{this.trigger(n,e)}
+if(this._isLegacyTrackingService(e))if(e._listen){e._listen(this._trackingEventRelayHandler)
+a.warn("Consider upgrading to ember-cli-pemberly-tracking@2.1.1 or greater. ember-cli-pemberly-litms support for lower versions of ember-cli-pemberly-tracking is deprecated.")}else a.warn("Tracking service appears to be mocked. Tag Manager won't work as expected")
+else e.listen(this._trackingEventRelayHandler)},listen(e){this.on(n,this,e)},removeListener(e){this.off(n,this,e)},_isLegacyTrackingService:e=>"function"!=typeof e.listen,willDestroy(){const e=this.get("tracking")
+this._isLegacyTrackingService(e)?e._clearListeners&&e._clearListeners():e.off("tracking-event",this,"_trackingEventRelayHandler")}})
+e.default=o}))
+define("ember-test-waiters/index",["exports","@ember/debug","@ember/test-waiters"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+Object.keys(i).forEach((function(t){"default"!==t&&"__esModule"!==t&&(t in e&&e[t]===i[t]||Object.defineProperty(e,t,{enumerable:!0,get:function(){return i[t]}}))}))}))
+define("ember-vector-upload-manager/components/vector-upload-manager",["exports","@ember/component","@ember/debug","@ember/object","@ember/array","@ember-vector-upload-manager/vector-upload-manager","ember-vector-upload-manager/templates/components/vector-upload-manager"],(function(e,t,i,r,a,n,o){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+const l="Csrf-Token",s=/JSESSIONID="?([^";]+)"?/
+var d=t.default.extend({tagName:"vector-upload-manager",layout:o.default,uploads:null,init(){this._super(...arguments)
+const e=this.get("getUploadMetaData"),t=this.getWithDefault("maxConcurrentFiles",1/0),i=this.getWithDefault("maxConcurrentPartsPerFile",1/0),o=this.getWithDefault("maxRetriesPerPart",0),d=this.getWithDefault("retryDelay",0),c=this.getWithDefault("method","PUT"),u=this.getWithDefault("headers",{});(0,r.get)(u,l)||(0,r.set)(u,l,function(){const e=s.exec(document.cookie)
+return e&&e[1]||""}())
+const p=new n.default({method:c,headers:u,maxConcurrentFiles:t,maxConcurrentPartsPerFile:i,maxRetriesPerPart:o,retryDelay:d,getUploadMetaData:e})
+this.set("uploadManager",p)
+this.set("uploads",new a.A)
+p.on("upload",(e=>{this.get("uploads").pushObject(e)}))
+p.start()},actions:{upload(){for(var e=arguments.length,t=new Array(e),i=0;i<e;i++)t[i]=arguments[i]
+const r=t.pop().target.files,a=t[0]
+this.get("uploadManager").add(r,a)},cancel(e){e?e.cancel():this.get("uploadManager").cancel()},remove(e){this.get("uploads").removeObject(e)}}})
+e.default=d}))
+define("ember-vector-upload-manager/components/vector-upload",["exports","@ember/component","@ember/utils","@ember/debug","@ember/object","ember-vector-upload-manager/templates/components/vector-upload"],(function(e,t,i,r,a,n){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+function o(){const e=this.get("uploader");(0,i.tryInvoke)(this,"onFinish",[e.results,this])}const l=t.default.extend({tagName:"vector-upload",layout:n.default,is:null,progress:null,state:null,fileName:null,fileSize:null,fileType:null,uploadMetaData:null,init(){this._super(...arguments)
+const e=this.get("uploader"),t=o.bind(this)
+e.then(t,t)
+this.set("state",e.status().state)
+this.set("is",a.default.create(e.state.is))
+this.set("fileName",e.file.name)
+this.set("fileSize",e.file.size)
+this.set("fileType",e.file.type)
+this.set("uploadMetaData",e.consumer.meta)
+this.set("progress",a.default.create(e.progress))
+!this.get("onFinish")&&this.get("finish")&&this.set("onFinish",this.get("finish"))
+e.on("status",(t=>{let{state:i,progress:r}=t
+this.set("state",i)
+this.get("is").setProperties(e.state.is)
+this.get("progress").setProperties(r)}))},actions:{cancel(){return this.get("uploader").cancel()},retry(){const e=this.get("uploader").retry(),t=o.bind(this)
+e.then(t,t)
+return e},pause(){return this.get("uploader").pause()},resume(){return this.get("uploader").resume()},toggle(){return this.get("uploader").toggle()}}})
+l.reopenClass({positionalParams:["uploader"]})
+var s=l
+e.default=s}))
+define("ember-vector-upload-manager/templates/components/vector-upload-manager",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"R8As3qCm",block:'[[[18,1,[[30,0]]],[1,"\\n"]],["&default"],false,["yield"]]',moduleName:"ember-vector-upload-manager/templates/components/vector-upload-manager.hbs",isStrictMode:!1})
+e.default=t}))
+define("ember-vector-upload-manager/templates/components/vector-upload",["exports"],(function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var t=Ember.HTMLBars.template({id:"yaBIawsL",block:'[[[18,1,[[30,0]]],[1,"\\n"]],["&default"],false,["yield"]]',moduleName:"ember-vector-upload-manager/templates/components/vector-upload.hbs",isStrictMode:!1})
+e.default=t}))
+define("inline-show-more-text/components/inline-show-more-text",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@ember/component","@ember/template-factory","@glimmer/component","@glimmer/tracking","@ember/debug","@ember/object","global-utils/utils/api-compat"],(function(e,t,i,r,a,n,o,l,s,d,c,u){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var p,m,h
+const v=(0,o.createTemplateFactory)({id:"Eor7kjBv",block:'[[[11,0],[16,0,[29,["inline-show-more-text\\n    ",[52,[30,0,["_isCollapsed"]],"inline-show-more-text--is-collapsed"],"\\n    ",[52,[30,0,["_shouldUseLineClamp"]],"inline-show-more-text--is-collapsed-with-line-clamp"],"\\n    ",[52,[30,0,["_onDark"]],"inline-show-more-text--on-dark"],"\\n    ",[30,1],"\\n    "]]],[16,5,[30,0,["style"]]],[17,2],[4,[38,1],[[28,[37,2],[[30,0],"_needsToggleButtons"],null]],null],[12],[1,"\\n\\n"],[41,[30,0,["useTextViewModelV2"]],[[[1,"    "],[8,[39,3],null,[["@tvm","@userGenerated"],[[30,3],[30,4]]],null],[1,"\\n"]],[]],[[[41,[30,3],[[[1,"    "],[1,[28,[35,4],[[30,3]],null]],[1,"\\n"]],[]],[[[1,"    "],[1,[30,5]],[1,"\\n  "]],[]]]],[]]],[1,"\\n"],[41,[30,0,["_needsToggleButtons"]],[[[41,[30,0,["_shouldShowMoreButton"]],[[[1,"      "],[10,1],[14,0,"inline-show-more-text__link-container-collapsed"],[12],[1,"\\n"],[41,[30,0,["_shouldShowEllipsis"]],[[[1,"          "],[10,1],[12],[1,[28,[35,5],["i18n_ellipsis","inline-show-more-text/components/inline-show-more-text"],null]],[13],[1,"\\n"]],[]],null],[1,"        "],[11,"button"],[16,0,[29,["inline-show-more-text__button\\n            ",[52,[30,0,["_lightButtonText"]],"inline-show-more-text__button--light"],"\\n            link"]]],[24,"aria-expanded","false"],[24,4,"button"],[4,[38,6],["click",[30,0,["expand"]]],null],[12],[1,"\\n          "],[1,[30,6]],[1,"\\n        "],[13],[1,"\\n      "],[13],[1,"\\n"]],[]],null],[1,"\\n"],[41,[30,0,["_shouldShowLessButton"]],[[[1,"      "],[10,1],[14,0,"inline-show-more-text__link-container-expanded"],[12],[1,"\\n        "],[11,"button"],[16,0,[29,["inline-show-more-text__button\\n            ",[52,[30,0,["_lightButtonText"]],"inline-show-more-text__button--light"],"\\n            link"]]],[24,"aria-expanded","true"],[24,4,"button"],[4,[38,6],["click",[30,0,["collapse"]]],null],[12],[1,"\\n          "],[1,[30,7]],[1,"\\n        "],[13],[1,"\\n      "],[13],[1,"\\n"]],[]],null]],[]],null],[13]],["@class","&attrs","@tvm","@isUserGenerated","@text","@seeMoreText","@seeLessText"],false,["if","inline-show-more-text@requires-scroll","ember-set-helper@set","text-view-model@text-view-model-v2","text-view-model@text-view-model","t","on"]]',moduleName:"inline-show-more-text/components/inline-show-more-text.hbs",isStrictMode:!1})
+let f=(p=class extends l.default{constructor(){super(...arguments);(0,t.default)(this,"_isExpanded",m,this);(0,t.default)(this,"_needsToggleButtons",h,this)}get _lines(){var e
+return null!==(e=this.args.lines)&&void 0!==e?e:3}get _showMoreButton(){var e
+const t=null===(e=this.args.showMoreButton)||void 0===e||e
+return t}get _showLessButton(){var e
+const t=null!==(e=this.args.showLessButton)&&void 0!==e&&e
+return t}get _showManualEllipsis(){var e
+return null===(e=this.args.showManualEllipsis)||void 0===e||e}get _isDummyButton(){var e
+return null!==(e=this.args.isDummyButton)&&void 0!==e&&e}get _lightButtonText(){var e
+const t=null!==(e=this.args.lightButtonText)&&void 0!==e&&e
+return t}get _onDark(){var e
+const t=null!==(e=this.args.onDark)&&void 0!==e&&e
+return t}get _isCollapsed(){return!this._isExpanded}get _shouldShowEllipsis(){return this._showMoreButton&&this._showManualEllipsis}get _shouldUseLineClamp(){return!this._showMoreButton&&this._isCollapsed}get _shouldShowMoreButton(){return this._showMoreButton&&this._isCollapsed}get _shouldShowLessButton(){return this._showLessButton&&this._isExpanded}get useTextViewModelV2(){return this.args.tvm&&"com.linkedin.voyager.dash.common.text.TextViewModel"===(0,u.classNameOf)(this.args.tvm)}get style(){const{lineHeight:e}=this.args,t=parseFloat(e),i=e.substring(String(t).length)
+let r=`line-height:${t}${i};`
+if(this._isCollapsed){r+=`max-height:${t*this._lines}${i};`
+this._shouldUseLineClamp&&(r+=`-webkit-line-clamp:${this._lines};`)}return r}expand(){var e,t
+this._isDummyButton||(this._isExpanded=!0)
+null===(e=(t=this.args).onExpand)||void 0===e||e.call(t)}collapse(){var e,t
+this._isExpanded=!1
+null===(e=(t=this.args).onCollapse)||void 0===e||e.call(t)}},m=(0,r.default)(p.prototype,"_isExpanded",[s.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),h=(0,r.default)(p.prototype,"_needsToggleButtons",[s.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),(0,r.default)(p.prototype,"expand",[c.action],Object.getOwnPropertyDescriptor(p.prototype,"expand"),p.prototype),(0,r.default)(p.prototype,"collapse",[c.action],Object.getOwnPropertyDescriptor(p.prototype,"collapse"),p.prototype),p)
+e.default=f;(0,n.setComponentTemplate)(v,f)}))
+define("inline-show-more-text/modifiers/requires-scroll",["exports","ember-modifier"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.modifier)(((e,t)=>{let[i]=t
+return i(e.offsetHeight<e.scrollHeight)}))
+e.default=i}))
+define("live/components/live-event-viewer-state-button",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","global-utils/utils/api-compat","@ember/debug","@ember/object","@ember/service","@glimmer/component","@glimmer/tracking","live/utils/live-constants"],(function(e,t,i,r,a,n,o,l,s,d,c,u){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var p,m,h,v
+let f=(p=(0,s.inject)("i18n"),m=class extends d.default{constructor(){super(...arguments);(0,t.default)(this,"i18n",h,this);(0,t.default)(this,"isPostAttendModalOpen",v,this)}get viewerState(){return(0,l.get)(this.args.viewerState,"scheduledContentViewerStatus")}get eventId(){return(0,n.entityUrnToId)((0,l.get)(this.args.viewerState,"entityUrn"))}get isViewerEvicted(){return this.viewerState===u.LIVE_EVENT_VIEWER_STATE.EVICTED}get pressed(){return this.viewerState===u.LIVE_EVENT_VIEWER_STATE.INTERESTED||this.viewerState===u.LIVE_EVENT_VIEWER_STATE.REGISTERED}get text(){return this.viewerState===u.LIVE_EVENT_VIEWER_STATE.REGISTERED?this.i18n.lookupTranslation("live@components/live-event-viewer-state-button","i18n_registered")():this.viewerState===u.LIVE_EVENT_VIEWER_STATE.NOT_REGISTERED?this.i18n.lookupTranslation("live@components/live-event-viewer-state-button","i18n_register")():this.viewerState===u.LIVE_EVENT_VIEWER_STATE.INTERESTED?this.i18n.lookupTranslation("live@components/live-event-viewer-state-button","i18n_attending")():this.i18n.lookupTranslation("live@components/live-event-viewer-state-button","i18n_attend")()}toggleViewerStatus(){const e=this.viewerState,t=this.args.viewerState,i=e===u.LIVE_EVENT_VIEWER_STATE.INTERESTED?u.LIVE_EVENT_VIEWER_STATE.NOT_INTERESTED:u.LIVE_EVENT_VIEWER_STATE.INTERESTED;(0,l.set)(t,"scheduledContentViewerStatus",i)
+t.save({adapterOptions:{partial:!0,url:`/voyager/api/voyagerScheduledcontentViewerStates/${(0,l.get)(t,"entityUrn")}`}}).then((()=>{this.isDestroying||(this.isPostAttendModalOpen=i===u.LIVE_EVENT_VIEWER_STATE.INTERESTED)}))}},h=(0,r.default)(m.prototype,"i18n",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),v=(0,r.default)(m.prototype,"isPostAttendModalOpen",[c.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),(0,r.default)(m.prototype,"toggleViewerStatus",[l.action],Object.getOwnPropertyDescriptor(m.prototype,"toggleViewerStatus"),m.prototype),m)
+e.default=f}))
+define("live/components/live-video-edit",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/tracking","@ember/object","@glimmer/component","@ember/service"],(function(e,t,i,r,a,n,o,l,s){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var d,c,u,p
+let m=(d=(0,s.inject)("lix"),c=class extends l.default{constructor(){super(...arguments);(0,t.default)(this,"lix",u,this);(0,t.default)(this,"isOpen",p,this)}openModal(){this.isOpen=!0}closeModal(){this.isOpen=!1}saveSettings(){this.isOpen=!1}},u=(0,r.default)(c.prototype,"lix",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),p=(0,r.default)(c.prototype,"isOpen",[n.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),(0,r.default)(c.prototype,"openModal",[o.action],Object.getOwnPropertyDescriptor(c.prototype,"openModal"),c.prototype),(0,r.default)(c.prototype,"closeModal",[o.action],Object.getOwnPropertyDescriptor(c.prototype,"closeModal"),c.prototype),(0,r.default)(c.prototype,"saveSettings",[o.action],Object.getOwnPropertyDescriptor(c.prototype,"saveSettings"),c.prototype),c)
+e.default=m}))
+define("live/components/live-video-header",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component","@ember/object","live/utils/video-live-utils","@ember/service"],(function(e,t,i,r,a,n,o,l,s){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var d,c,u
+let p=(d=(0,s.inject)("lix"),c=class extends n.default{constructor(){super(...arguments);(0,t.default)(this,"lix",u,this)}get useOctanedLiveVideoLoader(){return this.lix.getTreatmentIsEnabled("voyager.web.video-live-loader-octaned")}get activityUrn(){const e=(0,o.get)(this.args,"liveVideoHeader.updateV2Urn")
+return(0,l.getActivityUrn)(e)}},u=(0,r.default)(c.prototype,"lix",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),c)
+e.default=p}))
+define("live/components/live-video-loader",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@ember/polyfills","@ember/object","@ember-decorators/component","ember-lifeline","live/utils/live-constants","video/components/native-video-loader-v2","video/templates/components/native-video-loader-v2","@ember/service"],(function(e,t,i,r,a,n,o,l,s,d,c,u,p){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var m,h,v,f,g,b,y
+let _=(m=(0,l.layout)(u.default),h=(0,l.classNames)("live-video-loader"),v=(0,p.inject)("lix"),f=(0,o.computed)("videoPlayMetadata.adaptiveStreams").readOnly(),m(g=h(g=(b=class extends c.default{constructor(){super(...arguments);(0,i.default)(this,"preload","metadata");(0,i.default)(this,"aspectRatio","auto");(0,i.default)(this,"fallbackPoster",d.LIVE_VIDEO_FALLBACK_POSTER);(0,i.default)(this,"useCaptionsMenu",!0);(0,t.default)(this,"lix",y,this)}get isHLSv4(){return!(0,o.get)(this,"videoPlayMetadata.adaptiveStreams.firstObject.masterPlaylists.firstObject.url").includes("m3u8-aapl-v3")}init(){super.init(...arguments)
+this._liveState=this.isLive?d.LIVE_TRACKING_STATES.IS_LIVE:d.LIVE_TRACKING_STATES.WAS_LIVE
+this.isOverrideNativeEnabled=this.lix.getTreatmentIsEnabled("voyager.web.live-override-native-hls")}getPlugins(){const e=super.getPlugins();(0,n.assign)(e,{posterBackground:!1,reloadSourceOnError:!0})
+return e}shouldAutoplayWithSound(){return this.isInternal}handlePlayerSeeking(){var e
+null===(e=this.onPlayerSeeking)||void 0===e||e.call(this)}getInitialBandwidth(){}handleTrackingMethod(e,t){if(t.state&&(!t.state.length||t.state.length===1/0)){const e=this._liveState===d.LIVE_TRACKING_STATES.IS_LIVE?t.state.timeElapsed:t.state.length
+t.state.length=e}super.handleTrackingMethod(e,t,this.trackingEventMeta)}hasUserInteractedWithPlayer(){return super.hasUserInteractedWithPlayer()||this.isInternal}willDestroy(){super.willDestroy(...arguments);(0,s.runDisposables)(this)}handlePlayerReady(){super.handlePlayerReady(...arguments)
+this.muted&&(this._isManuallyMuted=!0)
+this.isInternal&&this.tryUnmuteVideo()}handlePlayerLoadeddata(){super.handlePlayerLoadeddata(...arguments)
+this.isLive&&this.isOverrideNativeEnabled&&0===this.mediaApi.getCurrentTime()&&this.mediaApi.setCurrentTime(this.mediaApi.getLiveCurrentTime())}handleTheaterModeActivate(){var e
+null===(e=this.activateTheaterMode)||void 0===e||e.call(this)}handleTheaterModeDeactivate(){var e
+null===(e=this.deactivateTheaterMode)||void 0===e||e.call(this)}},y=(0,r.default)(b.prototype,"lix",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),(0,r.default)(b.prototype,"isHLSv4",[f],Object.getOwnPropertyDescriptor(b.prototype,"isHLSv4"),b.prototype),(0,r.default)(b.prototype,"handlePlayerReady",[o.action],Object.getOwnPropertyDescriptor(b.prototype,"handlePlayerReady"),b.prototype),(0,r.default)(b.prototype,"handlePlayerLoadeddata",[o.action],Object.getOwnPropertyDescriptor(b.prototype,"handlePlayerLoadeddata"),b.prototype),(0,r.default)(b.prototype,"handleTheaterModeActivate",[o.action],Object.getOwnPropertyDescriptor(b.prototype,"handleTheaterModeActivate"),b.prototype),(0,r.default)(b.prototype,"handleTheaterModeDeactivate",[o.action],Object.getOwnPropertyDescriptor(b.prototype,"handleTheaterModeDeactivate"),b.prototype),b))||g)||g)
+e.default=_}))
+define("live/components/live-video-trimmer",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/tracking","@ember/object","@glimmer/component","video-utils/utils/video-constants","@ember/service","ember","ember-lifeline","ember-test-waiters"],(function(e,t,i,r,a,n,o,l,s,d,c,u,p){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var m,h,v,f,g,b,y,_,T,E,w,S,P,k,O,R
+const D=(0,p.buildWaiter)("video:live-video-trimmer"),M="i18n_video_too_short",C={masterPlaylists:[{mediaType:"application/x-mpegURL",url:"www.broken.com"}]}
+let A=(m=(0,d.inject)("store"),h=(0,d.inject)("persistent-toast-manager@persistentToastManager"),v=(0,d.inject)("lix"),f=(0,d.inject)("i18n"),g=class extends l.default{constructor(){super(...arguments);(0,i.default)(this,"_lastMinvalue",0);(0,i.default)(this,"_lastMaxvalue",null);(0,t.default)(this,"store",b,this);(0,t.default)(this,"persistentToastManager",y,this);(0,t.default)(this,"lix",_,this);(0,t.default)(this,"i18n",T,this);(0,t.default)(this,"trimValuesChanged",E,this);(0,t.default)(this,"minvalue",w,this);(0,t.default)(this,"maxvalue",S,this);(0,t.default)(this,"video",P,this);(0,t.default)(this,"isTrimming",k,this);(0,t.default)(this,"showLoadingScreen",O,this);(0,t.default)(this,"showRevertConfirmation",R,this)}get videoDuration(){return this.video?Math.floor(1e3*this.video.getDuration()):0}get videoSources(){const e=(0,o.get)(this.args,"videoPlayMetadata.adaptiveStreams.firstObject")
+return[{src:(0,o.get)(e,"masterPlaylists.firstObject.url"),type:c.default.testing?"video/mp4":"application/x-mpegURL"}]}willDestroy(){(0,u.runDisposables)(this)}onTrimSliderChange(e){const{min:t,max:i,minvalue:r,maxvalue:a}=e
+this.minSliderMoved=this._lastMinvalue!==r
+this.maxSliderMoved=this._lastMaxvalue!==a
+this.trimValuesChanged=!(t===r&&i===a)
+if(this.minSliderMoved||this.maxSliderMoved){this.seekWaiterToken=D.beginAsync()
+this._updateTrimValues(this.video,this.minSliderMoved?r:a)}}onPlayerLoadedmetadata(e){let{mediaApi:t}=e
+if(!t)return
+this.video=t
+this.showLoadingScreen=!1
+const i=this.videoDuration
+if(i&&i>=s.MIN_VIDEO_DURATION_LENGTH){this.maxvalue=Math.floor(this.videoDuration)
+this._lastMaxvalue=Math.floor(this.videoDuration)}else{const e=this.i18n.lookupTranslation("components/live@live-video-trimmer",M)()
+this.persistentToastManager.error({message:e})}}handlePlayerSeeked(e){let{mediaApi:t}=e
+const i=c.default.testing?[{activeCues:[{startTime:2,endTime:3}]}]:t.getTextTracks(),r=1e3*Math.round(i[0]&&i[0].activeCues?i[0].activeCues[0].startTime:0),a=1e3*Math.round(i[0]&&i[0].activeCues?i[0].activeCues[0].endTime:0)
+!this.lix.getTreatmentIsEnabled("voyager.web.video-live-disable-manifest-cues")&&(this.minSliderMoved||this.maxSliderMoved)&&this.videoDuration!==r&&this.videoDuration!==a&&i[0]?this._adjustVideoBasedOnActiveManifest(r,a):D.endAsync(this.seekWaiterToken)}onPlayerError(){this._retryLoadTrimmedVideo()}cancelTrim(){this._resetTrimState()}beginTrimming(){this.isTrimming=!0}executeTrim(){this.isTrimming=!1
+this._trimStream(this.minvalue+(this.args.startTrim||0),this.maxvalue+(this.args.startTrim||0)).then((()=>{this._resetTrimState()}))}revertTrim(){this.showRevertConfirmation=!1
+this.isTrimming=!1
+this._trimStream().then((()=>{this._resetTrimState()}))}isConfirmingRevert(e){this.showRevertConfirmation=e}_updateTrimValues(e,t){if(this.minSliderMoved){e.setCurrentTime(Math.round(t/1e3))
+this.minvalue=t
+this._lastMinvalue=t}if(this.maxSliderMoved){e.setCurrentTime(Math.round(t/1e3))
+this.maxvalue=t
+this._lastMaxvalue=t}}_retryLoadTrimmedVideo(){this.showLoadingScreen=!0
+const e=(0,o.get)(this.args,"videoPlayMetadata.adaptiveStreams.firstObject")
+this._updateStream({"videoPlayMetadata.adaptiveStreams":[C],trimOffsetStart:this.args.startTrim,trimOffsetEnd:this.args.endTrim});(0,u.runTask)(this,(()=>{this._updateStream({"videoPlayMetadata.adaptiveStreams":[e],trimOffsetStart:this.args.startTrim,trimOffsetEnd:this.args.endTrim})}),2e3)}_adjustVideoBasedOnActiveManifest(e,t){const i=this.minSliderMoved?e:t
+this._updateTrimValues(this.video,i)
+this.minSliderMoved=!1
+this.maxSliderMoved=!1}_trimStream(){let e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null
+const t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,i=e,r={startTimeOffset:t,assetUrn:(0,o.get)(this.args,"videoPlayMetadata.media")}
+e&&(r.endTimeOffset=i);(0,o.get)(this.args,"actor.urn").includes("company")&&(r.organizationActor=(0,o.get)(this.args,"actor.urn"))
+this.showLoadingScreen=!0
+return this.store.queryURL("video/videoActions?action=trimLiveVideo",{params:r,method:"POST",reload:!0}).then((e=>{if(!this.isDestroying){this._updateStream({"videoPlayMetadata.adaptiveStreams":[e],trimOffsetStart:t,trimOffsetEnd:i})
+this.showLoadingScreen=!1}})).catch((e=>{this.showLoadingScreen=!1
+const t=this.i18n.lookupTranslation("components/live@live-video-trimmer","i18n_trim_failed")()
+this.persistentToastManager.error({message:t})
+throw e}))}_updateStream(e){var t,i
+null===(t=(i=this.args).updateLiveStream)||void 0===t||t.call(i,e)}_resetTrimState(){this.trimValuesChanged=!1
+this._lastMinvalue=0
+this._lastMaxvalue=this.videoDuration
+this.isTrimming=!1
+this.maxvalue=this.videoDuration
+this.minvalue=0
+this.video=null}},b=(0,r.default)(g.prototype,"store",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),y=(0,r.default)(g.prototype,"persistentToastManager",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),_=(0,r.default)(g.prototype,"lix",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),T=(0,r.default)(g.prototype,"i18n",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),E=(0,r.default)(g.prototype,"trimValuesChanged",[n.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),w=(0,r.default)(g.prototype,"minvalue",[n.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),S=(0,r.default)(g.prototype,"maxvalue",[n.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),P=(0,r.default)(g.prototype,"video",[n.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),k=(0,r.default)(g.prototype,"isTrimming",[n.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),O=(0,r.default)(g.prototype,"showLoadingScreen",[n.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),R=(0,r.default)(g.prototype,"showRevertConfirmation",[n.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),(0,r.default)(g.prototype,"onTrimSliderChange",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"onTrimSliderChange"),g.prototype),(0,r.default)(g.prototype,"onPlayerLoadedmetadata",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"onPlayerLoadedmetadata"),g.prototype),(0,r.default)(g.prototype,"handlePlayerSeeked",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"handlePlayerSeeked"),g.prototype),(0,r.default)(g.prototype,"onPlayerError",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"onPlayerError"),g.prototype),(0,r.default)(g.prototype,"cancelTrim",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"cancelTrim"),g.prototype),(0,r.default)(g.prototype,"beginTrimming",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"beginTrimming"),g.prototype),(0,r.default)(g.prototype,"executeTrim",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"executeTrim"),g.prototype),(0,r.default)(g.prototype,"revertTrim",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"revertTrim"),g.prototype),(0,r.default)(g.prototype,"isConfirmingRevert",[o.action],Object.getOwnPropertyDescriptor(g.prototype,"isConfirmingRevert"),g.prototype),g)
+e.default=A}))
+define("live/components/octaned-live-video-loader",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@ember/object","live/utils/live-constants","video/components/octaned-native-video-loader-v2","@ember/service"],(function(e,t,i,r,a,n,o,l,s){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var d,c,u
+let p=(d=(0,s.inject)("lix"),c=class extends l.default{get isOverrideNativeEnabled(){return this.lix.getTreatmentIsEnabled("voyager.web.live-override-native-hls")}constructor(){super(...arguments);(0,i.default)(this,"fallbackPoster",o.LIVE_VIDEO_FALLBACK_POSTER);(0,t.default)(this,"lix",u,this)
+this._liveState=this.isLive?o.LIVE_TRACKING_STATES.IS_LIVE:o.LIVE_TRACKING_STATES.WAS_LIVE}getPlugins(){const e=super.getPlugins()
+Object.assign(e,{posterBackground:!1,reloadSourceOnError:!0})
+return e}shouldAutoplayWithSound(){return this.args.isInternal}handlePlayerSeeking(){var e
+null===(e=this.onPlayerSeeking)||void 0===e||e.call(this)}getInitialBandwidth(){}handleTrackingMethod(e,t){if(t.state&&(!t.state.length||t.state.length===1/0)){const e=this._liveState===o.LIVE_TRACKING_STATES.IS_LIVE?t.state.timeElapsed:t.state.length
+t.state.length=e}super.handleTrackingMethod(e,t,this.args.trackingEventMeta)}hasUserInteractedWithPlayer(){return super.hasUserInteractedWithPlayer()||this.args.isInternal}handlePlayerReady(){super.handlePlayerReady(...arguments)
+this.muted&&(this._isManuallyMuted=!0)
+this.args.isInternal&&this.tryUnmuteVideo()}handlePlayerLoadeddata(){super.handlePlayerLoadeddata(...arguments)
+this.args.isLive&&this.isOverrideNativeEnabled&&0===this.mediaApi.getCurrentTime()&&this.mediaApi.setCurrentTime(this.mediaApi.getLiveCurrentTime())}handleTheaterModeActivate(){var e,t
+null===(e=(t=this.args).activateTheaterMode)||void 0===e||e.call(t)}handleTheaterModeDeactivate(){var e,t
+null===(e=(t=this.args).deactivateTheaterMode)||void 0===e||e.call(t)}},u=(0,r.default)(c.prototype,"lix",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),(0,r.default)(c.prototype,"handlePlayerReady",[n.action],Object.getOwnPropertyDescriptor(c.prototype,"handlePlayerReady"),c.prototype),(0,r.default)(c.prototype,"handlePlayerLoadeddata",[n.action],Object.getOwnPropertyDescriptor(c.prototype,"handlePlayerLoadeddata"),c.prototype),(0,r.default)(c.prototype,"handleTheaterModeActivate",[n.action],Object.getOwnPropertyDescriptor(c.prototype,"handleTheaterModeActivate"),c.prototype),(0,r.default)(c.prototype,"handleTheaterModeDeactivate",[n.action],Object.getOwnPropertyDescriptor(c.prototype,"handleTheaterModeDeactivate"),c.prototype),c)
+e.default=p}))
+define("live/components/reactions/video-reactions-buttons-container",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@ember/service","@glimmer/component","@ember/object","feed-requests/reactions","live/utils/live-constants","reactions/utils/constants","ember-lifeline"],(function(e,t,i,r,a,n,o,l,s,d,c,u){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var p,m,h,v,f,g,b,y,_,T,E,w,S,P,k
+let O=(p=(0,n.inject)("store"),m=(0,n.inject)("i18n"),h=(0,n.inject)("persistent-toast-manager@persistent-toast-manager"),v=(0,n.inject)("global-services@a11y-notification"),f=(0,n.inject)("lix"),g=(0,n.inject)("pem-tracking"),b=(0,n.inject)("tracking"),y=class extends o.default{constructor(){super(...arguments);(0,t.default)(this,"store",_,this);(0,t.default)(this,"i18n",T,this);(0,t.default)(this,"persistentToastManager",E,this);(0,t.default)(this,"a11yNotification",w,this);(0,t.default)(this,"lix",S,this);(0,t.default)(this,"pemTracking",P,this);(0,t.default)(this,"tracking",k,this);(0,i.default)(this,"reactionTypes",Object.keys(c.REACTION_TYPE_MAP))}willDestroy(){super.willDestroy(...arguments);(0,u.runDisposables)(this)}handleReactionsMenuTracking(e){const t="select_reaction"
+this.tracking.fireInteractionEvent(t)
+if(this.args.updateTrackingObj){this.args.updateTrackingObj.fireFeedActionEvent({actionCategory:"REACT",actionType:`${e.toLowerCase()}Update`,controlName:t})
+this.previousReaction&&this.args.updateTrackingObj.fireFeedActionEvent({actionCategory:"UNREACT",actionType:`un${this.previousReaction.toLowerCase()}Update`,controlName:t})}}createReaction(e){var t,i,r,a
+null===(t=(i=this.args).generateReaction)||void 0===t||t.call(i,e)
+this.previousReaction=e
+const n=this.i18n.lookupTranslation("live@components/reactions/video-reactions-buttons-container",`react_${e}_screen_reader_confirmation`)
+this.a11yNotification.setTextInLiveRegion(n())
+this.handleReactionsMenuTracking(e)
+const o=(0,s.createReactionRequest)({threadUrn:this.args.threadUrn,reactionType:e,timeOffset:this.args.isLiveEventLobby?-2:1e3*(null===(r=(a=this.args).getVideoTime)||void 0===r?void 0:r.call(a))}),l=this.store.adapterFor("-ember-m3").ajax(...o).catch((e=>{const t=this.i18n.lookupTranslation("live@components/reactions/video-reactions-buttons-container","i18n_reaction_request_error")()
+this.persistentToastManager.error({message:t})
+if(!e||!e.isAdapterError)throw e}))
+this.pemTracking.trackFeatureDegradations(o[0],[this.args.threadUrn],[d.DEGRADATION_TRACKING_METADATA.CREATE_REACTION],l)
+return l}onReactionClicked(e){(0,u.throttleTask)(this,"createReaction",e,250)}},_=(0,r.default)(y.prototype,"store",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),T=(0,r.default)(y.prototype,"i18n",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),E=(0,r.default)(y.prototype,"persistentToastManager",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),w=(0,r.default)(y.prototype,"a11yNotification",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),S=(0,r.default)(y.prototype,"lix",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),P=(0,r.default)(y.prototype,"pemTracking",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),k=(0,r.default)(y.prototype,"tracking",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),(0,r.default)(y.prototype,"onReactionClicked",[l.action],Object.getOwnPropertyDescriptor(y.prototype,"onReactionClicked"),y.prototype),y)
+e.default=O}))
+define("live/components/reactions/video-reactions-container",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@ember/service","@glimmer/component","@ember/object","@ember/utils","ember-lifeline","reactions/utils/constants","live/utils/evented-queue-manager","live/utils/video-live-utils","live/utils/reaction","live/utils/live-constants","@glimmer/tracking"],(function(e,t,i,r,a,n,o,l,s,d,c,u,p,m,h,v){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var f,g,b,y,_,T,E,w,S,P,k,O,R,D,M,C,A,x
+let I=(f=(0,n.inject)("global-services@realtime-events"),g=(0,n.inject)("live@video-replay-api"),b=(0,n.inject)("authentication@authenticated-user"),y=(0,n.inject)("lix"),_=class extends o.default{get isLegacyScheduledLive(){return this.args.isPreLive&&!this.args.isLiveEvent}get isCancelledEvent(){return this.args.isPreLive&&this.args.isLiveEvent&&!this.args.reactionsTopic}get isLiveEventLobby(){return this.args.isPreLive&&this.args.isLiveEvent&&this.args.reactionsTopic}get isRealtime(){return this.isLiveEventLobby||this.args.isLive}get reactionRealtimeOrReplayTopic(){return this.isRealtime?this.args.reactionsTopic:this.args.threadUrn}constructor(){super(...arguments);(0,t.default)(this,"realtimeEvents",T,this);(0,t.default)(this,"replayAPI",E,this);(0,t.default)(this,"authenticatedUser",w,this);(0,t.default)(this,"lix",S,this);(0,t.default)(this,"numReactions",P,this);(0,t.default)(this,"likeNumReactions",k,this);(0,t.default)(this,"maybeNumReactions",O,this);(0,t.default)(this,"praiseNumReactions",R,this);(0,t.default)(this,"interestNumReactions",D,this);(0,t.default)(this,"empathyNumReactions",M,this);(0,t.default)(this,"subscriptionType",C,this);(0,t.default)(this,"incomingReactionsQueue",A,this);(0,t.default)(this,"reactionQueue",x,this)
+if(!this.isLegacyScheduledLive&&!this.isCancelledEvent){this.setUpReactionsQueue()
+this.subscribeForReactions()}}setUpReactionsQueue(){const{isRealtime:e}=this
+this.clearQueues();(0,d.registerDisposable)(this,(()=>{this.reactionQueue.forEach((e=>e.destroy()))}))
+if(this.reactionRealtimeOrReplayTopic){this.reactionsManager&&this.reactionsManager.destroy()
+this.reactionsManager=new u.default({realtimeTopic:this.reactionRealtimeOrReplayTopic,formatFunc:e?e=>e.data.value:void 0,batchFunc:this.isLiveEventLobby?void 0:this._filterByVideoTime.bind(this),rejectFunc:e?(0,p.rejectByMemberId)((0,l.get)(this,"authenticatedUser.memberId")):null,onFlush:this.flushReactions.bind(this),lix:this.lix});(0,d.registerDisposable)(this,(()=>this.reactionsManager.destroy()))}}onMessageHandler(e){var t
+null===(t=this.reactionsManager)||void 0===t||t.eventsMessageHandler(this.reactionRealtimeOrReplayTopic,e,this.isRealtime)}refreshReactionsQueue(){const{isLive:e,isSeeking:t,isPlaying:i,videoAtEnd:r}=this.args,a=i&&!this.subscriptionType,n=this.isLiveEventLobby&&!this.subscriptionType,o=!i&&r,l=!e&&t
+if(a||n){this.reactionsManager||this.setUpReactionsQueue()
+this.subscribeForReactions()}else if(o){this.unsubscribeFromReactions()
+this.clearQueues()
+this.setUpReactionsQueue()}else if(l){this.unsubscribeFromReactions()
+this.reactionsManager.clearQueue()}}subscribeForReactions(){if(this.isRealtime&&this.args.reactionsTopic){this.subscriptionType=h.SUBSCRIPTION_TYPES.LIVE
+this.realtimeEvents.registerEventHandlers({[this.args.reactionsTopic]:this.onMessageHandler})}else{this.subscriptionType=h.SUBSCRIPTION_TYPES.REPLAY
+this.replayAPI.subscribeToReactions(this,this.args.threadUrn,this.args.trimOffsetStart,this.args.trimOffsetEnd)}}unsubscribeFromReactions(){if(this.subscriptionType===h.SUBSCRIPTION_TYPES.LIVE){this.realtimeEvents.removeEventHandlers([this.args.reactionsTopic])
+this.subscriptionType=null}else if(this.subscriptionType===h.SUBSCRIPTION_TYPES.REPLAY){this.replayAPI.unsubscribeToReactions(this,this.args.threadUrn)
+this.subscriptionType=null}}flushReactions(e){const{incomingReactionsQueue:t}=this
+if(!(0,s.isEmpty)(e)){t.addObjects(e)
+t.splice(100)
+if(!this._isPollingAddingReactions){this._isPollingAddingReactions=!0
+this._reactionsPollToken=(0,d.pollTask)(this,"pollForAddingReactions")}}this.args.isLive&&(0,d.throttleTask)(this,"_updateReactors",5e3)}pollForAddingReactions(e){const{incomingReactionsQueue:t}=this,i=t.shift()
+this.addReaction((0,l.get)(i,"reactionType"))
+if(t.length)(0,d.runTask)(this,e,c.REACTION_HOLDOFF_VALUE)
+else{(0,d.cancelPoll)(this,this._reactionsPollToken)
+this._isPollingAddingReactions=!1}}addReaction(e){m.default.create({type:e,reactionQueue:this.reactionQueue}).add()
+this.numReactions++
+this[`${e.toLowerCase()}NumReactions`]++}clearQueues(){this.reactionQueue=[]
+this.incomingReactionsQueue=[]}_updateReactors(){if(!this.isDestroying){var e,t
+null===(e=(t=this.args).updateReactors)||void 0===e||e.call(t)}}_filterByVideoTime(e){var t
+const i=1e3*(null===(t=this.getVideoTime)||void 0===t?void 0:t.call(this))
+return(0,p.filterCommentsByTime)(e,i)}getVideoTime(){var e,t
+return null===(e=(t=this.args).getVideoTime)||void 0===e?void 0:e.call(t)}willDestroy(){super.willDestroy(...arguments);(0,d.runDisposables)(this)}generateReaction(e){this.addReaction(e)}},T=(0,r.default)(_.prototype,"realtimeEvents",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),E=(0,r.default)(_.prototype,"replayAPI",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),w=(0,r.default)(_.prototype,"authenticatedUser",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),S=(0,r.default)(_.prototype,"lix",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),P=(0,r.default)(_.prototype,"numReactions",[v.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),k=(0,r.default)(_.prototype,"likeNumReactions",[v.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),O=(0,r.default)(_.prototype,"maybeNumReactions",[v.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),R=(0,r.default)(_.prototype,"praiseNumReactions",[v.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),D=(0,r.default)(_.prototype,"interestNumReactions",[v.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),M=(0,r.default)(_.prototype,"empathyNumReactions",[v.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),C=(0,r.default)(_.prototype,"subscriptionType",[v.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),A=(0,r.default)(_.prototype,"incomingReactionsQueue",[v.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),x=(0,r.default)(_.prototype,"reactionQueue",[v.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),(0,r.default)(_.prototype,"onMessageHandler",[l.action],Object.getOwnPropertyDescriptor(_.prototype,"onMessageHandler"),_.prototype),(0,r.default)(_.prototype,"refreshReactionsQueue",[l.action],Object.getOwnPropertyDescriptor(_.prototype,"refreshReactionsQueue"),_.prototype),(0,r.default)(_.prototype,"getVideoTime",[l.action],Object.getOwnPropertyDescriptor(_.prototype,"getVideoTime"),_.prototype),(0,r.default)(_.prototype,"generateReaction",[l.action],Object.getOwnPropertyDescriptor(_.prototype,"generateReaction"),_.prototype),_)
+e.default=I}))
+define("live/components/reactions/video-reactions-dance-floor",["exports","@glimmer/component"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+class i extends t.default{willDestroy(){var e
+super.willDestroy(...arguments);(null!==(e=this.args.reactionQueue)&&void 0!==e?e:[]).forEach((e=>{e.destroy()}))}}e.default=i}))
+define("live/components/scheduled-live-poster",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component","@ember/object","@ember/service","live/utils/video-live-utils","ember-m3-pdsc-model-builder","@glimmer/tracking"],(function(e,t,i,r,a,n,o,l,s,d,c){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var u,p,m,h,v,f,g,b,y,_,T,E
+const w="live@components/scheduled-live-poster"
+let S=(u=(0,l.inject)("date"),p=(0,l.inject)("i18n"),m=(0,l.inject)("formatter"),h=(0,l.inject)("global-services@realtime-events"),v=(0,l.inject)("lix"),f=class extends n.default{get shouldRegisterRealtimeEvent(){var e
+return null===(e=this.args.shouldRegisterRealtimeEvent)||void 0===e||e}constructor(){super(...arguments);(0,i.default)(this,"defaultWidth",600);(0,t.default)(this,"date",g,this);(0,t.default)(this,"i18n",b,this);(0,t.default)(this,"formatter",y,this);(0,t.default)(this,"realtimeEvents",_,this);(0,t.default)(this,"lix",T,this);(0,t.default)(this,"scheduledTimeTag",E,this)
+this.liveVideoPostTopicUrn=(0,o.get)(this.args.model,"liveVideoPostTopicUrn")
+this.liveVideoPostTopicUrn&&this.shouldRegisterRealtimeEvent&&this.realtimeEvents.registerEventHandlers({[this.liveVideoPostTopicUrn]:this.realtimeLiveSignalReceived});(0,o.get)(this.args.model,"scheduledTimestamp")?this._handleUnlocalizedScheduledTime():this.scheduledTimeTag=(0,o.get)(this.args.model,"scheduledTimeTag")}willDestroy(){super.willDestroy(...arguments)
+this.liveVideoPostTopicUrn&&this.shouldRegisterRealtimeEvent&&this.realtimeEvents.removeEventHandlers([this.liveVideoPostTopicUrn])}handleUnlocalizedScheduledTime(){(0,o.get)(this.args.model,"scheduledTimestamp")&&this._handleUnlocalizedScheduledTime()}_handleUnlocalizedScheduledTime(){var e,t
+const i=new Date((0,o.get)(this.args.model,"scheduledTimestamp")),r=this._formatScheduledTimeTag(i)
+this.scheduledTimeTag=r
+null===(e=(t=this.args).updateSubtitle)||void 0===e||e.call(t,this._formatSubtitle(i))}_formatScheduledTimeTag(e){let t,i
+if(this.date.now()-e>72e5){const e=this.args.useShortTags?"cancelled_short":"cancelled"
+t=this.i18n.lookupTranslation(w,e)()
+i="IC_ERROR_PEBBLE_16DP"}else if(this.date.now()>=e){t=this.i18n.lookupTranslation(w,"waiting_for_broadcast")()
+i="IC_VIDEO_CAMERA_16DP"}else{t=this.i18n.lookupTranslation(w,"scheduled_time_tag_text")([{day:this._getScheduledDay(e),time:this._getScheduledTime(e)}])
+i="IC_VIDEO_CAMERA_16DP"}return(0,d.buildModel)("com.linkedin.voyager.common.TextViewModel",{textDirection:"USER_LOCALE",attributes:[(0,d.buildModel)("com.linkedin.voyager.common.TextAttribute",{start:0,length:1,artDecoIcon:i,type:"ART_DECO_ICON"})],text:`  ${t}`})}_getScheduledDay(e){const t=new Date(this.date.now())
+return(0,s.isSameDay)(t,e)?this.i18n.lookupTranslation(w,"today")():(0,s.isSameDay)((0,s.getNextDay)(t),e)?this.i18n.lookupTranslation(w,"tomorrow")():this.formatter.formatDate(e,"fmt_d_medium",!0)}_getScheduledTime(e){if(0===e.getMinutes()){if(0===e.getHours())return this.i18n.lookupTranslation(w,"midnight")()
+if(12===e.getHours())return this.i18n.lookupTranslation(w,"noon")()}return this.formatter.formatTime(e,"fmt_hm",!0)}_formatSubtitle(e){const t=this.formatter.formatDate(e,"fmt_md_long",!0),i=this.formatter.formatTime(e,"fmt_hm",!0)
+return this.i18n.lookupTranslation(w,"subtitle")([{date:t,time:i}])}realtimeLiveSignalReceived(e){var t,i
+let r=e
+this.lix.getTreatmentIsEnabled("voyager.web.messaging-use-full-realtime-payload")&&(r=e.payload)
+null===(t=(i=this.args).handleLiveRealtimeSignal)||void 0===t||t.call(i,r)}},g=(0,r.default)(f.prototype,"date",[u],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),b=(0,r.default)(f.prototype,"i18n",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),y=(0,r.default)(f.prototype,"formatter",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),_=(0,r.default)(f.prototype,"realtimeEvents",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),T=(0,r.default)(f.prototype,"lix",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),E=(0,r.default)(f.prototype,"scheduledTimeTag",[c.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),(0,r.default)(f.prototype,"handleUnlocalizedScheduledTime",[o.action],Object.getOwnPropertyDescriptor(f.prototype,"handleUnlocalizedScheduledTime"),f.prototype),(0,r.default)(f.prototype,"realtimeLiveSignalReceived",[o.action],Object.getOwnPropertyDescriptor(f.prototype,"realtimeLiveSignalReceived"),f.prototype),f)
+e.default=S}))
+define("live/components/scheduled-live-reminder-button",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@glimmer/component","@ember/object","@ember/service","restli-utils","live/utils/requests/scheduled-live-subscription-action","tracked-toolbox"],(function(e,t,i,r,a,n,o,l,s,d,c){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var u,p,m,h,v,f,g,b,y,_,T
+const E="default",w="muted",S="inverse"
+let P=(u=(0,l.inject)("feed-tracking@feed-action-event"),p=(0,l.inject)("i18n"),m=(0,l.inject)("persistent-toast-manager@persistent-toast-manager"),h=(0,l.inject)("store"),v=(0,c.localCopy)("args.reminded"),f=class extends n.default{constructor(){super(...arguments);(0,t.default)(this,"feedActionEvent",g,this);(0,t.default)(this,"i18n",b,this);(0,t.default)(this,"persistentToastManager",y,this);(0,t.default)(this,"store",_,this);(0,t.default)(this,"reminded",T,this)}get colorValue(){return this.args.inverseColor?S:this.reminded?w:E}get pressedInverseColor(){return this.reminded&&this.args.inverseColor}_showSuccessToast(e){const t=e?"reminder_subscribe_success":"reminder_unsubscribe_success",i=this.i18n.lookupTranslation("live@components/scheduled-live-reminder-button",t)()
+this.persistentToastManager.success({message:i})}_showNotificationsDisabledToast(){const e=this.i18n.lookupTranslation("live@components/scheduled-live-reminder-button","notifications_disabled_error")(),t=this.i18n.lookupTranslation("live@components/scheduled-live-reminder-button","view_settings")()
+this.persistentToastManager.notice({message:e,ctaText:t,ctaUrl:"/psettings/communications-controls/inapp"})}_showErrorToast(){const e=this.i18n.lookupTranslation("live@components/scheduled-live-reminder-button","reminder_generic_error")()
+this.persistentToastManager.error({message:e})}toggleReminded(){const e=!this.reminded;(0,o.set)(this,"reminded",e)
+const t=e?"FOLLOW":"UNFOLLOW",i=e?"followLiveVideo":"unFollowLiveVideo"
+this.feedActionEvent.fireFAE(this.args.updateMetadata,{controlName:"remindme",actionType:i,actionCategory:t})
+this.store.adapterFor("-ember-m3").ajax(...(0,d.default)(e,(0,o.get)(this,"args.updateMetadata.shareUrn"))).then((()=>{this._showSuccessToast(e)})).catch((t=>{(0,o.set)(this,"reminded",!e)
+if(!(0,o.get)(t,"isAdapterError")||Number((0,o.get)(t,"errors.firstObject.status"))!==s.httpStatus.S_412_PRECONDITION_FAILED){this._showErrorToast()
+throw t}this._showNotificationsDisabledToast()}))}},g=(0,r.default)(f.prototype,"feedActionEvent",[u],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),b=(0,r.default)(f.prototype,"i18n",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),y=(0,r.default)(f.prototype,"persistentToastManager",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),_=(0,r.default)(f.prototype,"store",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),T=(0,r.default)(f.prototype,"reminded",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),(0,r.default)(f.prototype,"toggleReminded",[o.action],Object.getOwnPropertyDescriptor(f.prototype,"toggleReminded"),f.prototype),f)
+e.default=P}))
+define("live/components/video-live-bug-v2",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@ember/service","@glimmer/component","live/utils/live-video-helpers"],(function(e,t,i,r,a,n,o,l){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var s,d,c
+let u=(s=(0,n.inject)("date"),d=class extends o.default{constructor(){super(...arguments);(0,t.default)(this,"date",c,this)}get showPreviouslyRecorded(){return void 0===this.args.showPreviouslyRecorded||this.args.showPreviouslyRecorded}get showCVC(){return this.args.isLive||this.args.showCVCForPreLive}get viewerCountToShow(){const e=this.date.now(),t=this.args.streamCreationDate
+return 1<this.args.viewerCount&&(t&&!(0,l.isStreamStale)(t,e)||this.args.showCVCForPreLive)?this.args.viewerCount:0}},c=(0,r.default)(d.prototype,"date",[s],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),d)
+e.default=u}))
+define("live/components/video-live-feed-v2",["exports","@babel/runtime/helpers/esm/defineProperty","@glimmer/component","@ember/object","ember-lifeline","live/utils/video-live-utils"],(function(e,t,i,r,a,n){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+class o extends i.default{constructor(){super(...arguments);(0,t.default)(this,"aspectRatio","1:1")}get isAutoPlayEnabled(){var e
+return null===(e=this.args.isAutoPlayEnabled)||void 0===e||e}get updateContent(){return(0,r.get)(this.args,"update.content")}get videoPlayMetadata(){const e=(0,r.get)(this,"updateContent.videoPlayMetadata")
+return(0,n.setupVideoMetadata)(e)}init(){super.init(...arguments);(0,r.setProperties)(this,{liveVideoOverrideOptions:{aspectRatio:"1:1"}})}willDestroy(){super.willDestroy(...arguments);(0,a.runDisposables)(this)}}e.default=o}))
+define("live/components/video-live",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@ember/service","@glimmer/component","@glimmer/tracking","@ember/object","live/utils/video-live-utils","ember-lifeline","global-utils/utils/is-browser"],(function(e,t,i,r,a,n,o,l,s,d,c,u){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var p,m,h,v,f,g,b,y,_,T,E,w,S,P,k,O
+let R=(p=(0,n.inject)("lix"),m=(0,n.inject)("global-services@window"),h=(0,n.inject)("router"),v=(0,n.inject)("global-services@realtime-events"),f=(0,n.inject)("authentication@authenticated-user"),g=class extends o.default{get updateContent(){return(0,s.get)(this.args,"update.content")}get isGuest(){return(0,s.get)(this,"authenticatedUser.isGuestUser")}get isLive(){return this.hasNotEnded&&(0,s.get)(this,"updateContent.shouldDisplayLiveIndicator")}get concurrentViewerCountTopic(){return(0,s.get)(this,"updateContent.concurrentViewerCountTopic")||(0,s.get)(this,"updateContent.concurrentViewerCountTopicUrn")}get controls(){var e
+return null===(e=this.args.showControls)||void 0===e||e}get viewerTrackingTopic(){return(0,s.get)(this,"updateContent.viewerTrackingTopic")||(0,s.get)(this,"updateContent.viewerTrackingTopicUrn")}get isAuthor(){const e=(0,s.get)(this,"updateMetadata.actions")
+return e&&e.isAny("actionType","DELETE")}get updateMetadata(){return(0,s.get)(this.args,"update.updateMetadata")}get videoPlayMetadata(){const e=(0,s.get)(this,"updateContent.videoPlayMetadata")
+return(0,d.setupVideoMetadata)(e)}constructor(){super(...arguments);(0,t.default)(this,"hasNotEnded",b,this);(0,t.default)(this,"viewerCount",y,this);(0,t.default)(this,"cvcSubscribed",_,this);(0,t.default)(this,"viewerTrackingSubscribed",T,this);(0,t.default)(this,"activeSubscribers",E,this);(0,t.default)(this,"lix",w,this);(0,t.default)(this,"windowService",S,this);(0,t.default)(this,"router",P,this);(0,t.default)(this,"realtimeEvents",k,this);(0,t.default)(this,"authenticatedUser",O,this)
+this._setupRealtimeData()
+this.useOctanedLiveVideoLoader=this.lix.getTreatmentIsEnabled("voyager.web.video-live-loader-octaned")}subToViewerTopicWithWait(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:3e3
+if(this.canSubscribeToLive("viewerTrackingSubscribed")){0
+this.viewerTopicTask=(0,c.runTask)(this,this.subToViewerTopic,e)}}subToViewerTopic(){if(this.canSubscribeToLive("viewerTrackingSubscribed")){this.cancelViewerTopicTask()
+this.viewerTrackingSubscribed=this._subscribeTo("viewerTrackingTopic")
+this.viewerTopicTask=null}}unsubToViewerTopic(){this.cancelViewerTopicTask()
+this.viewerTrackingSubscribed&&this._unsubscribeTo("viewerTrackingTopic")&&(this.viewerTrackingSubscribed=!1)}cancelViewerTopicTask(){this.viewerTopicTask&&(0,c.cancelTask)(this,this.viewerTopicTask)}subConcurrentViewCount(){this.canSubscribeToLive("cvcSubscribed")&&(this.cvcSubscribed=this._subscribeTo("concurrentViewerCountTopic"))}unsubToConcurrentViewerTopic(){this.cvcSubscribed&&this._unsubscribeTo("concurrentViewerCountTopic")&&(this.cvcSubscribed=!1)}canSubscribeToLive(e){return!this.isGuest&&(this.isLive||this.args.preLiveLobbyViewer)&&!(0,s.get)(this,e)}refreshAndSubscribe(){this.activeSubscribers.forEach((e=>{let{topic:t,topicName:i}=e
+this.realtimeEvents.removeEventHandlers([t])
+const r=(0,s.get)(this,i)
+this.realtimeEvents.registerEventHandlers({[r]:this.updateViewerCount})}))}topicsHaveChanged(){return this.activeSubscribers.filter((e=>{let{topic:t}=e
+return[this.concurrentViewerCountTopic,this.viewerTrackingTopic].includes(t)})).length!==this.activeSubscribers.length}willDestroy(){super.willDestroy(...arguments)
+this._destroyRealtimeData();(0,c.runDisposables)(this)}_setupRealtimeData(){this.activeSubscribers=[]
+this.subConcurrentViewCount()
+this.args.preLiveLobbyViewer&&this.subToViewerTopicWithWait()}_destroyRealtimeData(){this.activeSubscribers.forEach((e=>{let{topicName:t}=e
+this._unsubscribeTo(t)}))
+this.cancelViewerTopicTask()
+this.activeSubscribers=null}_subscribeTo(e){const t=(0,s.get)(this,e)
+if(!t)return!1
+this.realtimeEvents.registerEventHandlers({[t]:this.updateViewerCount})
+this.activeSubscribers.pushObject({topicName:e,topic:t})
+return!0}_unsubscribeTo(e){const t=(0,s.get)(this,e)
+if(!t)return!1
+this.activeSubscribers=this.activeSubscribers.filter((i=>{i.topicName===e&&i.topic===t&&this.realtimeEvents.removeEventHandlers([t])
+return i.topic!==t&&i.topicName!==e}))
+return!0}updateViewerCount(e){var t,i
+let{count:r}=e
+this.lix.getTreatmentIsEnabled("voyager.web.messaging-use-full-realtime-payload")&&(r=e.payload.count)
+this.viewerCount=r
+null===(t=(i=this.args).onUpdateViewerCount)||void 0===t||t.call(i,r)
+if(this.args.preLiveLobbyViewer){var a,n
+null===(a=(n=this.args).updateViewerCount)||void 0===a||a.call(n,r)}}onUpdate(){this.topicsHaveChanged()&&this.refreshAndSubscribe()}closeLiveVideo(){const e=this.windowService.getHistory()
+u.default&&e.length?e.back():this.router.transitionTo("feed")}handlePlayerPlay(){var e,t
+this.subToViewerTopicWithWait()
+null===(e=(t=this.args).onPlayerPlay)||void 0===e||e.call(t)}handlePlayerError(){var e
+null===(e=this.onPlayerError)||void 0===e||e.call(this)}handlePlayerEnd(){var e,t
+this.hasNotEnded=!1
+this.unsubToViewerTopic()
+this.unsubToConcurrentViewerTopic()
+null===(e=(t=this.args).onPlayerEnd)||void 0===e||e.call(t,{mediaApi:this.mediaApi})}handlePlayerPause(){var e,t
+this.cancelViewerTopicTask()
+this.unsubToViewerTopic()
+null===(e=(t=this.args).onPlayerPause)||void 0===e||e.call(t,{mediaApi:this.mediaApi})}handlePlayerReady(e){var t,i
+let{mediaApi:r}=e
+this.mediaApi=r
+null===(t=(i=this.args).onPlayerReady)||void 0===t||t.call(i,{mediaApi:r})}handlePlayerSeeking(){var e,t
+null===(e=(t=this.args).onPlayerSeeking)||void 0===e||e.call(t,{mediaApi:this.mediaApi})}handlePlayerSeek(){var e,t
+null===(e=(t=this.args).onPlayerSeek)||void 0===e||e.call(t,{mediaApi:this.mediaApi})}handlePlayerLoadeddata(){var e,t
+null===(e=(t=this.args).onPlayerLoadeddata)||void 0===e||e.call(t,{mediaApi:this.mediaApi})}handlePlayerTimeupdate(){var e,t
+null===(e=(t=this.args).onPlayerTimeupdate)||void 0===e||e.call(t,{mediaApi:this.mediaApi})}},b=(0,r.default)(g.prototype,"hasNotEnded",[l.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),y=(0,r.default)(g.prototype,"viewerCount",[l.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),_=(0,r.default)(g.prototype,"cvcSubscribed",[l.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),T=(0,r.default)(g.prototype,"viewerTrackingSubscribed",[l.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),E=(0,r.default)(g.prototype,"activeSubscribers",[l.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),w=(0,r.default)(g.prototype,"lix",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),S=(0,r.default)(g.prototype,"windowService",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),P=(0,r.default)(g.prototype,"router",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),k=(0,r.default)(g.prototype,"realtimeEvents",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),O=(0,r.default)(g.prototype,"authenticatedUser",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),(0,r.default)(g.prototype,"updateViewerCount",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"updateViewerCount"),g.prototype),(0,r.default)(g.prototype,"onUpdate",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"onUpdate"),g.prototype),(0,r.default)(g.prototype,"closeLiveVideo",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"closeLiveVideo"),g.prototype),(0,r.default)(g.prototype,"handlePlayerPlay",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"handlePlayerPlay"),g.prototype),(0,r.default)(g.prototype,"handlePlayerError",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"handlePlayerError"),g.prototype),(0,r.default)(g.prototype,"handlePlayerEnd",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"handlePlayerEnd"),g.prototype),(0,r.default)(g.prototype,"handlePlayerPause",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"handlePlayerPause"),g.prototype),(0,r.default)(g.prototype,"handlePlayerReady",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"handlePlayerReady"),g.prototype),(0,r.default)(g.prototype,"handlePlayerSeeking",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"handlePlayerSeeking"),g.prototype),(0,r.default)(g.prototype,"handlePlayerSeek",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"handlePlayerSeek"),g.prototype),(0,r.default)(g.prototype,"handlePlayerLoadeddata",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"handlePlayerLoadeddata"),g.prototype),(0,r.default)(g.prototype,"handlePlayerTimeupdate",[s.action],Object.getOwnPropertyDescriptor(g.prototype,"handlePlayerTimeupdate"),g.prototype),g)
+e.default=R}))
+define("live/modifiers/focus-on-mouseup",["exports","ember-modifier"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.modifier)((e=>{const t=()=>e.focus()
+e.addEventListener("mouseup",t)
+return()=>{e.removeEventListener("mouseup",t)}}))
+e.default=i}))
+define("live/modifiers/sync-height",["exports","ember-modifier","ember-batcher"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var r=(0,t.modifier)(((e,t)=>{let[r]=t
+const a=document.querySelector(r)
+a&&(0,i.readDOM)((()=>{const{height:t}=window.getComputedStyle(a);(0,i.mutateDOM)((()=>{e.style.minHeight=t
+e.style.maxHeight=t}))}))}))
+e.default=r}))
+define("live/services/live-video-header-realtime",["exports","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@ember/debug","@ember/object","@ember/service","@glimmer/tracking","ember-lifeline","live/utils/video-live-utils"],(function(e,t,i,r,a,n,o,l,s,d,c){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var u,p,m,h,v,f,g,b,y
+let _=(u=(0,l.inject)("global-services@realtime-events"),p=(0,l.inject)("store"),m=(0,l.inject)("router"),h=class extends l.default{constructor(){super(...arguments);(0,t.default)(this,"realtimeAPI",v,this);(0,t.default)(this,"store",f,this);(0,t.default)(this,"router",g,this);(0,t.default)(this,"liveVideoHeader",b,this);(0,t.default)(this,"cvc",y,this);(0,i.default)(this,"_isSetup",!1);(0,i.default)(this,"_urns",void 0);(0,i.default)(this,"_vanityOrUniversalName",void 0)}get activeSubscriptions(){var e
+return null!==(e=this._urns)&&void 0!==e?e:[]}willDestroy(){super.willDestroy(...arguments)
+this.clearOldData();(0,d.runDisposables)(this)}setupProfile(e){if(!this._isSetup){this._vanityOrUniversalName=e
+this._updateProfileSubscriptions()
+this.router.on("routeDidChange",(e=>{if((0,c.isTransitionToNewProfile)(e,this._vanityOrUniversalName)){var t,i
+this._vanityOrUniversalName=null===(t=e.to)||void 0===t||null===(i=t.attributes)||void 0===i?void 0:i.vanityName
+this._updateProfileSubscriptions()}}))
+this._isSetup=!0}}setupCompany(e){if(!this._isSetup&&e){this._vanityOrUniversalName=e
+this._updateCompanySubscriptions()
+this.router.on("routeDidChange",(e=>{if((0,c.isTransitionToNewCompanyPage)(e,this._vanityOrUniversalName)){this._vanityOrUniversalName=(0,o.get)(e,"to.attributes.organization.universalName")
+this._updateCompanySubscriptions()}}))}}clearOldData(){this.liveVideoHeader=null
+this.cvc=null
+this._cancelViewerTopicTask()
+this._hasSubscriptions()&&this.realtimeAPI.removeEventHandlers(this._urns)
+this._urns=null}_subscribeToLiveVideo(e,t){this.realtimeAPI.registerEventHandlers({[e]:e=>{this.liveVideoHeader=(0,c.handleRealtimeLiveHeaderPayload)(t,e)
+const{concurrentViewerCountTopicUrn:i,viewerTrackingTopicUrn:r}=(0,o.getProperties)(this.liveVideoHeader,"concurrentViewerCountTopicUrn","viewerTrackingTopicUrn")
+i&&this._cvcSubscribe(i)
+r&&this._viewerTrackingSubscribeWithWait(r)}})}_handleLiveHeaderPayload(e,t,i){const r=(0,c.extractLiveVideo)(e,t,i)
+if(!r)return
+const a=(0,o.get)(r,"topCardLiveVideoTopicUrn");(0,o.get)(r,"videoPlayMetadata")&&(this.liveVideoHeader=r)
+this._subscribeToLiveVideo(a,t)
+const{concurrentViewerCountTopicUrn:n,viewerTrackingTopicUrn:l}=(0,o.getProperties)(r,"concurrentViewerCountTopicUrn","viewerTrackingTopicUrn")
+this._urns=[a]
+n&&this._cvcSubscribe(n)
+l&&this._viewerTrackingSubscribeWithWait(l)}_updateCompanySubscriptions(){this.clearOldData()
+const{store:e}=this
+e.queryURL("voyagerOrganizationDashCompanies",{params:{q:"universalName",universalName:this._vanityOrUniversalName,recipe:"com.linkedin.voyager.dash.deco.organization.CompanyTopCardLiveVideo"}}).then((t=>this._handleLiveHeaderPayload(t,e,!0)))}_updateProfileSubscriptions(){this.clearOldData()
+const{store:e}=this
+e.queryURL("voyagerIdentityDashProfiles",{params:{q:"memberIdentity",memberIdentity:this._vanityOrUniversalName,recipe:"com.linkedin.voyager.dash.deco.identity.profile.ProfileWithTopCardLiveVideo"}}).then((t=>this._handleLiveHeaderPayload(t,e,!1)))}_hasSubscriptions(){return this._urns&&Array.isArray(this._urns)&&this._urns.length>0}_cvcSubscribe(e){this._cvcUnsubscribe()
+this._urns.push(e)
+this.realtimeAPI.registerEventHandlers({[e]:e=>{this.cvc=(0,o.get)(e,"count")}})}_viewerTrackingSubscribe(e){this._cancelViewerTopicTask()
+this._viewerTrackingSubscribeTask=null
+this._viewerTrackingUnsubscribe()
+this._urns.push(e)
+this.realtimeAPI.registerEventHandlers({[e]:()=>{}})}_viewerTrackingSubscribeWithWait(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:3e3
+0
+this._cancelViewerTopicTask()
+this._viewerTrackingSubscribeTask=(0,d.runTask)(this,this._viewerTrackingSubscribe.bind(this,e),t)}_cancelViewerTopicTask(){this._viewerTrackingSubscribeTask&&(0,d.cancelTask)(this,this._viewerTrackingSubscribeTask)}_cvcUnsubscribe(){if(!this._hasSubscriptions())return
+const e=this._urns.filter(c.isCvcUrn)
+e.length>0&&this.realtimeAPI.removeEventHandlers(e)
+this._urns=this._urns.filter((e=>!(0,c.isCvcUrn)(e)))}_viewerTrackingUnsubscribe(){if(!this._hasSubscriptions())return
+const e=this._urns.filter(c.isViewerTrackingTopicUrn)
+e.length>0&&this.realtimeAPI.removeEventHandlers(e)
+this._urns=this._urns.filter((e=>!(0,c.isViewerTrackingTopicUrn)(e)))}},v=(0,r.default)(h.prototype,"realtimeAPI",[u],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),f=(0,r.default)(h.prototype,"store",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),g=(0,r.default)(h.prototype,"router",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),b=(0,r.default)(h.prototype,"liveVideoHeader",[s.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),y=(0,r.default)(h.prototype,"cvc",[s.tracked],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),h)
+e.default=_}))
+define("live/services/video-replay-api",["exports","@babel/runtime/helpers/esm/objectSpread2","@babel/runtime/helpers/esm/initializerDefineProperty","@babel/runtime/helpers/esm/defineProperty","@babel/runtime/helpers/esm/applyDecoratedDescriptor","@babel/runtime/helpers/esm/initializerWarningHelper","@ember/object","@ember/service","ember-lifeline","live/utils/video-live-utils","live/utils/live-constants"],(function(e,t,i,r,a,n,o,l,s,d,c){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var u,p,m
+let h=(u=(0,l.inject)("store"),p=class extends l.default{constructor(){super(...arguments);(0,i.default)(this,"store",m,this)}init(){super.init(...arguments)
+this._reset()}willDestroy(){super.willDestroy(...arguments);(0,s.runDisposables)(this)}subscribeToReactions(e,t,i,r){(0,o.setProperties)(this,{reactionsSubscriber:e,threadUrn:t,trimOffsetStart:i,trimOffsetEnd:r})
+this._pollTokenReactions||(this._pollTokenReactions=(0,s.pollTask)(this,"updateVideoTimeReactions",(0,d.subscriptionGuid)(e,t)))}subscribeToComments(e,t,i,r){(0,o.setProperties)(this,{commentsSubscriber:e,threadUrn:t,trimOffsetStart:i,trimOffsetEnd:r})
+this._pollTokenComments||(this._pollTokenComments=(0,s.pollTask)(this,"updateVideoTimeComments",(0,d.subscriptionGuid)(e,t)))}unsubscribeToComments(e,t){(0,s.cancelPoll)(this,(0,d.subscriptionGuid)(e,t))
+this._pollTokenComments=null;(0,s.cancelTask)(this,this.updateVideoTimeTaskComments);(0,o.setProperties)(this,{nextCommentsStartOffset:0,originalCommentsStartOffset:0})}unsubscribeToReactions(e,t){(0,s.cancelPoll)(this,(0,d.subscriptionGuid)(e,t))
+this._pollTokenReactions=null;(0,s.cancelTask)(this,this.updateVideoTimeTaskReactions);(0,o.setProperties)(this,{nextReactionsStartOffset:0,originalReactionsStartOffset:0})}updateOffSetTime(e){(0,o.setProperties)(this,{nextCommentsStartOffset:e,originalCommentsStartOffset:e,nextReactionsStartOffset:e,originalReactionsStartOffset:e})}fetchSeedComments(e,t,i){(0,o.setProperties)(this,{commentsSubscriber:e,threadUrn:t})
+0!==i&&this._fetchComments({startOffset:Math.floor(i),threadUrn:t,searchForward:!1}).then((e=>{this.isDestroying||this._sendRealtimeEvents(this.commentsSubscriber,t,e)}))}updateVideoTimeComments(e){const t=this._getCurrentVideoTimeMS(this.commentsSubscriber)
+if(this.commentsSubscriber&&t>=(this.nextCommentsStartOffset-this.originalCommentsStartOffset)/2+this.originalCommentsStartOffset){(0,o.set)(this,"originalCommentsStartOffset",this.nextCommentsStartOffset)
+this._fetchComments().then((e=>{this.isDestroying||this._handleCommentsData(e)}))}this.updateVideoTimeTaskComments=(0,s.runTask)(this,e,1e3)}updateVideoTimeReactions(e){const t=this._getCurrentVideoTimeMS(this.reactionsSubscriber)
+if(this.reactionsSubscriber&&t>=(this.nextReactionsStartOffset-this.originalReactionsStartOffset)/2+this.originalReactionsStartOffset){(0,o.set)(this,"originalReactionsStartOffset",this.nextReactionsStartOffset)
+this._fetchReactions().then((e=>{this.isDestroying||this._handleReactionsData(e)}))}this.updateVideoTimeTaskReactions=(0,s.runTask)(this,e,1e3)}_reset(){this.isDestroying||(0,o.setProperties)(this,{nextCommentsStartOffset:0,originalCommentsStartOffset:0,nextReactionsStartOffset:0,originalReactionsStartOffset:0})}_getCurrentVideoTimeMS(e){var t
+return 1e3*(null===(t=e.getVideoTime)||void 0===t?void 0:t.call(e))||0}_fetchComments(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{}
+const i=Math.max(1,Math.floor(this.originalCommentsStartOffset)),r={degradations:[c.DEGRADATION_TRACKING_METADATA.REPLAY_COMMENTS],degradedEntityIDsToRemove:[this.threadUrn]},a=(0,t.default)({startOffset:i,threadUrn:this.threadUrn,trimOffsetStart:this.trimOffsetStart,trimOffsetEnd:this.trimOffsetEnd,q:"offsetTime",start:0,count:10},e)
+return this.store.queryURL("feed/comments",{adapterOptions:r,params:a})}_fetchReactions(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{}
+const i=Math.max(1,Math.floor(this.originalReactionsStartOffset)),r={degradations:[c.DEGRADATION_TRACKING_METADATA.REPLAY_REACTIONS],degradedEntityIDsToRemove:[this.threadUrn]},a=(0,t.default)({startOffset:i,threadUrn:this.threadUrn,trimOffsetStart:this.trimOffsetStart,trimOffsetEnd:this.trimOffsetEnd,q:"offsetTime",start:0,count:10},e)
+return this.store.queryURL("feed/reactions",{adapterOptions:r,params:a})}_handleCommentsData(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:1
+this._sendRealtimeEvents(this.commentsSubscriber,this.threadUrn,e);(0,o.set)(this,"nextCommentsStartOffset",(0,o.get)(e,"metadata.nextStartOffset"))
+const i=(0,o.get)(e,"paging.total")
+if(i>=10&&t<10){const r=(0,o.get)(e,"paging.start")
+this._fetchComments({start:r+i}).then((e=>{this.isDestroying||this._handleCommentsData(e,t+1)}))}}_handleReactionsData(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:1
+this._sendRealtimeEvents(this.reactionsSubscriber,this.threadUrn,e);(0,o.set)(this,"nextReactionsStartOffset",(0,o.get)(e,"metadata.nextStartOffset"))
+const i=(0,o.get)(e,"paging.total")
+if(i>=10&&t<10){const r=(0,o.get)(e,"paging.start")
+this._fetchReactions({start:r+i}).then((e=>{this.isDestroying||this._handleReactionsData(e,t+1)}))}}_sendRealtimeEvents(e,t,i){(0,o.get)(i,"elements").toArray().forEach((t=>{var i
+return null===(i=e.onMessageHandler)||void 0===i?void 0:i.call(e,t)}))}},m=(0,a.default)(p.prototype,"store",[u],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),p)
+e.default=h}))
+define("live/templates/components/live-event-viewer-state-button",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"n7Bv7EeM",block:'[[[41,[51,[30,0,["isViewerEvicted"]]],[[[1,"  "],[8,[39,1],[[16,"aria-pressed",[30,0,["pressed"]]]],[["@text","@icon","@type","@color","@size","@click","@data-control-name","@disabled"],[[30,0,["text"]],[52,[30,0,["pressed"]],"check-icon","null"],"secondary",[52,[30,0,["pressed"]],"muted","default"],2,[30,0,["toggleViewerStatus"]],[52,[30,0,["pressed"]],"native_event_share_card_leave","native_event_share_card_join"],[30,1]]],null],[1,"\\n\\n  "],[8,[39,3],null,[["@isModalOpen","@eventIdOrVanityName","@closeModal"],[[30,0,["isPostAttendModalOpen"]],[30,0,["eventId"]],[28,[37,4],[[30,0],"isPostAttendModalOpen",false],null]]],null],[1,"\\n"]],[]],null]],["@disabled"],false,["unless","artdeco-button@artdeco-button","if","events-shared-v2@post-attend-modal","ember-set-helper@set"]]',moduleName:"live/templates/components/live-event-viewer-state-button.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/live-video-edit",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"Zgkusl/f",block:'[[[41,[30,1,["content","videoPlayMetadata","adaptiveStreams","length"]],[[[1,"  "],[8,[39,1],[[24,0,"live-video-edit--button"],[16,"aria-label",[28,[37,2],["i18n_edit_video_button_text","live/templates/components/live-video-edit"],null]],[24,"data-control-name","video_setting_open"]],[["@size","@icon","@color","@click","@text"],[1,"pencil-icon","muted",[30,0,["openModal"]],[28,[37,2],["i18n_edit_video_button_text","live/templates/components/live-video-edit"],null]]],null],[1,"\\n"],[41,[30,0,["isOpen"]],[[[1,"    "],[8,[39,3],null,[["@dismissModal","@size","@modalClasses","@isOpen"],[[30,0,["closeModal"]],"large","live-video-edit__modal",[30,0,["isOpen"]]]],[["default"],[[[[1,"\\n      "],[8,[30,2,["artdeco-modal-header"]],null,null,[["default"],[[[[1,"\\n        "],[10,"h2"],[14,1,"header"],[12],[1,[28,[35,2],["i18n_edit_your_video","live/templates/components/live-video-edit"],null]],[13],[1,"\\n      "]],[]]]]],[1,"\\n      "],[8,[30,2,["artdeco-modal-content"]],null,null,[["default"],[[[[1,"\\n"],[41,[51,[30,3]],[[[1,"          "],[8,[39,5],null,[["@videoPlayMetadata","@startTrim","@endTrim","@actor","@updateLiveStream"],[[30,1,["content","videoPlayMetadata"]],[30,1,["content","trimOffsetStart"]],[30,1,["content","trimOffsetEnd"]],[30,1,["actor"]],[30,4]]],null],[1,"\\n"]],[]],null],[1,"        "],[8,[39,6],null,[["@autoTranscriptEnabled","@autoTranscriptToggleable","@assetUrn","@updateVideo"],[[30,1,["content","autoTranscriptEnabled"]],[30,1,["content","autoTranscriptToggleable"]],[30,1,["content","videoPlayMetadata","entityUrn"]],[30,4]]],null],[1,"\\n      "]],[]]]]],[1,"\\n      "],[8,[30,2,["artdeco-modal-footer"]],null,null,[["default"],[[[[1,"\\n        "],[10,1],[14,0,"live-video-edit__footer"],[12],[1,"\\n          "],[8,[39,1],null,[["@class","@text","@click"],["mr1",[28,[37,2],["i18n_done","live/templates/components/live-video-edit"],null],[30,0,["saveSettings"]]]],null],[1,"\\n        "],[13],[1,"\\n      "]],[]]]]],[1,"\\n    "]],[2]]]]],[1,"\\n"]],[]],null]],[]],null]],["@update","modal","@isLive","@updateLiveStream"],false,["if","artdeco-button@artdeco-button","t","artdeco-modal@artdeco-modal","unless","live@live-video-trimmer","video@video-autocaptions-setting"]]',moduleName:"live/templates/components/live-video-edit.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/live-video-header",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"9/BWnjNL",block:'[[[11,0],[24,0,"video-live-header"],[17,1],[12],[1,"\\n  "],[8,[39,0],[[24,0,"video-live-header__overlay-link"],[4,[38,2],["entity_page_top_card_live_video_view"],null]],[["@route","@model","@query"],["video-engine.live",[30,0,["activityUrn"]],[28,[37,1],null,[["isInternal","actorCompanyId"],[true,[30,2]]]]]],[["default"],[[[[1,"\\n    "],[10,0],[14,0,"video-live-header__link-text t-sans t-16 t-white t-bold pv1 ph2 mb1"],[12],[1,"\\n      "],[1,[28,[35,3],["join_live","live/templates/components/live-video-header"],null]],[1,"\\n    "],[13],[1,"\\n  "]],[]]]]],[1,"\\n  "],[10,0],[14,0,"video-live-header__label"],[12],[1,"\\n    "],[8,[39,4],null,[["@isLive","@streamCreationDate","@viewerCount"],[true,[30,3,["videoPlayMetadata","liveStreamCreatedAt"]],[30,4]]],null],[1,"\\n  "],[13],[1,"\\n"],[41,[30,0,["useOctanedLiveVideoLoader"]],[[[1,"    "],[8,[39,6],[[24,0,"video-live-header__video-live"]],[["@adaptiveStreams","@isAutoPlayEnabled","@isInternal","@muted","@preload","@aspectRatio","@useAdaptiveStreams","@videoPlayMetadata","@onPlayerEnd","@trackingEventMeta"],[[30,3,["videoPlayMetadata","adaptiveStreams"]],true,false,true,"metadata","auto",true,[30,3,["videoPlayMetadata"]],[30,5],[28,[37,1],null,[["requestHeader"],[[28,[37,1],null,[["pageKey"],["flagship3_company_live_header"]]]]]]]],null],[1,"\\n"]],[]],[[[1,"    "],[8,[39,7],[[24,0,"video-live-header__video-live"]],[["@adaptiveStreams","@isAutoPlayEnabled","@isInternal","@muted","@preload","@aspectRatio","@useAdaptiveStreams","@videoPlayMetadata","@onPlayerEnd","@trackingEventMeta"],[[30,3,["videoPlayMetadata","adaptiveStreams"]],true,false,true,"metadata","auto",true,[30,3,["videoPlayMetadata"]],[30,5],[28,[37,1],null,[["requestHeader"],[[28,[37,1],null,[["pageKey"],["flagship3_company_live_header"]]]]]]]],null],[1,"\\n"]],[]]],[13]],["&attrs","@actorAdminCompanyId","@liveVideoHeader","@viewerCount","@clearLiveVideoHeader"],false,["ember-engines@link-to-external","hash","ember-cli-pemberly-tracking@track-interaction","t","live@video-live-bug-v2","if","live@octaned-live-video-loader","live@live-video-loader"]]',moduleName:"live/templates/components/live-video-header.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/live-video-hero-image",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"0SexWf/N",block:'[[[11,0],[16,0,[29,["live-video-hero-image\\n    ",[52,[30,1]," live-video-hero-image--expanded"]]]],[4,[38,1],[[30,2]],null],[12],[1,"\\n  "],[10,0],[14,0,"live-video-hero-image__bg-image"],[12],[1,"\\n    "],[18,3,[[28,[37,3],null,[["default"],[[50,"dummy-yield-wrapper@dummy-yield-wrapper",0,null,null]]]]]],[1,"\\n  "],[13],[1,"\\n  "],[10,0],[14,0,"live-video-hero-image__live-video"],[12],[1,"\\n"],[41,[30,1],[[[1,"      "],[18,3,[[28,[37,3],null,[["liveVideoHeader"],[[50,"dummy-yield-wrapper@dummy-yield-wrapper",0,null,null]]]]]],[1,"\\n"]],[]],null],[1,"  "],[13],[1,"\\n"],[13]],["@isLiveVideoHeader","@bgImageSelector","&default"],false,["if","live@sync-height","yield","hash","component"]]',moduleName:"live/templates/components/live-video-hero-image.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/live-video-trimmer",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"msWC8E8k",block:'[[[10,0],[14,0,"live-video-trimmer"],[12],[1,"\\n  "],[10,0],[15,0,[29,["relative full-width v-align-middle\\n      ",[52,[30,0,["showLoadingScreen"]],"live-video-trimmer__is-trimming"]]]],[12],[1,"\\n"],[41,[30,0,["showLoadingScreen"]],[[[1,"      "],[10,"section"],[14,0,"live-video-trimmer__overlay absolute full-width full-height text-align-center v-align-middle"],[12],[1,"\\n        "],[10,0],[14,0,"relative live-video-trimmer__overlay-content"],[12],[1,"\\n          "],[8,[39,1],null,null,null],[1,"\\n          "],[10,"h3"],[12],[1," "],[1,[28,[35,2],["i18n_trim_in_progress_message","live/templates/components/live-video-trimmer"],null]],[13],[1,"\\n        "],[13],[1,"\\n      "],[13],[1,"\\n"]],[]],null],[1,"    "],[8,[39,3],null,[["@pillarSource"],["live"]],[["default"],[[[[1,"\\n      "],[8,[30,1,["NativeVideoLoader"]],null,[["@aspectRatio","@teardownOnVideoError","@isAutoPlayEnabled","@isInternal","@isLive","@trackingId","@videoSources","@preload","@onPlayerReady","@onLoadedmetadata","@onPlayerError","@onPlayerSeek"],["auto",false,false,false,false,[30,0,["trackingId"]],[30,0,["videoSources"]],true,[30,0,["onPlayerReady"]],[30,0,["onPlayerLoadedmetadata"]],[30,0,["onPlayerError"]],[30,0,["handlePlayerSeeked"]]]],null],[1,"\\n    "]],[1]]]]],[1,"\\n  "],[13],[1,"\\n"],[41,[30,0,["video"]],[[[1,"    "],[10,0],[12],[1,"\\n      "],[10,"h3"],[14,0,"pt4 pb1 t-sans t-16 t-black t-normal"],[12],[1,"\\n        "],[1,[28,[35,2],["i18n_trim","live/templates/components/live-video-trimmer"],null]],[1,"\\n      "],[13],[1,"\\n      "],[8,[39,4],null,[["@min","@max","@step","@minvalue","@maxvalue","@multiple","@hasTooltip","@onChange"],[0,[30,0,["videoDuration"]],1000,[30,0,["minvalue"]],[30,0,["maxvalue"]],true,false,[30,0,["onTrimSliderChange"]]]],null],[1,"\\n      "],[10,0],[14,0,"live-video-trimmer__trim-min-textbox"],[12],[1,"\\n        "],[10,2],[14,0,"mp-label--white t-sans t-16 t-black t-normal"],[12],[1,[28,[35,5],[[30,0,["minvalue"]]],[["isDateTime","format","showLeadingZero"],[true,"radio",true]]]],[13],[1,"\\n      "],[13],[1,"\\n      "],[10,0],[14,0,"live-video-trimmer__trim-max-textbox"],[12],[1,"\\n        "],[10,2],[14,0,"mp-label--white t-sans t-16 t-black t-normal"],[12],[1,[28,[35,5],[[30,0,["maxvalue"]]],[["isDateTime","format","showLeadingZero"],[true,"radio",true]]]],[13],[1,"\\n      "],[13],[1,"\\n    "],[13],[1,"\\n"]],[]],null],[1,"  "],[10,0],[14,0,"mt6 relative"],[12],[1,"\\n    "],[8,[39,6],[[24,0,"live-video-trimmer__trim-button m0"],[16,"aria-label",[28,[37,2],["i18n_revert_trim","live/templates/components/live-video-trimmer"],null]]],[["@size","@click","@color","@icon","@text"],[1,[28,[37,7],[[30,0,["isConfirmingRevert"]],true],null],"muted","rotate-left-icon",[28,[37,2],["i18n_revert_trim","live/templates/components/live-video-trimmer"],null]]],null],[1,"\\n"],[41,[30,0,["video"]],[[[1,"      "],[8,[39,6],[[24,0,"live-video-trimmer__trim-button live-video-trimmer__trim-button--right m0"],[16,"aria-label",[28,[37,2],["i18n_trim","live/templates/components/live-video-trimmer"],null]]],[["@size","@click","@color","@disabled","@icon","@text"],[1,[30,0,["executeTrim"]],"muted",[28,[37,8],[[30,0,["trimValuesChanged"]]],null],"pencil-icon",[28,[37,2],["i18n_trim","live/templates/components/live-video-trimmer"],null]]],null],[1,"\\n"]],[]],null],[1,"  "],[13],[1,"\\n\\n  "],[8,[39,9],null,[["@isOpen","@title","@content","@primaryActionText","@secondaryActionText","@onPrimary","@onSecondary","@onEscape"],[[30,0,["showRevertConfirmation"]],[28,[37,2],["i18n_confirm_revert_title","live/templates/components/live-video-trimmer"],null],[28,[37,2],["i18n_confirm_revert_info","live/templates/components/live-video-trimmer"],null],[28,[37,2],["i18n_confirm_revert_yes","live/templates/components/live-video-trimmer"],null],[28,[37,2],["i18n_confirm_revert_no","live/templates/components/live-video-trimmer"],null],[30,0,["revertTrim"]],[28,[37,7],[[30,0,["isConfirmingRevert"]],false],null],[28,[37,7],[[30,0,["isConfirmingRevert"]],false],null]]],null],[1,"\\n"],[13]],["videoRouter"],false,["if","artdeco-loader@artdeco-loader","t","video@native-video-router","artdeco-slider@artdeco-slider","global-helpers@format-duration","artdeco-button@artdeco-button","fn","global-helpers@not","artdeco-modal@artdeco-confirmation-dialog"]]',moduleName:"live/templates/components/live-video-trimmer.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/octaned-live-video-loader",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"JL6v7hDC",block:'[[[11,0],[16,0,[29,[[30,1],"\\n    live-video-loader video-s-loader live-video-loader\\n    ",[52,[30,0,["playerState","is","videoActive"]],"video-s-loader--video-active"],"\\n    ",[52,[30,0,["playerState","is","LOADING"]],"video-s-loader--video-loading"]]]],[17,2],[4,[38,1],[[30,0,["videoAttached"]]],null],[12],[1,"\\n  "],[8,[39,2],null,[["@classNames","@tracks","@aspectRatio","@sources","@poster","@muted","@controls","@tech","@preload","@tracking","@rumTracking","@plugins","@onReady","@onEnded","@onError","@onLoadeddata","@onLoadstart","@onLoadedmetadata","@onPause","@onPlay","@onPlaying","@onSeeked","@onSeeking","@onTimeupdate","@onVolumechange","@onControlInteractionTrack","@onTrack","@onInteract","@onRumTrack"],["video-s-loader__video-container",[30,0,["tracks"]],[30,0,["playerAspectRatio"]],[30,0,["sources"]],[52,[30,0,["withPoster"]],[30,0,["posterUrl"]]],true,[30,0,["controls"]],[30,0,["tech"]],[30,0,["preload"]],[30,0,["trackingConfig"]],[30,0,["trackingConfig"]],[28,[37,3],[[28,[37,4],null,[["controlInteraction","posterImageInteraction","bigPlayButtonInteraction","muteToggleInteraction","getTextTracks","fullscreenMediaQuality"],[true,[28,[37,4],null,[["onInteraction"],[[30,0,["handleThumbnailClick"]]]]],[28,[37,4],null,[["onInteraction"],[[30,0,["handleThumbnailClick"]]]]],[28,[37,4],null,[["onInteraction"],[[30,0,["onMuteToggleInteraction"]]]]],[28,[37,4],null,[["onAddTextTrack"],[[30,0,["onAddTextTrack"]]]]],true]]],[30,0,["plugins"]]],null],[30,0,["handlePlayerReady"]],[30,0,["handlePlayerEnd"]],[30,0,["handlePlayerError"]],[30,0,["handlePlayerLoadeddata"]],[30,0,["handlePlayerLoadstart"]],[30,0,["handlePlayerLoadedmetadata"]],[30,0,["handlePlayerPause"]],[30,0,["handlePlayerPlay"]],[30,0,["handlePlayerPlaying"]],[30,0,["handlePlayerSeeked"]],[30,0,["handlePlayerSeeking"]],[30,0,["handlePlayerTimeupdate"]],[30,0,["handlePlayerVolumechange"]],[30,0,["handleControlInteraction"]],[30,0,["handleTracking"]],[30,0,["handlePlayerInteraction"]],[30,0,["handleTracking"]]]],[["default"],[[[[1,"\\n    "],[18,5,[[30,3]]],[1,"\\n\\n    "],[8,[30,3,["big-play-button"]],null,null,null],[1,"\\n    "],[8,[30,3,["control","backToStart"]],null,[["@onClick"],[[30,0,["handleBackToStartClick"]]]],null],[1,"\\n    "],[8,[30,3,["control","captionsMenu"]],null,null,null],[1,"\\n"],[41,[30,4],[[[1,"      "],[8,[30,3,["control","theaterMode"]],null,[["@onActivate","@onDeactivate"],[[30,0,["handleTheaterModeActivate"]],[30,0,["handleTheaterModeDeactivate"]]]],null],[1,"\\n"]],[]],null],[41,[30,0,["playerControlFeatures","has","skipback"]],[[[1,"      "],[8,[30,3,["control","skipback"]],null,null,null],[1,"\\n"]],[]],null],[41,[30,0,["playerControlFeatures","has","skipahead"]],[[[1,"      "],[8,[30,3,["control","skipahead"]],null,null,null],[1,"\\n"]],[]],null],[41,[30,0,["playerControlFeatures","has","playbackRate"]],[[[1,"      "],[8,[30,3,["control","playback-rate"]],null,null,null],[1,"\\n"]],[]],null],[1,"    "],[8,[30,3,["control","fullscreen"]],null,null,null],[1,"\\n  "]],[3]]]]],[1,"\\n"],[13]],["@className","&attrs","player","@showTheaterModeButton","&default"],false,["if","did-insert","ember-media-player@media-player","global-helpers@merge-hashes","hash","yield"]]',moduleName:"live/templates/components/octaned-live-video-loader.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/reactions/video-reaction-dance-directions",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"KrQhupkL",block:'[[[10,0],[14,0,"video-reaction-dance-directions"],[15,5,[30,1,["verticalDance"]]],[15,4,[30,1,["type"]]],[12],[1,"\\n  "],[10,0],[14,0,"video-reactions-horizontal-dance-space"],[15,5,[30,1,["leftRightDance"]]],[12],[1,"\\n    "],[10,0],[15,5,[30,1,["enterExitDance"]]],[12],[1,"\\n      "],[1,[28,[35,0],[[30,1,["type"]]],[["iconStyle","size","customStyle","class"],["creation","medium","menu","reactions-menu__icon"]]]],[1,"\\n    "],[13],[1,"\\n  "],[13],[1,"\\n"],[13]],["@dancingReaction"],false,["reactions@reactions-icon"]]',moduleName:"live/templates/components/reactions/video-reaction-dance-directions.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/reactions/video-reactions-buttons-container",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"WQgaLxZh",block:'[[[11,0],[24,0,"video-reactions-buttons-container"],[24,"tabindex","-1"],[4,[38,0],null,null],[12],[1,"\\n"],[42,[28,[37,2],[[28,[37,2],[[30,0,["reactionTypes"]]],null]],null],null,[[[1,"    "],[11,"button"],[24,0,"reactions-menu__reaction video-reactions-buttons-container__reaction"],[24,4,"button"],[4,[38,3],["click",[28,[37,4],[[30,0,["onReactionClicked"]],[30,1]],null]],null],[12],[1,"\\n      "],[10,1],[14,0,"reactions-menu__reaction-description"],[12],[1,"\\n"],[1,"        "],[1,[28,[35,5],[[28,[37,6],["react_",[30,1],"_V2"],null],"live/templates/components/reactions/video-reactions-buttons-container"],null]],[1,"\\n      "],[13],[1,"\\n      "],[1,[28,[35,7],[[30,1]],[["size","iconStyle","customStyle","class"],["medium","creation","menu","reactions-menu__icon video-reactions-icon"]]]],[1,"\\n    "],[13],[1,"\\n"]],[1]],null],[13]],["reactionType"],false,["live@focus-on-mouseup","each","-track-array","on","fn","t","concat","reactions@reactions-icon"]]',moduleName:"live/templates/components/reactions/video-reactions-buttons-container.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/reactions/video-reactions-container",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"nFjlh/sD",block:'[[[11,0],[24,0,"relative fit-content-width"],[4,[38,0],[[30,0,["refreshReactionsQueue"]]],null],[4,[38,1],[[30,0,["refreshReactionsQueue"]],[30,1],[30,2],[30,3],[30,4]],null],[12],[1,"\\n"],[41,[51,[30,0,["isViewerMuted"]]],[[[1,"    "],[8,[39,3],null,[["@reactionQueue","@threadUrn","@getVideoTime","@generateReaction","@updateTrackingObj","@isLiveEventLobby"],[[30,0,["reactionQueue"]],[30,5],[30,6],[30,0,["generateReaction"]],[30,7],[30,0,["isLiveEventLobby"]]]],null],[1,"\\n"]],[]],null],[1,"  "],[8,[39,4],null,[["@reactionQueue"],[[30,0,["reactionQueue"]]]],null],[1,"\\n"],[13]],["@isLive","@isSeeking","@isPlaying","@videoAtEnd","@threadUrn","@getVideoTime","@updateTrackingObj"],false,["did-insert","did-update","unless","live@reactions/video-reactions-buttons-container","live@reactions/video-reactions-dance-floor"]]',moduleName:"live/templates/components/reactions/video-reactions-container.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/reactions/video-reactions-dance-floor",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"oMDoOaCD",block:'[[[10,0],[14,0,"video-reactions-dance-floor"],[12],[1,"\\n"],[42,[28,[37,1],[[28,[37,1],[[30,1]],null]],null],null,[[[1,"    "],[8,[39,2],null,[["@dancingReaction"],[[30,2]]],null],[1,"\\n"]],[2]],null],[13]],["@reactionQueue","dancingReaction"],false,["each","-track-array","live@reactions/video-reaction-dance-directions"]]',moduleName:"live/templates/components/reactions/video-reactions-dance-floor.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/scheduled-live-poster",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"5VvNFiKw",block:'[[[11,0],[24,0,"video-scheduled-live-poster relative"],[17,1],[12],[1,"\\n  "],[11,0],[4,[38,0],[[30,0,["handleUnlocalizedScheduledTime"]],[30,2,["scheduledTimestamp"]]],null],[12],[13],[1,"\\n  "],[18,4,[[28,[37,2],null,[["scheduledTimeTag","image"],[[50,"live@video-live-bug-v2",0,null,[["scheduledTimeTag","viewerCount","isLive","showCVCForPreLive","useShortTags"],[[30,0,["scheduledTimeTag"]],[30,0,["viewerCount"]],false,false,[30,3]]]],[50,"image-view-model@image-view-model",0,null,[["images","imgWidth","imgClasses","class"],[[30,2,["image"]],[30,0,["defaultWidth"]],"video-scheduled-live-poster__image","video-scheduled-live-poster__image-container"]]]]]]]],[1,"\\n"],[13]],["&attrs","@model","@useShortTags","&default"],false,["did-update","yield","hash","component"]]',moduleName:"live/templates/components/scheduled-live-poster.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/scheduled-live-reminder-button",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"m7LR+76O",block:'[[[8,[39,0],[[24,0,"white-space-nowrap"],[16,"aria-pressed",[30,0,["reminded"]]]],[["@text","@type","@size","@color","@click","@data-control-name","@disabled"],[[52,[30,0,["reminded"]],[28,[37,2],["reminder_on","live/templates/components/scheduled-live-reminder-button"],null],[28,[37,2],["remind_me","live/templates/components/scheduled-live-reminder-button"],null]],[52,[30,0,["pressedInverseColor"]],"primary","secondary"],1,[30,0,["colorValue"]],[30,0,["toggleReminded"]],"remindme",[30,1]]],null]],["@disabled"],false,["artdeco-button@artdeco-button","if","t"]]',moduleName:"live/templates/components/scheduled-live-reminder-button.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/scheduled-live-update-details",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"1yqQkFkF",block:'[[[1,"\\n"],[11,0],[17,1],[12],[1,"\\n\\n"],[41,[30,2],[[[1,"    "],[10,2],[14,0,"t-12 t-bold mb1"],[12],[1,"\\n      "],[1,[28,[35,1],[[30,2]],null]],[1,"\\n    "],[13],[1,"\\n"]],[]],null],[41,[30,3],[[[1,"    "],[10,"h2"],[14,0,"t-14 t-bold mb1"],[12],[1,"\\n      "],[1,[28,[35,1],[[30,3]],null]],[1,"\\n    "],[13],[1,"\\n"]],[]],null],[41,[30,4],[[[1,"    "],[10,"h3"],[14,0,"t-12 t-normal t-black--light mb1"],[12],[1,"\\n      "],[1,[28,[35,1],[[30,4]],null]],[1,"\\n    "],[13],[1,"\\n"]],[]],null],[41,[30,5],[[[1,"    "],[10,"h4"],[14,0,"t-12 t-normal t-black--light mb1"],[12],[1,"\\n      "],[1,[28,[35,1],[[30,5]],null]],[1,"\\n    "],[13],[1,"\\n"]],[]],null],[41,[28,[37,2],[[30,6],[30,7]],null],[[[1,"    "],[10,0],[14,0,"display-flex align-items-center"],[12],[1,"\\n"],[41,[30,6,["attributes","length"]],[[[1,"        "],[8,[39,3],[[24,0,"mr1"]],[["@images","@isStackedLayout","@entitySize"],[[30,6],[28,[37,4],[[30,6,["attributes","length"]],1],null],1]],null],[1,"\\n"]],[]],null],[41,[30,7],[[[1,"        "],[10,0],[14,0,"text-body-xsmall t-black--light"],[12],[1,"\\n          "],[1,[28,[35,1],[[30,7]],null]],[1,"\\n        "],[13],[1,"\\n"]],[]],null],[1,"    "],[13],[1,"\\n"]],[]],null],[13]],["&attrs","@titleContext","@title","@subtitle","@description","@insightImage","@insightText"],false,["if","text-view-model@text-view-model","global-helpers@or","image-view-model@image-view-model","global-helpers@gt"]]',moduleName:"live/templates/components/scheduled-live-update-details.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/video-live-bug-v2",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"xWcCHv+j",block:'[[[10,0],[14,0,"video-live-bug"],[12],[1,"\\n"],[41,[30,1],[[[1,"    "],[10,1],[15,0,[29,["video-live-bug__scheduled-time-tag t-14 t-bold t-white\\n        ",[52,[30,2],"video-live-bug__scheduled-time-tag--transitioning"]]]],[12],[1,"\\n      "],[1,[28,[35,1],[[30,1]],null]],[1,"\\n    "],[13],[1,"\\n"]],[]],[[[41,[30,3],[[[1,"    "],[10,1],[15,0,[29,["video-live-bug__label t-sans t-12 t-white t-bold",[52,[30,2]," video-live-bug__label--transitioning"]]]],[12],[1,[28,[35,2],["live","live/templates/components/video-live-bug-v2"],null]],[13],[1,"\\n"]],[]],[[[41,[30,0,["showPreviouslyRecorded"]],[[[1,"    "],[10,1],[15,0,[29,["video-live-bug__previously-live t-white t-14\\n        ",[52,[30,4],"t-bold"]]]],[12],[1,"\\n"],[41,[30,4],[[[1,"        "],[1,[28,[35,2],["i18n_previously_recorded_short","live/templates/components/video-live-bug-v2"],null]],[1,"\\n"]],[]],[[[1,"        "],[1,[28,[35,2],["i18n_previously_recorded","live/templates/components/video-live-bug-v2"],null]],[1,"\\n"]],[]]],[1,"    "],[13],[1,"\\n  "]],[]],null]],[]]]],[]]],[1,"\\n"],[41,[30,0,["showCVC"]],[[[41,[28,[37,3],[[30,0,["viewerCountToShow"]],1],null],[[[1,"      "],[10,1],[12],[1,"\\n        "],[1,[28,[35,4],null,[["type","class","size","a11y-text"],["people-icon","video-live-bug__cvc-icon mb1","small",[28,[37,2],["viewer_count","live/templates/components/video-live-bug-v2"],null]]]]],[1,"\\n        "],[10,2],[14,0,"t-sans t-14 t-white t-bold t-roman inline-block"],[12],[1,[28,[35,5],[[30,0,["viewerCountToShow"]]],null]],[13],[1,"\\n      "],[13],[1,"\\n"]],[]],null]],[]],null],[13]],["@scheduledTimeTag","@transitioningToLive","@isLive","@useShortTags"],false,["if","text-view-model@text-view-model","t","global-helpers@gte","artdeco-icons-web@li-icon","ember-cli-pemberly-i18n@format-number"]]',moduleName:"live/templates/components/video-live-bug-v2.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/video-live-feed-v2",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"f+57zib0",block:'[[[10,0],[14,0,"video-live-feed full-height full-width"],[12],[1,"\\n  "],[8,[39,0],null,[["@isAutoPlayEnabled","@liveVideoOverrideOptions","@aspectRatio","@trackingId","@update"],[[30,0,["isAutoPlayEnabled"]],[30,0,["liveVideoOverrideOptions"]],[30,0,["aspectRatio"]],[30,1],[30,2]]],[["default"],[[[[1,"\\n    "],[10,0],[14,0,"video-live__label"],[12],[1,"\\n      "],[8,[30,3,["liveBug"]],null,[["@showPreviouslyRecorded"],[false]],null],[1,"\\n    "],[13],[1,"\\n"],[41,[30,0,["videoPlayMetadata"]],[[[1,"      "],[1,[30,3,["videoLoader"]]],[1,"\\n"]],[]],null],[1,"  "]],[3]]]]],[1,"\\n"],[13]],["@trackingId","@update","liveVideo"],false,["live@video-live","if"]]',moduleName:"live/templates/components/video-live-feed-v2.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/templates/components/video-live",["exports","@ember/template-factory"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+var i=(0,t.createTemplateFactory)({id:"j25OoFTp",block:'[[[11,0],[16,0,[29,["video-live",[52,[30,0,["isLive"]]," video-live--is-live"]]]],[4,[38,1],[[30,0,["onUpdate"]],[30,1]],null],[12],[1,"\\n  "],[18,9,[[28,[37,3],null,[["videoLoader","backButton","liveBug"],[[50,[28,[37,5],[[52,[30,0,["useOctanedLiveVideoLoader"]],"live$octaned-live-video-loader","live$live-video-loader"]],null],0,null,[["className","class","controls","isAutoPlayEnabled","isInternal","isLive","aspectRatio","showTheaterModeButton","onPlayerEnd","onPlayerPause","onPlayerPlay","onPlayerReady","onPlayerSeek","onPlayerSeeking","onPlayerError","onPlayerLoadeddata","onPlayerTimeupdate","activateTheaterMode","deactivateTheaterMode","trackingId","update","liveVideoOverrideOptions","videoPlayMetadata","videoTitle"],[[28,[37,6],[[52,[30,2],"video-live__loader--expand-horizontally","full-width"],[52,[30,0,["isLive"]]," video-live__loader--is-live"]],null],[28,[37,6],[[52,[30,2],"video-live__loader--expand-horizontally","full-width"],[52,[30,0,["isLive"]]," video-live__loader--is-live"]],null],[30,0,["controls"]],[30,3],[30,4],[30,0,["isLive"]],"auto",[30,5],[30,0,["handlePlayerEnd"]],[30,0,["handlePlayerPause"]],[30,0,["handlePlayerPlay"]],[30,0,["handlePlayerReady"]],[30,0,["handlePlayerSeek"]],[30,0,["handlePlayerSeeking"]],[30,0,["handlePlayerError"]],[30,0,["handlePlayerLoadeddata"]],[30,0,["handlePlayerTimeupdate"]],[30,6],[30,7],[30,8],[30,1],[30,0,["overrideOptions"]],[30,0,["videoPlayMetadata"]],[30,0,["updateContent","title"]]]]],[50,"artdeco-button@artdeco-button",0,null,[["data-test-back-button","type","color","class","icon","size","click","circle","text"],[true,"tertiary","inverse","video-live__backarrow pr2","chevron-left-icon",1,[30,0,["closeLiveVideo"]],true,[28,[37,7],["i18n_a11y_show_back_arrow","live/templates/components/video-live"],null]]]],[50,"live@video-live-bug-v2",0,null,[["streamCreationDate","viewerCount","isLive"],[[30,0,["updateContent","videoPlayMetadata","liveStreamCreatedAt"]],[30,0,["viewerCount"]],[30,0,["isLive"]]]]]]]]]],[1,"\\n"],[13]],["@update","@wasScheduled","@isAutoPlayEnabled","@isInternal","@showTheaterModeButton","@activateTheaterMode","@deactivateTheaterMode","@trackingId","&default"],false,["if","did-update","yield","hash","component","ember-holy-futuristic-template-namespacing-batman@-translate-dynamic-2","concat","t"]]',moduleName:"live/templates/components/video-live.hbs",isStrictMode:!1})
+e.default=i}))
+define("live/utils/evented-queue-manager",["exports","@ember/debug","@ember/polyfills","@ember/object","ember-lifeline","live/utils/queue-manager"],(function(e,t,i,r,a,n){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.getFlushPollToken=o
+e.default=void 0
+function o(e){return`evented-queue-manager::${e}`}class l extends n.default{constructor(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{}
+super(e)
+const{realtimeTopic:t,updateInterval:r=1e3,onFlush:a,onDelete:n,rejectFunc:o,lix:l}=e;(0,i.assign)(this,{realtimeTopic:t,updateInterval:r,onFlush:a,onDelete:n,rejectFunc:o,lix:l})}eventsMessageHandler(e,t){var i
+let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2],l=t
+null!==(i=this.lix)&&void 0!==i&&i.getTreatmentIsEnabled("voyager.web.messaging-use-full-realtime-payload")&&n&&(l=t.payload)
+if(!(e!==this.realtimeTopic||this.rejectFunc&&this.rejectFunc(l)))if("DELETE"!==(0,r.get)(l,"data.value.action")){this.addToQueue(l)
+if(!this.isPolling){this.isPolling=!0;(0,a.pollTask)(this,"_flushPoll",o(this.realtimeTopic))}}else this.onDelete(l)}_flushPoll(e){const t=this.flushQueue()
+t.length>0&&this.onFlush(t);(0,a.runTask)(this,e,this.updateInterval)}destroy(){(0,a.runDisposables)(this)
+super.destroy()}}e.default=l}))
+define("live/utils/live-constants",["exports","@linkedin/ember-pem/utils/degradation-tracking-metadata"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.LIVE_EVENT_VIEWER_STATE=e.DEGRADATION_TRACKING_METADATA=e.PEM_PRODUCT_NAMES=e.PEM_FEATURE_KEYS=e.LIVE_VIDEO_EDIT_STATES=e.SUBSCRIPTION_TYPES=e.LIVE_TRACKING_STATES=e.MEDIA_LIVE_STATE=e.LIVE_STREAM_MAX_DURATION_HOURS=e.LIVE_VIDEO_FALLBACK_POSTER=void 0
+e.LIVE_VIDEO_FALLBACK_POSTER="https://media.licdn.com/media/AAUQAQQBAAgAAQAAAAAAAAT4AAAAJDE0Y2RiZmJlLTU2NzMtNDgyNC1hYmE1LTliMGRjNGNiNmFlNw.png"
+e.LIVE_STREAM_MAX_DURATION_HOURS=4.5
+e.MEDIA_LIVE_STATE={IS_LIVE:"IS_LIVE",WAS_LIVE:"WAS_LIVE",PRE_RECORDED:"PRE_RECORDED"}
+e.LIVE_TRACKING_STATES={IS_LIVE:"IS_LIVE",WAS_LIVE:"WAS_LIVE"}
+e.SUBSCRIPTION_TYPES={LIVE:"LIVE",REPLAY:"REPLAY"}
+e.LIVE_VIDEO_EDIT_STATES={READY_STATE:"READY",TRIMABLE:"TRIMABLE",TRIM_IN_PROGRESS:"TRIM_IN_PROGRESS"}
+const i=Object.freeze({LIVE_MODULE:"video-live-module"})
+e.PEM_FEATURE_KEYS=i
+const r=Object.freeze({VOYAGER_LIVE_VIDEO_THEATER:"Voyager - Live Video Theater Page"})
+e.PEM_PRODUCT_NAMES=r
+const a=Object.freeze({REPLAY_COMMENTS:new t.default(i.LIVE_MODULE,"replay-comments-did-not-load",{productName:r.VOYAGER_LIVE_VIDEO_THEATER}),REPLAY_REACTIONS:new t.default(i.LIVE_MODULE,"replay-reactions-did-not-load",{productName:r.VOYAGER_LIVE_VIDEO_THEATER}),CREATE_REACTION:new t.default(i.LIVE_MODULE,"reaction-not-created",{productName:r.VOYAGER_LIVE_VIDEO_THEATER})})
+e.DEGRADATION_TRACKING_METADATA=a
+e.LIVE_EVENT_VIEWER_STATE={NOT_INTERESTED:"NOT_INTERESTED",INTERESTED:"INTERESTED",NOT_REGISTERED:"NOT_REGISTERED",REGISTERED:"REGISTERED",EVICTED:"EVICTED"}}))
+define("live/utils/live-video-helpers",["exports","ember","live/utils/live-constants"],(function(e,t,i){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.getSourceType=function(){return t.default.testing?"video/mp4":"application/x-mpegURL"}
+e.isStreamStale=function(e,t){let r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:i.LIVE_STREAM_MAX_DURATION_HOURS
+const a=(t-e)/1e3,n=a/60/60
+return n>=r}}))
+define("live/utils/queue-manager",["exports","@ember/polyfills"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+function i(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:10
+const i=e.splice(0,t),r={flushItems:i,newQueue:e}
+return r}e.default=class{constructor(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{}
+const{batchFunc:r=i,formatFunc:a=null}=e,n={batchFunc:r,formatFunc:a};(0,t.assign)(this,n)
+this.queue=[]}addToQueue(e){let t=e
+Array.isArray(t)||(t=[t])
+this.formatFunc&&(t=t.map((e=>this.formatFunc(e))))
+this.queue.push(...t)}flushQueue(){const e=this.queue.slice(),{newQueue:t,flushItems:i}=this.batchFunc(e)
+this.queue=t
+return i}destroy(){Object.keys(this).forEach((e=>{delete this[e]}))}clearQueue(){this.queue=[]}}}))
+define("live/utils/reaction",["exports","@babel/runtime/helpers/esm/defineProperty","@ember/debug","@ember/object","@ember/string","ember-lifeline"],(function(e,t,i,r,a,n){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=e.DANCE_PREP_TIME=void 0
+const o=3e3
+e.DANCE_PREP_TIME=100
+function l(){const e=Math.random
+return(0,a.htmlSafe)(jSecure.mk`cubic-bezier(${e().toFixed(2)}, ${e().toFixed(2)}, ${e().toFixed(2)}, ${e().toFixed(2)})`)}function s(e,t){return(0,a.htmlSafe)(jSecure.mk`animation: ${e} ${o}ms  1 forwards ${t};`)}class d extends r.default{constructor(){super(...arguments);(0,t.default)(this,"isDancing",!1)}init(){super.init(...arguments);(0,r.setProperties)(this,{danceTime:o,verticalDance:s.call(this,"video-reaction-vertical","cubic-bezier(0, 0, 1, 1)"),leftRightDance:s.call(this,`video-reaction-dance-${Math.floor(8*Math.random())+1}`,l()),enterExitDance:s.call(this,"video-reaction-transformation","cubic-bezier(0, 0, 1, 1)")})}add(){const{reactionQueue:e}=this
+if(e){e.addObject(this);(0,n.runTask)(this,(()=>{(0,r.set)(this,"isDancing",!0)
+this._removeTask=(0,n.runTask)(this,this.remove,2900)}),100)}}remove(){if(!this.isDancing)return;(0,r.set)(this,"isDancing",!1);(0,n.cancelPoll)(this,this._removeTask)
+const e=this.reactionQueue
+e&&e.removeObject(this)
+this.destroy()}willDestroy(){super.willDestroy(...arguments);(0,n.runDisposables)(this);(0,n.cancelPoll)(this,this._removeTask)
+this._removeTask=null}}e.default=d}))
+define("live/utils/requests/scheduled-live-subscription-action",["exports","extended/config/environment","global-utils/utils/url","@ember/debug"],(function(e,t,i,r){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=function(e,r){const a=`/${t.default.namespace}/voyagerVideoActions`,n=(0,i.addQueryParam)(a,"action","subscribeScheduledLiveVideo")
+return[n,"POST",{data:{isSubscription:e,ugcPostUrn:r}}]}}))
+define("live/utils/video-live-utils",["exports","@ember/object","@ember/object/internals","ember-copy","ember-lifeline","global-utils/utils/api-compat","global-utils/utils/is-browser","global-utils/utils/urn-id-helpers","live/utils/live-video-helpers"],(function(e,t,i,r,a,n,o,l,s){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.filterCommentsByTime=function(e,i){const r=e.slice()
+r.sort(((e,i)=>(0,t.get)(e,"timeOffset")-(0,t.get)(i,"timeOffset")))
+const a=r.filter((e=>(0,t.get)(e,"timeOffset")<=i)).length
+return{flushItems:r.splice(0,a),newQueue:r}}
+e.subscriptionGuid=function(e,t){return(0,i.guidFor)(`${(0,i.guidFor)(e)}${t}`)}
+e.handleCommentPayload=function(e,i){const a=(0,r.copy)(i)
+a.data=a.data.value
+const n=e.push(e.serializerFor("-ember-m3").normalizeResponse(e,void 0,a,a.data.urn)),o=(0,t.get)(n,"comment");(0,t.trySet)(o,"commenter.distance.value","OUT_OF_NETWORK")
+return o}
+e.handleLiveUpdatePayload=function(e,i){const a=(0,r.copy)(i)
+return e.push(e.serializerFor("-ember-m3").normalizeResponse(e,void 0,a,(0,t.get)(a,"data.*value")))}
+e.handleRealtimeLiveHeaderPayload=function(e,t){const i=(0,r.copy)(t)
+i.data=i.data.value
+return e.push(e.serializerFor("-ember-m3").normalizeResponse(e,i.data.$type,i,1))}
+e.setupVideoMetadata=function(e){if(e&&(0,t.get)(e,"adaptiveStreams.length")){const i=(0,t.get)(e,"adaptiveStreams").objectAt(0);(0,t.set)(i,"mediaType",(0,s.getSourceType)());(0,t.set)(e,"progressiveStreams",[])}return e}
+e.rejectByMemberId=function(e){return function(i){const r=i.included.findBy("$type","com.linkedin.voyager.feed.Comment")||(0,t.get)(i,"data.value.comment"),a=r&&r.commenterProfileId===e,n=(0,t.get)(i,"data.value.actorUrn"),o=n&&n.includes(e)
+return a||o}}
+e.transitionToLive=function(e,i){const r=e=>{if("max-width"===e.propertyName){(0,t.set)(i,"scheduledLiveContent",void 0);(0,a.removeEventListener)(i,i.element.querySelector(".video-live-bug__scheduled-time-tag"),"transitionend",r)}};(0,a.addEventListener)(i,i.element.querySelector(".video-live-bug__scheduled-time-tag"),"transitionend",r);(0,t.setProperties)(i,{"update.content":(0,t.get)(e,"content"),"update.socialDetail":(0,t.get)(e,"socialDetail"),"update.updateMetadata":(0,t.get)(e,"updateMetadata"),transitioningToLive:!0})}
+e.isSameDay=function(e,t){return e.getDate()===t.getDate()&&e.getMonth()===t.getMonth()&&e.getFullYear()===t.getFullYear()}
+e.getNextDay=function(e){return new Date(e.setDate(e.getDate()+1))}
+e.liveVideoDebugOutput=function(e){const i=(0,t.get)(e,"content"),r=(0,t.get)(i,"videoPlayMetadata"),a=(0,n.classNameOf)(i),l=(0,t.get)(e,"updateMetadata.detailPageType"),s={videoPlayMetadata:r,componentType:a,detailPageType:l},d=JSON.stringify(s,null,"  ")
+return o.default?new window.Blob([d],{type:"application/octet-stream"}):d}
+e.updateCommentMutedState=function(e,i,r){let a=arguments.length>3&&void 0!==arguments[3]?arguments[3]:null
+const n=(0,t.get)(e,"rootSocialPermissions.entityUrn")
+if(n&&n===i){(0,t.set)(e,"isCommenterMuted",r)
+a&&(0,t.set)(e,"rootSocialPermissions",a)}}
+e.getActivityUrn=function(e){if(!e)return""
+const t=(0,l.extractUrnParts)(e)[1]
+return(0,l.isUrnId)(t)?(0,l.extractEntityId)(t):t}
+e.isTransitionToNewProfile=function(e,t){var i,r,a,n,o
+return(null===(i=e.to)||void 0===i||null===(r=(a=i.name).startsWith)||void 0===r?void 0:r.call(a,"profile.view.index"))&&(null===(n=e.to)||void 0===n||null===(o=n.attributes)||void 0===o?void 0:o.vanityName)!==t}
+e.isTransitionToNewCompanyPage=function(e,t){var i,r,a,n,o
+return(null===(i=e.to)||void 0===i||null===(r=(a=i.name).startsWith)||void 0===r?void 0:r.call(a,"companies.company"))&&(null===(n=e.to)||void 0===n||null===(o=n.attributes)||void 0===o?void 0:o.universalName)!==t}
+e.extractLiveVideo=function(e,i,r){const a=(0,t.get)(e,"elements.firstObject.entityUrn")
+if(!a)return null
+const n=r?"com.linkedin.voyager.dash.organization.Company":"com.linkedin.voyager.dash.identity.profile.Profile",o=i.peekRecord(n,a)
+return(0,t.get)(o,"topCardLiveVideos.elements.firstObject")}
+e.isViewerTrackingTopicUrn=function(e){return e&&"string"==typeof e&&e.startsWith("urn:li-realtime:viewerTrackingTopic:")}
+e.isCvcUrn=function(e){return e&&"string"==typeof e&&e.startsWith("urn:li-realtime:concurrentViewerCountTopic:")}}))
+define("organization-detour/broadcast-to-share-detour-manager",["exports","ember-m3-pdsc-model-builder","detour-framework/utils/detour-manager","detour-framework/utils/detour-preview-data","detour-framework/utils/detour-status-data","detour-framework/utils/progress-data","detour-framework/utils/detour-constants","@ember/object","rich-text/utils/text-view-helper","rich-text/utils/annotated-text","@ember/debug"],(function(e,t,i,r,a,n,o,l,s,d,c){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+class u extends i.default{constructor(e,t,i,s){super({detourStatusData:new a.default({detourData:{rootBroadcastUrn:(0,l.get)(e,"shareUrn")},detourState:o.DETOUR_STATES.SUCCEEDED,progressData:new n.default({headline:""})}),detourPreviewData:new r.default({previewState:o.DETOUR_PREVIEW_STATES.IN_PROGRESS}),isDetourV2:!0,detourType:o.DETOUR_TYPES.BROADCAST_TO_SHARE})
+this.detourPreview.publishData(new r.default({previewComponent:i,previewState:o.DETOUR_PREVIEW_STATES.SUCCEEDED}))
+this.broadcastUpdateMetadata=e
+this.broadcastCommentary=t
+this.store=s
+this.getShareText=this.getShareText.bind(this)
+this.getShareMedia=this.getShareMedia.bind(this)}getShareText(){const{text:e,mentions:i}=(0,s.generateTextAndMentionsFromTextViewModel)((0,l.get)(this,"broadcastCommentary.text"))
+return(0,t.buildModel)("com.linkedin.voyager.feed.shared.AnnotatedText",{values:(0,d.generateAnnotatedText)(e,i)})}getShareMedia(){return this.store.adapterFor("-ember-m3").ajax("/voyager/api/voyagerOrganizationUpdatesV2/?action=duplicateShareMediaWithViewerAsOwner","POST",{data:{broadcastShareUrn:(0,l.get)(this,"broadcastUpdateMetadata.shareUrn")}}).then((e=>{let{data:{value:t}}=e
+return t}))}}e.default=u}))
+define("organization-detour/url-preview-detour-manager",["exports","detour-framework/utils/detour-manager","detour-framework/utils/detour-constants","detour-framework/utils/detour-status-data","@ember/debug","detour-framework/utils/detour-preview-data","ember-m3-pdsc-model-builder","@ember/object","detour-framework/utils/progress-data","organization-detour/utils/url-preview-utils","rsvp"],(function(e,t,i,r,a,n,o,l,s,d,c){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.default=void 0
+class u extends t.default{constructor(e,t){let a=arguments.length>2&&void 0!==arguments[2]?arguments[2]:(0,c.resolve)(),u=arguments.length>3&&void 0!==arguments[3]?arguments[3]:null,p=arguments.length>4&&void 0!==arguments[4]?arguments[4]:i.DETOUR_TYPES.URL_PREVIEW
+super({detourStatusData:new r.default({detourState:i.DETOUR_STATES.IN_PROGRESS,progressData:new s.default({headline:"whatever",thumbnailLiIcon:"whatever-icon"}),percentComplete:0}),detourPreviewData:new n.default({previewState:i.DETOUR_PREVIEW_STATES.IN_PROGRESS}),isDetourV2:!0,detourType:p})
+e.then((e=>{this.detourStatus.publishData(new r.default({detourState:i.DETOUR_STATES.SUCCEEDED,progressData:new s.default({headline:"whatever",thumbnailLiIcon:"whatever-icon"}),detourData:(0,d.isUpdateV2AThirdPartyArticle)((0,l.get)(e,"update"))?{initialUpdateV2:(0,l.get)(e,"update"),mediaUrn:(0,l.get)(e,"update.updateMetadata.shareMediaUrn"),originalUrl:(0,l.get)(e,"originalUrl")}:null}))
+this.detourPreview.publishData(new n.default({previewComponent:(0,l.get)(e,"update.content"),previewState:i.DETOUR_PREVIEW_STATES.SUCCEEDED}))})).catch((()=>{this.detourPreview.publishData(new n.default({previewState:i.DETOUR_STATES.FAILED,previewStatusData:{message:t.lookupTranslation("components/url-preview-detour@url-preview-detour","i18n_url_preview_error")()}}))
+this.detourStatus.publishData(new r.default({detourState:i.DETOUR_STATES.FAILED,progressData:new s.default({headline:"whatever",thumbnailLiIcon:"whatever-icon"}),percentComplete:0}))
+throw new Error("Ember Data Request GET /voyager/api/contentcreation/urlPreview [url-preview-detour]")}))
+this.getShareMedia=()=>(0,c.hash)({urlPreviewData:e,customArticleImage:a}).then((e=>{let{urlPreviewData:t,customArticleImage:i}=e
+const r={}
+u&&(r.title=(0,o.buildModel)("com.linkedin.pemberly.text.AttributedText",{text:u}))
+if(i&&i[0]){r.thumbnailUrns=[i[0].meta.urn]
+r.recipes=i[0].meta.recipes}r.mediaUrn=(0,l.get)(t,"update.updateMetadata.shareMediaUrn")
+r.originalUrl=(0,l.get)(t,"originalUrl")
+return[(0,o.buildModel)("com.linkedin.voyager.contentcreation.ShareMedia",r)]}))}}e.default=u}))
+define("organization-detour/utils/url-preview-utils",["exports","@ember/object","ember-m3-pdsc-model-builder","global-utils/utils/api-compat"],(function(e,t,i,r){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0})
+e.getUpdateV2WithGivenArticleImageOrTitle=function(e,r){let a=arguments.length>2&&void 0!==arguments[2]?arguments[2]:void 0,n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:void 0
+const o={urn:(0,t.get)(r,"content.urn")};(0,t.get)(r,"content.type")&&(o.type=(0,t.get)(r,"content.type"))
+n&&n.text?o.title=n:(0,t.get)(r,"content.title")&&(o.title=(0,t.get)(r,"content.title"));(0,t.get)(r,"content.subtitle")&&(o.subtitle=(0,t.get)(r,"content.subtitle"));(0,t.get)(r,"content.description")&&(o.description=(0,t.get)(r,"content.description"));(0,t.get)(r,"content.navigationContext")&&(o.navigationContext=(0,t.get)(r,"content.navigationContext"));(a||(0,t.get)(r,"content.largeImage"))&&(o.largeImage=a||(0,t.get)(r,"content.largeImage"))
+const l=(0,i.buildModel)("com.linkedin.voyager.feed.render.ArticleComponent",o),s=e.createRecord("com.linkedin.voyager.feed.render.UpdateV2",{entityUrn:(0,t.get)(r,"entityUrn"),content:l,updateMetadata:(0,t.get)(r,"updateMetadata")})
+return s}
+e.isUpdateV2AThirdPartyArticle=function(e){const i=(0,t.get)(e,"content")
+if(i)return"com.linkedin.voyager.feed.render.ArticleComponent"===(0,r.classNameOf)(i)&&"FIRST_PARTY"!==(0,t.get)(i,"type")
+return!1}}))
+!function(e){t=this,i=function(e){"use strict"
+function t(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t,i){t in e?Object.defineProperty(e,t,{value:i,enumerable:!0,configurable:!0,writable:!0}):e[t]=i
+return e}var r,a,n,o,l={ADVERTISING:"ADVERTISING",ANALYTICS_AND_RESEARCH:"ANALYTICS_AND_RESEARCH",FUNCTIONAL:"FUNCTIONAL"},s={GUEST:"GUEST",MEMBER:"MEMBER"},d=0,c=1,u=2,p=(i(r={},s.GUEST,"li_gc"),i(r,s.MEMBER,"li_mc"),r),m="liap",h=function e(){var i=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null,r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null,a=arguments.length>2&&void 0!==arguments[2]?arguments[2]:null,n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:null
+t(this,e)
+i=i||{}
+this.consentAvailable=!1
+this.issuedAt=r
+this.userMode=a
+this.optedInConsentMap={}
+for(var o in l){i[o]=i[o]||d
+i[o]!==d&&(this.consentAvailable=!0)
+this.optedInConsentMap[o]=i[o]===c||i[o]===d&&n===c}},v=(a=[l.ADVERTISING,l.ANALYTICS_AND_RESEARCH,l.FUNCTIONAL],n=[d,c,u,d],o=new RegExp(["^(\\d+)","(\\d+)","(\\d+)","((?:.|\\s)+)"].join(";")),{parseConsentBody:function(e,t){var i=e.match(o)
+if(!i)return{error:"Invalid consent body encoding",consent:new h}
+for(var r=parseInt(i[1],10),l={},s=0;s<a.length;s++)l[a[s]]=n[r>>2*s&3]
+var c=new Date(1e3*parseInt(i[2],10)),u=parseInt(i[3],10),p=d
+u>=0&&u<=3&&(p=n[u])
+return{error:null,consent:new h(l,c,t,p)}}}),f=new RegExp(["^(\\d+)","((?:.|\\s)+)"].join(";")),g=function(e,t){var i=t.match(new RegExp("(?:^|; *)".concat(e,"=([^;]*)")))
+return i&&i.length>1?i[1]:null},b=function(e,t){var i=g(p[e],t)
+return i?E(i,e):g(p[s.GUEST],t)||g(p[s.MEMBER],t)?y(u):y(c)},y=function(e){var t={}
+for(var i in l)t[i]=e
+return{error:null,consent:new h(t,null,null,e)}},_=function(){var e=document.domain.match(/^(?:|.*\.)([^\.]+\.[^\.]+)$/)
+return e?e[1]:"linkedin-ei.com"},T=function(e){var t=e===s.MEMBER?"settings/member-cookies":"mypreferences/g/guest-cookies"
+return"https://www.".concat(_(),"/").concat(t)},E=function(e,t){e&&e.length>1&&'"'==e.charAt(0)&&'"'==e.charAt(e.length-1)&&(e=e.substring(1,e.length-1))
+var i,r=null
+try{r=(i=e,"undefined"==typeof atob&&"undefined"!=typeof Buffer?Buffer.from(i,"base64").toString("binary"):atob(i)).match(f)}catch(e){}if(!r)return{error:"Invalid consent encoding",consent:new h}
+var a=parseInt(r[1],10),n=r[2]
+switch(a){case 1:return v.parseConsentBody(n,t)
+default:return{error:"Invalid encoded consent version ".concat(a),consent:new h}}},w=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:document.cookie
+e||(e=g(m,t)?g(p[s.MEMBER],t)?s.MEMBER:s.GUEST:g(p[s.GUEST],t)?s.GUEST:s.MEMBER)
+return b(e,t)}
+e.NON_ESSENTIAL_CATEGORIES=l
+e.USER_MODE=s
+e.getBannerData=function(e){var t=w(e),i=t.consent,r=e||i.userMode||s.GUEST
+return{showBanner:!t.error&&!i.consentAvailable,userMode:r,managePreferenceUrl:T(r)}}
+e.getCookieConsent=w
+e.parseEncodedConsent=E
+e.updateCookieConsent=function(e,t){var i=e.optedInConsentMap,r=e.updateSettings,a=e.userMode
+t=t||function(e,t){}
+e.optedInConsentMap||t("optedInConsentMap is a required option",null)
+var n=new XMLHttpRequest
+n.open("POST","https://www.".concat(_(),"/cookie-consent/"))
+n.setRequestHeader("Content-Type","application/json")
+n.withCredentials=!0
+n.onload=function(){200!==n.status?t("Request failed with status ".concat(n.status),null):t(null,n)}
+n.onerror=function(){t("Request failed with an error",n)}
+var o={UPDATE_SETTINGS:r,USER_MODE:a,CATEGORIES:{}}
+for(var s in l){var d=void 0
+!0===i[s]?d=c:!1===i[s]&&(d=u)
+o.CATEGORIES[s]=d}n.send(JSON.stringify(o))}
+Object.defineProperty(e,"__esModule",{value:!0})},"object"==typeof exports&&"undefined"!=typeof module?i(exports):"function"==typeof e&&e.amd?e(["exports"],i):i((t=t||self).ConsentCookieParser={})
+var t,i}(function(){function e(){var e=Array.prototype.slice.call(arguments)
+e.unshift("@linkedin/consent-cookie-parser")
+return define.apply(null,e)}e.amd=!0
+return e}())
+
+//# sourceMappingURL=engine-vendor.map
