@@ -1,3 +1,7 @@
+/* Tail recursion ----> perform all operatiopn at calling time And no operation
+       is done at returning time. */
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
