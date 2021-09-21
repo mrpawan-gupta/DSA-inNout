@@ -1,3 +1,5 @@
+/* Head recursion ------ > All operation are done after recursive call */
+
 #include <bits/stdc++.h>
 using namespace std;
 
