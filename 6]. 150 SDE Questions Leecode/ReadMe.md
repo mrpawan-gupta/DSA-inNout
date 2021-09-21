@@ -2,8 +2,7 @@
 
 ## Array
 
-- [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | Array, String ---------->Solution -[cpp](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/6%5D.%20150%20SDE%20Questions%20Leecode/Cpp/romanToInt.cpp) -[Java](https://github.com/mrpawan-gupta/DSA-inNout/blob/main/6%5D.%20150%20SDE%20Questions%20Leecode/Java/RomanToInt.java)
-
+- [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | Array, String 
 - [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | String , Stack
 
 - [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Array , Two-Pointers 
