@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fun1(int n) // recursive function 
+int fun1(int n) // recursive functionn 
 {
 	if (n > 0) // the base condition it is used for terminating the recursion // until this condition satisfy fxn will all itself 
 	{
