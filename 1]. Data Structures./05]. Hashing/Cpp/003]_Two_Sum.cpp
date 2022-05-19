@@ -11,7 +11,7 @@ class Solution{
         vector<int>ButeMethod(vector<int> &nums, int target){
           vector<int> Result;
           for(int i = 0; i < nums.size(); i++){
-            int count = target - nums[i]7;
+            int count = target - nums[i];
             for(int j = i+1; j < nums.size() ; j++){
               if(nums[j]==count){
                 Result.push_back(i);
