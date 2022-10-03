@@ -1,6 +1,6 @@
 # `🏆 The Complete DSA Preparation 🏆`
 
-This repository contains all the DSA (Data-Structures, Algorithms, 450 DSA by Love Babbar Bhaiya,STriver Series ,FAANG Questions and Many More).
+This repository contains all the DSA (Data-Structures, Algorithms, 450 DSA by Love Babbar Bhaiya,STriver Series ,FAANG Questions and Many More!).
 
 ***Before dive into this repo you should know why do we need these concepts. What is Role of [DSA in your real life](https://mrpawan-gupta.medium.com/role-of-data-structures-algorithms-for-software-engineer-a6b1ea5a8701)??***
 
