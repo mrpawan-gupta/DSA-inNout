@@ -12,7 +12,7 @@ This repository contains all the DSA (Data-Structures, Algorithms, 450 DSA by Lo
 
 * Problems on Data structure & Algorithms (Competitive coding)  [Click Here ](https://github.com/mrpawan-gupta/Competitve-Coding) to get into problems section..
 
-* **NOTE** : Click on [:blue_book:] for getting hand written notes on particular topic.
+* **NOTE** : Click on [:blue_book:] for getting hand written notes on particular topics of problem solving.
 
 <h4 align="center">Show some &nbsp;❤️&nbsp; by starring this repository! It will push me to give more percentage of efforts.</h4>
 
