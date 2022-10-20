@@ -10,7 +10,7 @@ This repository contains all the DSA (Data-Structures, Algorithms, 450 DSA by Lo
 
 * ***STL*** is standard template library, It is most powerful & useful while solving competitive coding questions [Read More](https://github.com/mrpawan-gupta/DSA-inNout/tree/main/Resources/Cpp/CPP-STL).
 
-* Problems on Data structure & Algorithms (Competitive coding)  [Click Here ](https://github.com/mrpawan-gupta/Competitve-Coding) to get into problems section..
+* Problems on Data structure & Algorithms (Competitive coding)  [Click Here ](https://github.com/mrpawan-gupta/Competitve-Coding) to get into problems(Questions) section..
 
 * **NOTE** : Click on [:blue_book:] for getting hand written notes on particular topics of problem solving.
 
