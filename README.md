@@ -14,7 +14,7 @@ This repository contains all the DSA (Data-Structures, Algorithms, 450 DSA by Lo
 
 * **NOTE** : Click on [:blue_book:] for getting hand written notes on particular topics of problem solving.
 
-<h4 align="center">Show some &nbsp;❤️&nbsp; by starring this repository! It will push me to give more percentage of efforts.</h4>
+<h4 align="center">Show some &nbsp;❤️&nbsp; by starring this repository! It will push me to give more percentage of efforts!!.</h4>
 
 ## `Table of Contents 📋`
 | **SNo.** | **Contents** |
